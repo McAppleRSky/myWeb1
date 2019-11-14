@@ -11,36 +11,49 @@
 
 <body>
 	<header>
+		<h1>
 			<figure>
-				<h1>
-					<figure>
-						<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
-						<figcaption id="idFigcaptionHeader">фотография
-							<figcaption />
-					</figure>
-					<br>Персональный сайт
-			</h1>
-			<table id="idTableMenu">
-				<tr class="cMenuRow"><th>Главная<br>страница</th>
+				<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+				<figcaption id="idFigcaptionHeader">фотография
+					<figcaption />
+			</figure>
+			<br>Персональный сайт
+		</h1>
+		<table id="idTableMenu">
+			<caption>Гиперссылки на страницы сайта</caption>
+			<tr class="cMenuRow">
+				<th>Главная<br>страница</th>
 				<th class="hide">|<br>|</th>
-				<th class="cMenuTabCol"/>
-				<th class="cMenuTabCol"/>
-				<th class="cMenuTabCol"/>
-				<th class="cMenuTabCol"/>
-				<th class="cMenuTabCol"/></tr>
-				<tr class="cMenuRow">
-					<td></td>
-					<td><a href="page1.htm">Обо мне</a></td>
-					<td><a href="page2.htm">Мои<br>интересы</a></td>
-					<td><a href="page3.htm">Учеба</a></td>
-					<td><a href="page4.htm">Фотоальбом</a></td>
-					<td><a href="page5.htm">Контакт</a></td>
-					<td><a href="page6.htm">Тест<br>по дисциплине</a></td>
-				</tr>
-			</table>
+				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol" />
+			</tr>
+			<tr class="cMenuRow">
+				<td></td>
+				<td><a href="page1.htm">Обо мне</a></td>
+				<td><a href="page2.htm">Мои<br>интересы</a></td>
+				<td><a href="page3.htm">Учеба</a></td>
+				<td><a href="page4.htm">Фотоальбом</a></td>
+				<td><a href="page5.htm">Контакт</a></td>
+				<td><a href="page6.htm">Тест<br>по дисциплине</a></td>
+			</tr>
+		</table>
 	</header>
-
-	<div>
+	<section id="boderSection"></section>
+	<aside>
+		<h3>здесь могла быть ваша реклама:</h3>
+		<section>
+			<h4>рекламодатель1</h4>
+			<p>рекламная<br>плоскость 1</p>
+		</section>
+		<section>
+			<h4>рекламодатель2</h4>
+			<p>рекламная<br>плоскость 2</p>
+		</section>
+	</aside>
+	<article>
 		<h2>Личные данные</h2> <br />
 		<dl>
 			<dt>
@@ -62,9 +75,10 @@
 				Лабораторная работа № 1 "Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS"<br />
 			</dd>
 		</dl>
-	</div>
-	<h4>Страницы сайта</h3>
-		<nav>
+	</article>
+	<nav>
+		<h2>Страницы сайта</h3>
+			<p>Гиперссылки на страницы сайта:</p>
 			<ul>
 				<li><a href="page1.htm">Обо мне</a></li>
 				<li><a href="page2.htm">Мои интересы</a></li>
@@ -73,12 +87,13 @@
 				<li><a href="page5.htm">Контакт</a></li>
 				<li><a href="page6.htm">Тест по дисциплине "Безопасность жизнедеятельности"</a></li>
 			</ul>
-		</nav>
-					<p>Гиперссылки на страницы сайта
-						<p>Вы развлекаетесь — <em>я работаю</em>. Лабораторная.</p>
-
-						<footer>
-							<br><time>2019-11-13</time>, Борисов Е.А.
-						</footer>
+	</nav>
+	<div>
+		<p>Вы развлекаетесь — <em>я работаю</em>. Лабораторная.</p>
+	</div>
+	<footer>
+		<br>&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+	</footer>
 </body>
+
 </html>
