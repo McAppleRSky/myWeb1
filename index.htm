@@ -6,31 +6,42 @@
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<style>
-		h1 {
-			text-align: center;
-			font-family: serif;
-			font-weight: normal;
-			text-transform: uppercase;
-			border-bottom: 1px solid #57b1dc;
-			margin-top: 30px;
-		}
 	</style>
 </head>
 
 <body>
 	<header>
-		<h1>
 			<figure>
-				<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
-				<figcaption id="idFigcaption">фотография
-					<figcaption />
-			</figure>
-			<br>Персональный сайт
-		</h1>
+				<h1>
+					<figure>
+						<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+						<figcaption id="idFigcaptionHeader">фотография
+							<figcaption />
+					</figure>
+					<br>Персональный сайт
+			</h1>
+			<table id="idTableMenu">
+				<tr class="cMenuRow"><th>Главная<br>страница</th>
+				<th class="hide">|<br>|</th>
+				<th class="cMenuTabCol"/>
+				<th class="cMenuTabCol"/>
+				<th class="cMenuTabCol"/>
+				<th class="cMenuTabCol"/>
+				<th class="cMenuTabCol"/></tr>
+				<tr class="cMenuRow">
+					<td></td>
+					<td><a href="page1.htm">Обо мне</a></td>
+					<td><a href="page2.htm">Мои<br>интересы</a></td>
+					<td><a href="page3.htm">Учеба</a></td>
+					<td><a href="page4.htm">Фотоальбом</a></td>
+					<td><a href="page5.htm">Контакт</a></td>
+					<td><a href="page6.htm">Тест<br>по дисциплине</a></td>
+				</tr>
+			</table>
 	</header>
-	<h2>Главная страница</h2>
+
 	<div>
-		<h3>Личные данные</h3> <br />
+		<h2>Личные данные</h2> <br />
 		<dl>
 			<dt>
 				Имя:
@@ -42,7 +53,7 @@
 				студент СевГУ группы:
 			</dt>
 			<dd>
-				а11з<br />
+				а31з<br />
 			</dd>
 			<dt>
 				Номер и название лабораторной работы:
@@ -59,12 +70,15 @@
 				<li><a href="page2.htm">Мои интересы</a></li>
 				<li><a href="page3.htm">Учеба</a></li>
 				<li><a href="page4.htm">Фотоальбом</a></li>
-				<li><a href="page5.htm">контакт</a></li>
+				<li><a href="page5.htm">Контакт</a></li>
 				<li><a href="page6.htm">Тест по дисциплине "Безопасность жизнедеятельности"</a></li>
 			</ul>
 		</nav>
-		<p>Гиперссылки на страницы сайта
-			<p>Вы развлекаетесь — <em>я работаю</em>. Лабораторная.</p>
-</body>
+					<p>Гиперссылки на страницы сайта
+						<p>Вы развлекаетесь — <em>я работаю</em>. Лабораторная.</p>
 
+						<footer>
+							<br><time>2019-11-13</time>, Борисов Е.А.
+						</footer>
+</body>
 </html>

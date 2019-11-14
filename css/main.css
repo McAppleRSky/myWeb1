@@ -3,6 +3,13 @@ background-color: #81ecec;
 margin: 0 15%;
 font-family: sans-serif;
 }
+header {
+  text-align: center;
+  font-family: serif;
+  font-weight: normal;
+  border-bottom: 1px solid #57b1dc;
+  margin-top: 30px;
+}
 h1{
 text-align: center;
 font-family: serif;
@@ -11,12 +18,29 @@ text-transform: uppercase;
 border-bottom: 1px solid #57b1dc;
 margin-top:30px;
 }
+footer{
+  border-top:  1px solid #57b1dc;
+}
 h2{
 color: #d1633c;
 font-size: 1em;
 }
-#idFigcaption{
+#idFigcaptionHeader{
 text-transform: none;
 font-size: 10pt;
 font-style: italic;
+}
+#idTableMenu{
+  width: 100%;
+}
+.cMenuRow{
+  text-align: center;
+  font-size: smaller;
+}
+.cMenuTabCol{
+  width: 14%;
+}
+.hide{
+  opacity: 0;
+  line-height: 1;
 }
