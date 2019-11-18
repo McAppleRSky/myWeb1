@@ -1,6 +1,6 @@
 body{
 background-color: #81ecec;
-margin: 0 15%;
+margin: 7%;
 font-family: sans-serif;
 }
 header {
@@ -8,7 +8,13 @@ header {
   font-family: serif;
   font-weight: normal;
   border-bottom: 1px solid #57b1dc;
-  margin-top: 30px;
+}
+aside{
+  float: right;
+  width: 20%;
+}
+footer{
+  border-top:  1px solid #57b1dc;
 }
 h1{
 text-align: center;
@@ -17,13 +23,6 @@ font-weight: normal;
 text-transform: uppercase;
 border-bottom: 1px solid #57b1dc;
 margin-top:30px;
-}
-aside{
-  float: right;
-  width: 20%;
-}
-footer{
-  border-top:  1px solid #57b1dc;
 }
 h2{
 color: #d1633c;
