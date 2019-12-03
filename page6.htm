@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
@@ -8,8 +7,7 @@
 	<style>
 	</style>
 </head>
-
-<body>
+<body onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;">
 	<header>
 		<h1>
 			<figure>
@@ -49,29 +47,134 @@
 		</section>
 		<section>
 			<h4>рекламодатель2</h4>
-			<p>Вот это<br>новость!</p>
+			<p><q>Телеведущий Владимир Соловьев завел телеграм-канал.</q> Ссылка для подписания <a href="t.me/SolovievLive">https://t.me/SolovievLive</a> .</p>
 		</section>
 	</aside>
 	<main>
 		<article>
-			<h2>Тест по дисциплине "Безопасность жизнедеятельности</h2>
-			<div>
-				<textarea name="IS" rows="10" cols="60">Севастопольский государственный университет,
-		Кафедра ИС</textarea>
-			</div>
+			<section>
+				<h2>Тесты по дисциплинам СевГУ:</h2>
+			</section>
+			<section>
+				<figure>
+					<figcaption>
+						<h2>Тест по дисциплине "Веб-технологии":</h2>
+					</figcaption>
+					<form class="" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" id="mainForm">
+						<p>Для решения теста заполнитете поля с личными данными на себя, заполните тест и нажмите кнопку отправить для отправки теста на мою электронную почту на проверку
+						</p>
+						<ul>
+							<li>Личные данные:
+								<label for="name">Ваш nicname:</label><br>
+								<input type="text" name="name" value="nicname" size="20"><br>
+								<label for="family">Фамилия:</label><input type="text" name="family" value="">
+								<label for="name">Имя:</label><input type="text" name="name" value="">
+								<label for="surname">Отчество:</label><input type="text" name="surname" value="">
+								<br>
+							</li>
+							<li>Вопросы по 1 части дисциплины:
+								<ol>
+									<li><h3>Что такое URL? Расскажите о формате URL?</h3>
+										<label for="ask1">Варианты ответа:</label><br>
+										<input type="radio" name="ask1" value="ans11" >система унифицированных адресов электронных ресурсов, или единообразный определитель местонахождения ресурса;<br>
+										<input type="radio" name="ask1" value="ans12" >это постоянная последовательность символов, идентифицирующая абстрактный или физический ресурс<br>
+										<input type="radio" name="ask1" value="ans13" >последовательность символов, идентифицирующая абстрактный или физический ресурс.
+										<br>
+										</li>
+									<li><h3>Какие атрибуты используются в тегах таблиц HTML?</h3>
+										<label for="ask2">Варианты ответа:</label><br>
+										<input type="checkbox" name="ask2" value="ans21" >bgcolor;<br>
+										<input type="checkbox" name="ask2" value="ans22" >bordercolor;<br>
+										<input type="checkbox" name="ask2" value="ans23" >frame;<br>
+										<input type="checkbox" name="ask2" value="ans24" >rules;<br>
+										<input type="checkbox" name="ask2" value="ans25" >summary;<br>
+										<input type="checkbox" name="ask2" value="ans26" >charoff;<br>
+										<input type="checkbox" name="ask2" value="ans27" >axis;<br>
+										<input type="checkbox" name="ask2" value="ans28" >nowrap;<br>
+										<input type="checkbox" name="ask2" value="ans29" >enctype.<br>
+										</li>
+
+									<li><h3>В чем состоят основные отличия HTML и XHTML?</h3>
+										<label for="ask3">Впишите ответ:</label><br>
+										<textarea name="ask3" rows="8" cols="80" form="mainForm"></textarea>
+										</li>
+									<li><h3>Какие атрибуты имеет тег &lt;FORM&gt; и для чего они используются?</h3>
+										<label for="ask4">Варианты ответа:</label><br>
+										<select size="6" name="ask4" multiple>
+											<option value="ans41">accept-charset</option>
+											<option value="ans42">action</option>
+											<option value="ans43">autocoplete</option>
+											<option value="ans44">enctype</option>
+											<option value="ans45">method</option>
+											<option value="ans46">novalidate</option>
+											<option value="ans47">target</option>
+										</select>
+										</li>
+									<li><h3>Для чего используется тег &lt;SELECT&gt;?</h3>
+										<select name="ask5" >
+										<option value="none" hidden="">Выберите ответ</option>
+										<option value="ans51">организации в формах списков выбора </option>
+										<option value="ans52">организации выпадающих списков выбора</option>
+										<option value="ans53">организации в формах списков выбора и выпадающих списков выбора</option>
+										</select>
+										</li>
+									<li><h3>Как выполняется группировка элементов списка выбора в выпадающих списках?</h3>
+										<label for="ask6">Варианты ответа:</label><br>
+										<select name="ask6" size="6" multiple>
+											<optgroup label="">
+												<option value="ask61">Для выполнения группировки элементов списка выбора используется тэг &lt;optgroup&gt;</option>
+												<option value="ask62">Для группировки элементов списка выбора используется тэг &lt;colgroup&gt;</option>
+											</optgroup>
+											<optgroup label="">
+												<option value="ask63">(закрывающий тэг обязательный)</option>
+												<option value="ask64">(закрывающий тэг не обязательный)</option>
+											</optgroup>
+										</select>
+										</li>
+								</ol>
+							</li>
+						</ol>
+						<input type="reset" name="" value="reset">
+						<input type="submit" name="" value="submit">
+					</form>
+				</figure>
+			</section>
+			<section>
+				<h2>Тест по дисциплине "Веб-технологии" 2:</h2>
+				<form class="" action="index.html" method="post">
+					<p>
+						<label for="name">Введите свое имя</label><br>
+						<input type="text" name="name" value=""><br>
+					</p>
+					<p>
+						<label for="group">Выберите группу</label>
+					</p>
+					<ol>
+						<li>
+						</li>
+					</ol>
+					<p></p>
+				</form>
+
+				<div>
+					<textarea name="IS" rows="10" cols="60">Севастопольский государственный университет, Кафедра ИС</textarea>
+				</div>
+			</section>
 		</article>
-		<section>
-			<h2>личный сайт</h2>
-			<p>Вы развлекаетесь — <em>я работаю</em>. Лабораторная.</p>
-		</section>
 		<section>
 			<br><br><br><br><br><br><br><br><br><br><br>
 		</section>
 	</main>
 	<footer>
+		<table width="100%">
+			<td width="10%">&lt;<a href="page5.htm">prev</a>&gt;</td>
+			<td width="80%" />
+			<td width="10%" />
+		</table>
 		<br>&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
 		<adress><br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
 		</adress>
 	</footer>
 </body>
+
 </html>
