@@ -1,33 +1,39 @@
 <!doctype html>
-<html>
+<html lang="">
 
 <head>
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<style></style>
+	<style>
+		#h3Uppercase {
+			text-transform: uppercase;
+		}
+		table.mainTable {
+			border-collapse: collapse;
+			border: 1px solid;
+		}
+
+	</style>
 </head>
 
 <body>
 	<header>
-		<h1>
-			<figure>
-				<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
-				<figcaption id="idFigcaptionHeader">фотография
-					<figcaption />
-			</figure>
-			<br>Персональный сайт
-		</h1>
-		<table id="idTableMenu">
+		<figure>
+			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+			<figcaption id="idFigcaptionHeader">фотография</figcaption>
+		</figure>
+		<h1>Персональный сайт</h1>
+		<table class="fullTableMenu">
 			<caption>Гиперссылки на страницы сайта</caption>
 			<tr class="cMenuRow">
-				<th class="cMenuTabCol" />
-				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol"></th>
+				<th class="cMenuTabCol"></th>
 				<th class="hide">|<br>|</th>
 				<th>Учеба</th>
 				<th class="hide">|<br>|</th>
-				<th class="cMenuTabCol" />
-				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol"></th>
+				<th class="cMenuTabCol"></th>
 			</tr>
 			<tr class="cMenuRow">
 				<td><a href="index.htm">На гланую<br>страницу</a></td>
@@ -54,24 +60,26 @@
 	<main>
 		<article>
 			<section>
-				<h3>КРЫМСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ</h3>
+				<h3 id="h3Uppercase">Севстопольский государственный университет</h3>
 				<h3>Кафедра информационных технологий</h3>
 			</section>
 			<section>
 				<figure>
 					<figcaption><strong>Перечень изучаемых дисциплин</strong></figcaption>
-					<table border="1" cellspacing="0">
+					<table  class="mainTable">
 						<caption>Дисциплины по семестрам</caption>
 						<tr>
 							<th>№ п/п</th>
-							<th>Наименование предмета</th><th>Тест</th>
+							<th>Наименование предмета</th>
+							<th>Тест</th>
 						</tr>
 						<tr>
 							<td align="center" colspan="2">1 курс</td>
 						</tr>
 						<tr>
 							<td>1.</td>
-							<td>Веб-технологии</td><td><a href="page6.htm">пройти тест</a></td>
+							<td>Веб-технологии</td>
+							<td><a href="page6.htm">пройти тест</a></td>
 						</tr>
 						<tr>
 							<td>2.</td>
@@ -145,13 +153,15 @@
 		</section>
 	</main>
 	<footer>
-		<table width="100%">
-			<td width="10%">&lt;<a href="page2.htm">prev</a>&gt;</td>
-			<td width="80%" />
-			<td width="10%">&lt;<a href="page4.htm">next</a>&gt;</td>
+		<table class="fullTableMenu">
+			<tr>
+				<td class="tdMenu10">&lt;<a href="page2.htm">prev</a>&gt;</td>
+				<td id="tdMenu80"></td>
+				<td class="tdMenu10">&lt;<a href="page4.htm">next</a>&gt;</td>
+			</tr>
 		</table>
-		<br>&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
-		<adress><br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a></adress>
+		&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
 	</footer>
 </body>
 

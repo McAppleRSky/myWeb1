@@ -1,5 +1,6 @@
 <!doctype html>
-<html>
+<html lang="">
+
 <head>
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
@@ -7,24 +8,22 @@
 	<style>
 	</style>
 </head>
+
 <body onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;">
 	<header>
-		<h1>
-			<figure>
-				<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
-				<figcaption id="idFigcaptionHeader">фотография
-					<figcaption />
-			</figure>
-			<br>Персональный сайт
-		</h1>
-		<table id="idTableMenu">
+		<figure>
+			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+			<figcaption id="idFigcaptionHeader">фотография</figcaption>
+		</figure>
+		<h1>Персональный сайт</h1>
+		<table class="fullTableMenu">
 			<caption>Гиперссылки на страницы сайта</caption>
 			<tr class="cMenuRow">
-				<th class="cMenuTabCol" />
-				<th class="cMenuTabCol" />
-				<th class="cMenuTabCol" />
-				<th class="cMenuTabCol" />
-				<th class="cMenuTabCol" />
+				<th class="cMenuTabCol"></th>
+				<th class="cMenuTabCol"></th>
+				<th class="cMenuTabCol"></th>
+				<th class="cMenuTabCol"></th>
+				<th class="cMenuTabCol"></th>
 				<th class="hide">|<br>|</th>
 				<th>Тест<br>по дисциплине</th>
 			</tr>
@@ -74,31 +73,35 @@
 							</li>
 							<li>Вопросы по 1 части дисциплины:
 								<ol>
-									<li><h3>Что такое URL? Расскажите о формате URL?</h3>
+									<li>
+										<h3>Что такое URL? Расскажите о формате URL?</h3>
 										<label for="ask1">Варианты ответа:</label><br>
-										<input type="radio" name="ask1" value="ans11" >система унифицированных адресов электронных ресурсов, или единообразный определитель местонахождения ресурса;<br>
-										<input type="radio" name="ask1" value="ans12" >это постоянная последовательность символов, идентифицирующая абстрактный или физический ресурс<br>
-										<input type="radio" name="ask1" value="ans13" >последовательность символов, идентифицирующая абстрактный или физический ресурс.
+										<input type="radio" name="ask1" value="ans11">система унифицированных адресов электронных ресурсов, или единообразный определитель местонахождения ресурса;<br>
+										<input type="radio" name="ask1" value="ans12">это постоянная последовательность символов, идентифицирующая абстрактный или физический ресурс<br>
+										<input type="radio" name="ask1" value="ans13">последовательность символов, идентифицирующая абстрактный или физический ресурс.
 										<br>
-										</li>
-									<li><h3>Какие атрибуты используются в тегах таблиц HTML?</h3>
+									</li>
+									<li>
+										<h3>Какие атрибуты используются в тегах таблиц HTML?</h3>
 										<label for="ask2">Варианты ответа:</label><br>
-										<input type="checkbox" name="ask2" value="ans21" >bgcolor;<br>
-										<input type="checkbox" name="ask2" value="ans22" >bordercolor;<br>
-										<input type="checkbox" name="ask2" value="ans23" >frame;<br>
-										<input type="checkbox" name="ask2" value="ans24" >rules;<br>
-										<input type="checkbox" name="ask2" value="ans25" >summary;<br>
-										<input type="checkbox" name="ask2" value="ans26" >charoff;<br>
-										<input type="checkbox" name="ask2" value="ans27" >axis;<br>
-										<input type="checkbox" name="ask2" value="ans28" >nowrap;<br>
-										<input type="checkbox" name="ask2" value="ans29" >enctype.<br>
-										</li>
+										<input type="checkbox" name="ask2" value="ans21">bgcolor;<br>
+										<input type="checkbox" name="ask2" value="ans22">bordercolor;<br>
+										<input type="checkbox" name="ask2" value="ans23">frame;<br>
+										<input type="checkbox" name="ask2" value="ans24">rules;<br>
+										<input type="checkbox" name="ask2" value="ans25">summary;<br>
+										<input type="checkbox" name="ask2" value="ans26">charoff;<br>
+										<input type="checkbox" name="ask2" value="ans27">axis;<br>
+										<input type="checkbox" name="ask2" value="ans28">nowrap;<br>
+										<input type="checkbox" name="ask2" value="ans29">enctype.<br>
+									</li>
 
-									<li><h3>В чем состоят основные отличия HTML и XHTML?</h3>
+									<li>
+										<h3>В чем состоят основные отличия HTML и XHTML?</h3>
 										<label for="ask3">Впишите ответ:</label><br>
 										<textarea name="ask3" rows="8" cols="80" form="mainForm"></textarea>
-										</li>
-									<li><h3>Какие атрибуты имеет тег &lt;FORM&gt; и для чего они используются?</h3>
+									</li>
+									<li>
+										<h3>Какие атрибуты имеет тег &lt;FORM&gt; и для чего они используются?</h3>
 										<label for="ask4">Варианты ответа:</label><br>
 										<select size="6" name="ask4" multiple>
 											<option value="ans41">accept-charset</option>
@@ -109,16 +112,18 @@
 											<option value="ans46">novalidate</option>
 											<option value="ans47">target</option>
 										</select>
-										</li>
-									<li><h3>Для чего используется тег &lt;SELECT&gt;?</h3>
-										<select name="ask5" >
-										<option value="none" hidden="">Выберите ответ</option>
-										<option value="ans51">организации в формах списков выбора </option>
-										<option value="ans52">организации выпадающих списков выбора</option>
-										<option value="ans53">организации в формах списков выбора и выпадающих списков выбора</option>
+									</li>
+									<li>
+										<h3>Для чего используется тег &lt;SELECT&gt;?</h3>
+										<select name="ask5">
+											<option value="none" hidden="">Выберите ответ</option>
+											<option value="ans51">организации в формах списков выбора </option>
+											<option value="ans52">организации выпадающих списков выбора</option>
+											<option value="ans53">организации в формах списков выбора и выпадающих списков выбора</option>
 										</select>
-										</li>
-									<li><h3>Как выполняется группировка элементов списка выбора в выпадающих списках?</h3>
+									</li>
+									<li>
+										<h3>Как выполняется группировка элементов списка выбора в выпадающих списках?</h3>
 										<label for="ask6">Варианты ответа:</label><br>
 										<select name="ask6" size="6" multiple>
 											<optgroup label="">
@@ -130,12 +135,12 @@
 												<option value="ask64">(закрывающий тэг не обязательный)</option>
 											</optgroup>
 										</select>
-										</li>
+									</li>
 								</ol>
 							</li>
-						</ol>
-						<input type="reset" name="" value="reset">
-						<input type="submit" name="" value="submit">
+							</ol>
+							<input type="reset" name="" value="reset">
+							<input type="submit" name="" value="submit">
 					</form>
 				</figure>
 			</section>
@@ -166,14 +171,15 @@
 		</section>
 	</main>
 	<footer>
-		<table width="100%">
-			<td width="10%">&lt;<a href="page5.htm">prev</a>&gt;</td>
-			<td width="80%" />
-			<td width="10%" />
+		<table class="fullTableMenu">
+			<tr>
+				<td class="tdMenu10">&lt;<a href="page5.htm">prev</a>&gt;</td>
+				<td id="tdMenu80"></td>
+				<td class="tdMenu10"></td>
+			</tr>
 		</table>
-		<br>&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
-		<adress><br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
-		</adress>
+		&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
 	</footer>
 </body>
 

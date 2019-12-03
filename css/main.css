@@ -33,8 +33,14 @@ text-transform: none;
 font-size: 10pt;
 font-style: italic;
 }
-#idTableMenu{
+.fullTableMenu{
   width: 100%;
+}
+.tdMenu10{
+  width: 10%;
+}
+#tdMenu80{
+  width: 80%;
 }
 .cMenuRow{
   text-align: center;
