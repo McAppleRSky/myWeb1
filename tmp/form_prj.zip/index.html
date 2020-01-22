@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>HTML страница с формой</title>
+	<link rel="stylesheet" href="css/main.css" >
+</head>
+<body>
+	<form action="" method="post" name="" id="form">
+	<div class="container">
+		<div>
+			<h1>Форма пользователя</h1> <br/>
+			<dl>
+				<dt>
+			<label for="name">Имя пользователя:</label>
+				</dt>
+				<dd>
+			<input type="text" name="name" placeholder="pls type your name" id="name" class="brd" /><br/>
+				</dd>
+				<dt>
+			<label for="telnum">Телефон:</label>
+				</dt>
+				<dd>
+			<input type="text" name="telnum" placeholder="pls type your telnumber" id="telnum" class="brd" /><br/>
+				</dd>
+				<dt>
+			<label for="email">Email:</label>
+				</dt>
+				<dd>
+			<input type="text" name="email" placeholder="pls type email" id="email" class="brd"/><br/>
+				</dd>
+				<dt/>
+				<dd><br/>
+			<input type="button" onclick="valid(document.getElementById('form'))" name="submit" value="Отправить" />
+				</dd>
+			</dl>
+		</div>
+		<div class="bottom">
+			<pre>--------------------------------------------
+*для работы формы должен работать javaScript
+JavaScript working ? - <noscript class="tstjs">NO !</noscript></pre>
+		</div>
+	</div>
+	</form>
+	
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

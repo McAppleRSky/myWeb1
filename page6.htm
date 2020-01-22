@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<script src="js/validPage6.js"></script>
 	<style>
 	</style>
 </head>
@@ -64,11 +65,14 @@
 						</p>
 						<ul>
 							<li>Личные данные:
-								<label for="name">Ваш nicname:</label><br>
-								<input type="text" name="name" value="nicname" size="20"><br>
-								<label for="family">Фамилия:</label><input type="text" name="family" value="">
-								<label for="name">Имя:</label><input type="text" name="name" value="">
-								<label for="surname">Отчество:</label><input type="text" name="surname" value="">
+								<label for="nicname">Ваш nicname:</label><br>
+								<input type="text" name="nicname" value="nicname" size="20"><br>
+								<label for="family">Фамилия:</label>
+								<input type="text" name="family" value="">
+								<label for="name">Имя:</label>
+								<input type="text" name="name" value="">
+								<label for="surname">Отчество:</label>
+								<input type="text" name="surname" value="">
 								<br>
 							</li>
 							<li>Вопросы по 1 части дисциплины:
@@ -140,7 +144,8 @@
 							</li>
 							</ol>
 							<input type="reset" name="" value="reset">
-							<input type="submit" name="" value="submit">
+							<input type="submit" name="" value="submit"
+							onclick="valid(document.getElementById('mainForm'))">
 					</form>
 				</figure>
 			</section>
@@ -167,7 +172,13 @@
 			</section>
 		</article>
 		<section>
-			<br><br><br><br><br><br><br><br><br><br><br>
+			<pre>--------------------------------------------
+*для обработки (валидации) форм на текущей странице должен работать javaScript.
+<noscript class="tstjs">JavaScript working ? - NO !</noscript>
+Негатвный статус разрешения браузером обработки js кода
+отображается в документе строкой выше. Позитивный статус
+выводится в консоль браузера (доступна в меню разработчика).</pre>
+			<script src="js/testAllowJsBrowserLog.js"></script>
 		</section>
 	</main>
 	<footer>

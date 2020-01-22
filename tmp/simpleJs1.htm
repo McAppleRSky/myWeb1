@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>hello</title>
+  <meta charset="utf-8">
+  <script src="js/wordCnt.js"></script>
+  <script src="js/dub.js"></script>
+</head>
+
+<body>
+  <script>
+    function sChange() {
+      alert("Содержимое текстовой области изменено");
+    }
+
+    function howMany(selectObject) {
+      var numberSelected = 0;
+      for (var i = 0; i < selectObject.options.length; i++) {
+        if (selectObject.options[i].selected == true)
+          numberSelected++;
+      }
+      return numberSelected;
+    }
+  </script>
+  <form>
+    Измените этот текст и перейдите в другое поле формы:<br />
+    <textarea name="tarea" rews=5 cols=40 onChange="sChange()">
+Это объект textarea
+Пример текста по умолчанию
+</textarea>
+    <br />
+    <input type="text" size=35 name="stxt">
+  </form>
+  <form name="selectForm">
+    <p>
+      <strong>
+        Выберите несколько вариантов и нажмите на кнопку:
+      </strong>
+    </p>
+    <br />
+    <select name="musicTypes" multiple>
+      <option SELECTED>R&amp;B</option>
+      <option>Jazz</option>
+      <option>Blues</option>
+      <option>New Age</option>
+      <option>Classical</option>
+      <option>Opera</option>
+    </select>
+    <p>
+      <input type="button" value=" Сколько выбрано?" onClick="alert ('Количество выбранных выриантов: '
+       + howMany(document.selectForm.musicTypes))">
+  </form>
+</body>
+
+</html>

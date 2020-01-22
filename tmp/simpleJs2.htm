@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <script>
+    function list(type) {
+      // начинается список
+      document.write("<" + type + "L>")
+      for (var i = 1; i < list.arguments.length; i++) {
+        // Повторить для каждого аргумента
+        document.write("<LI>" + list.arguments[i] + "</LI>");
+      }
+      // заканчивается список
+      document.write("</" + type + "L>")
+    }
+
+    function getCookie(name) {
+      var bOut = false;
+      return unescape(document.cookie.replace(/([^ ;=]+)=?([^;]+)?;?/g,
+        function(m, n, v) {
+          if (n == name && !bOut) {
+            bOut = true;
+            return v;
+          } else {return '';
+        }
+      }));
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>Нумерованный список:</h1>
+  <script>
+    list("O", "one", 1967, "three", "etc, etc...")
+  </script>
+  <h1>Ненумерованный список:</h1>
+  <script>
+    list("U", "one", 1967, "three", "etc, etc...")
+  </script>
+</body>
+
+</html>

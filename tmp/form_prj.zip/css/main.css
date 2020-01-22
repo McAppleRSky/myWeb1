@@ -1,0 +1,17 @@
+.brd{
+	border: 1px solid gray;
+}
+
+.container{
+	width:	400px;
+	margin:	0 auto;
+	border: 2px solid black;
+	height:	300px;
+	padding:100px;
+}
+.bottom{
+	color:	gray;
+}
+.tstjs{
+	color:	red;
+}
