@@ -6,7 +6,7 @@
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<style>
-		article {
+		#mainArticle {
 			background-image: url("img/cfa82088a277960755ecb3ca54c728be.png");
 			background-repeat: repeat-y;
 			background-position: left;
@@ -47,7 +47,7 @@
 				<td><a href="page5.htm">Контакт</a></td>
 				<td><a href="page6.htm">Тест<br>по дисциплине</a></td>
 			</tr>
-		</table class="commonTable">
+		</table>
 	</header>
 	<aside>
 		<h3>здесь могла быть ваша реклама:</h3>
@@ -65,9 +65,14 @@
 			<h3>Ниже секции расположены мои фотографии </h3>
 			<p>данные фотографии разбиты на группы, сделанные в разное время и различных обстоятельствах. Сделаны различными приборами</p>
 		</section>
+		<div id="mainArticle"> </div>
+		<script src="js/page4Handler.js"></script>
+		<section>
+			<br><br>
+		</section>
 		<article>
 			<table class="commonTable">
-				<caption>Фотографии первые</caption>
+				<caption>Фотографии в HTML'е</caption>
 				<tr>
 					<th width="20%" />
 					<th width="20%" />
@@ -78,9 +83,7 @@
 					<td>
 						<figure>
 							<img src="img/photo_2019-10-22_16-49-22.jpg" height="200px" alt="2019 г. фотография с курсов по программе лидерства" />
-							<figcaption>фотография
-								<figcaption />
-						</figure>
+							<figcaption>фотография</figcaption></figure>
 					</td>
 					<td>
 						<img src="img/photo_2019-11-22_10-39-51.jpg" height="200px" alt="img flower1" /></td>
@@ -132,6 +135,7 @@
 		&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
 		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
 	</footer>
+
 </body>
 
 </html>

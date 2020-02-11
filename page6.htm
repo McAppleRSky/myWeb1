@@ -1,16 +1,15 @@
 <!doctype html>
 <html lang="">
-
 <head>
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
-	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<script src="js/validPage6.js"></script>
-	<style>
-	</style>
+	<link rel="stylesheet" href="css/main.css" type="text/css"/>
+	<link rel="stylesheet" href="css/page6DefaultFormStyle.css" type="text/css"/>
+	<style type="text/css"></style>
+	<script src="js/page6Valid.js"></script>
 </head>
 
-<body onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;">
+<body><!--onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;"-->
 	<header>
 		<figure>
 			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
@@ -60,7 +59,15 @@
 					<figcaption>
 						<h2>Тест по дисциплине "Веб-технологии":</h2>
 					</figcaption>
-					<form class="" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" id="mainForm">
+					<div id="MainFormSubmitedMessage">
+						<p>Форма теста по дисциплине "Веб-технологии" отправлена (Form Submited)</p>
+					</div>
+					<form id="mainForm"
+					 			action="mailto:mcapple@yandex.ru"
+								method="post"
+								enctype="text/plain"
+								accept-charset="utf-8"
+								onsubmit="return validMainForm();">
 						<p>Для решения теста заполнитете поля с личными данными на себя, заполните тест и нажмите кнопку отправить для отправки теста на мою электронную почту на проверку
 						</p>
 						<ul>
@@ -73,19 +80,51 @@
 								<input type="text" name="name" value="">
 								<label for="surname">Отчество:</label>
 								<input type="text" name="surname" value="">
+								<div class="InvalidMessage" id="valid01">
+									<br>поле "Nicname" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой
+								</div>
+								<div class="InvalidMessage" id="valid02">
+									<br>поле "Nicname" не может быть заполнено словом менее 3 букв
+								</div>
+								<div class="InvalidMessage" id="valid03">
+									<br>Nicname должен быть уникальным по этому значение \"nicname\" в поле не уникально и не годится
+								</div>
+								<div class="InvalidMessage" id="valid011">
+									<br>поле "Family" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой
+								</div>
+								<div class="InvalidMessage" id="valid012">
+									<br>поле "Family" не может быть заполнено словом менее 3 букв
+								</div>
+								<div class="InvalidMessage" id="valid021">
+									<br>поле "Name" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой"
+								</div>
+								<div class="InvalidMessage" id="valid022">
+									<br>поле "Name" не может быть заполнено словом менее 3 букв
+								</div>
+								<div class="InvalidMessage" id="valid031">
+									<br>поле "Surname" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой"
+								</div>
+								<div class="InvalidMessage" id="valid032">
+									<br>поле "Surname" не может быть заполнено словом менее 3 букв
+								</div>
+								<br class="PrevalidMessage">
 								<br>
-							</li>
+								</li>
 							<li>Вопросы по 1 части дисциплины:
 								<ol>
-									<li>
+									<li id="ask1">
 										<h3>Что такое URL? Расскажите о формате URL?</h3>
 										<label for="ask1">Варианты ответа:</label><br>
 										<input type="radio" name="ask1" value="ans11">система унифицированных адресов электронных ресурсов, или единообразный определитель местонахождения ресурса;<br>
 										<input type="radio" name="ask1" value="ans12">это постоянная последовательность символов, идентифицирующая абстрактный или физический ресурс<br>
 										<input type="radio" name="ask1" value="ans13">последовательность символов, идентифицирующая абстрактный или физический ресурс.
+										<div class="InvalidMessage" id="valid11">
+											<br>Первый вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
 										<br>
 									</li>
-									<li>
+									<li id="ask2">
 										<h3>Какие атрибуты используются в тегах таблиц HTML?</h3>
 										<label for="ask2">Варианты ответа:</label><br>
 										<input type="checkbox" name="ask2" value="ans21">bgcolor;<br>
@@ -97,14 +136,26 @@
 										<input type="checkbox" name="ask2" value="ans27">axis;<br>
 										<input type="checkbox" name="ask2" value="ans28">nowrap;<br>
 										<input type="checkbox" name="ask2" value="ans29">enctype.<br>
+										<div class="InvalidMessage" id="valid21">
+											<br>Второй вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
 									</li>
-
-									<li>
+									<li id="ask3">
 										<h3>В чем состоят основные отличия HTML и XHTML?</h3>
 										<label for="ask3">Впишите ответ:</label><br>
-										<textarea name="ask3" rows="8" cols="80" form="mainForm"></textarea>
+										<textarea name="ask3" rows="8" cols="50" form="mainForm"></textarea>
+										<div class="InvalidMessage" id="valid31">
+											<br>Третий вопрос не отвечен
+										</div>
+										<div class="InvalidMessage" id="valid311">
+											<br>Третий вопрос должен содержать не менее 30 слов
+										</div>
+										<br class="PrevalidMessage">
+										<br>
 									</li>
-									<li>
+									<li id="ask4">
 										<h3>Какие атрибуты имеет тег &lt;FORM&gt; и для чего они используются?</h3>
 										<label for="ask4">Варианты ответа:</label><br>
 										<select size="6" name="ask4" multiple>
@@ -116,8 +167,13 @@
 											<option value="ans46">novalidate</option>
 											<option value="ans47">target</option>
 										</select>
+										<div class="InvalidMessage" id="valid41">
+											<br>Четвертый вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
 									</li>
-									<li>
+									<li id="ask5">
 										<h3>Для чего используется тег &lt;SELECT&gt;?</h3>
 										<select name="ask5">
 											<option value="none" hidden="">Выберите ответ</option>
@@ -125,8 +181,13 @@
 											<option value="ans52">организации выпадающих списков выбора</option>
 											<option value="ans53">организации в формах списков выбора и выпадающих списков выбора</option>
 										</select>
+										<div class="InvalidMessage" id="valid51">
+											<br>Пятый вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
 									</li>
-									<li>
+									<li id="ask6">
 										<h3>Как выполняется группировка элементов списка выбора в выпадающих списках?</h3>
 										<label for="ask6">Варианты ответа:</label><br>
 										<select name="ask6" size="6" multiple>
@@ -139,13 +200,18 @@
 												<option value="ask64">(закрывающий тэг не обязательный)</option>
 											</optgroup>
 										</select>
+										<div class="InvalidMessage" id="valid61">
+											<br>Шестой вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
 									</li>
 								</ol>
 							</li>
 							</ol>
-							<input type="reset" name="" value="reset">
-							<input type="submit" name="" value="submit"
-							onclick="valid(document.getElementById('mainForm'))">
+							<input type="submit" value="submit">
+							<input type="reset" value="reset"
+										 onClick="window.location.reload()">
 					</form>
 				</figure>
 			</section>

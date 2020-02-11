@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="">
-
 <head>
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<style></style>
-	</script>
+	<link rel="stylesheet" href="css/page5DefaultFormStyle.css" type="text/css"/>
+	<style type="text/css"></style>
+	<script src="js/page5Valid.js"></script>
 </head>
 
 <body>
@@ -60,32 +60,88 @@
 					<figcaption>
 						<h2>Форма отправки сообщения</h2>
 					</figcaption>
-					<form class="" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8">
+					<div id="MessageFormSubmitedMessage">
+						<p>Сообщение отправлена (Form Submited)</p>
+					</div>
+					<form id="messageForm"
+								action="mailto:mcapple@yandex.ru"
+								method="post"
+								enctype="text/plain"
+								accept-charset="utf-8"
+								onsubmit="return validMessageForm();">
 						Для отправки сообщения на мой личный почтоый ящик:
 						<ol>
-							<li>Введите для сообщения никнэйм<br>
-								<label for="name">Ваш nicname:</label><br>
-								<input type="text" name="name" value="nicname" size="20"><br>
-								<label for="family">Фамилия:</label><input type="text" name="family" value="">
-								<label for="name">Имя:</label><input type="text" name="name" value="">
-								<label for="surname">Отчество:</label><input type="text" name="surname" value="">
+							<li>Введите для сообщения Фамилию Имя Отчество<br>
+								<label for="familyNameSurname">Вас зовут:</label><br>
+								<input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="20" />
+								<div class="InvalidMessage" id="valid01">
+									<br>поле ФИО должно быть заполнено
+								</div>
+								<div class="InvalidMessage" id="valid02">
+									<br>поле ФИО не может быть заполнено пробелом
+								</div>
+								<div class="InvalidMessage" id="valid03">
+									<br>поле ФИО не может начинаться с пробела
+								</div>
+								<div class="InvalidMessage" id="valid04">
+									<br>поле ФИО не может быть заполнено словами Фамилия Имя Отчество
+								</div>
+								<div class="InvalidMessage" id="valid05">
+									<br>Необходимо заполнить Фамилию Имя Отчество (зполнено менее 3 слов)
+								</div>
+								<div class="InvalidMessage" id="valid06">
+									<br>Необходимо заполнить Фамилию Имя Отчество (зполнено более 3 слов)
+								</div>
+								<br class="PrevalidMessage">
+								<br>
 							</li>
 							<li>
 								<label for="gender">Пол:</label><br>
-								<input type="radio" name="gender" value="male">мужской
-								<input type="radio" name="gender" value="famale">женский
+								<input type="radio" name="gender" value="male">мужской</input>
+								<input type="radio" name="gender" value="famale">женский</input>
+								<div class="InvalidMessage" id="valid11">
+									<br>пол не выбран
+								</div>
+								<br class="PrevalidMessage">
+								<br>
+							</li>
+							<li>Укажите Ваш телефон<br>
+								<label for="telef">Ваш телефон (без разделителей):</label><br>
+								<input type="text" name="telef" value="+7978" size="12" />
+								<div class="InvalidMessage" id="valid20">
+									<br>Телефон заполнен не верно
+								</div>
+								<div class="InvalidMessage" id="valid201">
+									<br>Номер телефона можно вводить от 9 до 11 цифр (на +3 и +7)
+								</div>
+								<br class="PrevalidMessage">
+								<br>
 							</li>
 							<li>Укажите Ваш адрес электронной почты<br>
 								<label for="mail">Ваш Email:</label><br>
-								<input type="text" name="mail" value="name@domain" size="63"><br>
+								<input type="text" name="mail" value="name@domain" size="63" />
+								<div class="InvalidMessage" id="valid21">
+									<br>Email заполнен не верно
+								</div>
+								<br class="PrevalidMessage">
+								<br>
 							</li>
 							<li>Напишите сообщение<br>
 								<label for="message">Ваше сообщение:</label><br>
-								<input type="text" name="message" value="nic">
+								<input type="text" name="message" value="текст сообщения" />
+								<div class="InvalidMessage" id="valid31">
+									<br>сообщение не может быть пустое
+								</div>
+								<div class="InvalidMessage" id="valid32">
+									<br>Текст сообщения - неприемлемые слова, изложите суть сообщения для отправки
+								</div>
+								<br class="PrevalidMessage">
+								<br>
 							</li>
 							<li>
-								<input type="submit" name="" value="Отправить">
-								<input type="reset" name="" value="Очистить">
+								<input type="submit" name="" value="Отправить" />
+								<input type="reset" name="" value="Очистить"
+								       onClick="window.location.reload()"/>
 							</li>
 						</ol>
 					</form>
@@ -127,7 +183,7 @@
 			<tr>
 				<td class="tdMenu10">&lt;<a href="page4.htm">prev</a>&gt;</td>
 				<td id="tdMenu80"></td>
-				<td class="tdMenu10">&lt;<a href="page6.htm">next</a>&gt;</td>				
+				<td class="tdMenu10">&lt;<a href="page6.htm">next</a>&gt;</td>
 			</tr>
 		</table>
 		&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
