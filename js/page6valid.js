@@ -202,7 +202,7 @@ function validMainForm() {
   if(submitStatus){
     form.style.display="none";
     submitMessage.style.display="inline";
-    console.log("Проверка mainForm page6 успешно пройдена.");
+    //console.log("Проверка mainForm page6 успешно пройдена.");
   }
 
   return submitStatus;

@@ -5,7 +5,7 @@
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="stylesheet" href="css/page5DefaultFormStyle.css" type="text/css"/>
-	<style type="text/css"></style>
+	<style></style>
 	<script src="js/page5Valid.js"></script>
 </head>
 
@@ -72,8 +72,8 @@
 						Для отправки сообщения на мой личный почтоый ящик:
 						<ol>
 							<li>Введите для сообщения Фамилию Имя Отчество<br>
-								<label for="familyNameSurname">Вас зовут:</label><br>
-								<input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="20" />
+								<label for="text1">Вас зовут:</label><br>
+								<input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="20" id="text1"/>
 								<div class="InvalidMessage" id="valid01">
 									<br>поле ФИО должно быть заполнено
 								</div>
@@ -96,9 +96,11 @@
 								<br>
 							</li>
 							<li>
-								<label for="gender">Пол:</label><br>
-								<input type="radio" name="gender" value="male">мужской</input>
-								<input type="radio" name="gender" value="famale">женский</input>
+								<label>Пол:</label><br>
+								<label for="radio1">мужской</label>
+								<input type="radio" name="gender" value="male" id="radio1"/>
+								<label for="radio2">женский</label>
+								<input type="radio" name="gender" value="famale" id="radio2"/>
 								<div class="InvalidMessage" id="valid11">
 									<br>пол не выбран
 								</div>
@@ -106,8 +108,8 @@
 								<br>
 							</li>
 							<li>Укажите Ваш телефон<br>
-								<label for="telef">Ваш телефон (без разделителей):</label><br>
-								<input type="text" name="telef" value="+7978" size="12" />
+								<label for="text2">Ваш телефон (без разделителей):</label><br>
+								<input id="text2" type="text" name="telef" value="+7978" size="12" />
 								<div class="InvalidMessage" id="valid20">
 									<br>Телефон заполнен не верно
 								</div>
@@ -118,8 +120,8 @@
 								<br>
 							</li>
 							<li>Укажите Ваш адрес электронной почты<br>
-								<label for="mail">Ваш Email:</label><br>
-								<input type="text" name="mail" value="name@domain" size="63" />
+								<label for="text3">Ваш Email:</label><br>
+								<input id="text3" type="text" name="mail" value="name@domain" size="63" />
 								<div class="InvalidMessage" id="valid21">
 									<br>Email заполнен не верно
 								</div>
@@ -127,8 +129,8 @@
 								<br>
 							</li>
 							<li>Напишите сообщение<br>
-								<label for="message">Ваше сообщение:</label><br>
-								<input type="text" name="message" value="текст сообщения" />
+								<label for="text4">Ваше сообщение:</label><br>
+								<input id="text4" type="text" name="message" value="текст сообщения" />
 								<div class="InvalidMessage" id="valid31">
 									<br>сообщение не может быть пустое
 								</div>
@@ -139,8 +141,8 @@
 								<br>
 							</li>
 							<li>
-								<input type="submit" name="" value="Отправить" />
-								<input type="reset" name="" value="Очистить"
+								<input type="submit" value="Отправить" />
+								<input type="reset" value="Очистить"
 								       onClick="window.location.reload()"/>
 							</li>
 						</ol>
@@ -148,10 +150,10 @@
 				</figure>
 			</section>
 			<section>
-				<h2>Электронная почта:</h3>
-					<adress><br>Yandex <a href="mailto:mcapple@yandex.ru">mcapple@yandex.ru</a>
-						<adress><br>Корпоративная <a href="mailto:e.borisov@krtech.ru">e.borisov@krtech.ru</a>
-							<adress><br>Правительственная <a href="mailto:e.borisov@sev.gov.ru">e.borisov@sev.gov.ru</a>
+				<h2>Электронная почта:</h2>
+					<address><br>Yandex <a href="mailto:mcapple@yandex.ru">mcapple@yandex.ru</a></address>
+						<address><br>Корпоративная <a href="mailto:e.borisov@krtech.ru">e.borisov@krtech.ru</a></address>
+							<address><br>Правительственная <a href="mailto:e.borisov@sev.gov.ru">e.borisov@sev.gov.ru</a></address>
 			</section>
 			<section>
 				<h3>Телефоны:</h3>
@@ -173,8 +175,8 @@
 			</section>
 			<section>
 				<h3>почтоый адрес:</h3>
-				<adress>ул. Володарского, д. 20/3, кв. 1, г. Симферополь, Республика Крым, 295001</adress>
-				<p />
+				<address>ул. Володарского, д. 20/3, кв. 1, г. Симферополь, Республика Крым, 295001</address>
+				<p>
 			</section>
 		</article>
 	</main>

@@ -75,12 +75,12 @@ function validMessageForm() {
     }else{
       form.querySelector("#valid201").style.display="none";
       if(telef_pattern.test(telef)==false){
-        console.log("telef invalid");
+        //console.log("telef invalid");
         form.querySelector("#valid20").style.display="inline";
         submitStatus=false;
         document.getElementsByName("telef")[0].focus();
       }else{
-        console.log("telef valid");
+        //console.log("telef valid");
         form.querySelector("#valid20").style.display="none";
       }
     }
@@ -140,7 +140,7 @@ function validMessageForm() {
   if(submitStatus){
     form.style.display="none";
     submitMessage.style.display="inline";
-    console.log("Проверка mainForm page5 успешно пройдена.");
+    //console.log("Проверка mainForm page5 успешно пройдена.");
   }
 
   return submitStatus;
