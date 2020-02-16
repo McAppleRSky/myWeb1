@@ -1,14 +1,17 @@
 <!doctype html>
-<html lang="">
+<html lang="ru">
 
 <head>
 	<meta charset="utf-8">
 	<title>Мой персональный Веб-сайт</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<style></style>
+	<link rel="stylesheet" href="css/top-menu-page2.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-common.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-common-hover.css" type="text/css">
+	<style type="text/css">
+	</style>
 	<script src="js/page2Handler.js"></script>
 </head>
-
 <body>
 	<header>
 		<figure>
@@ -16,27 +19,17 @@
 			<figcaption id="idFigcaptionHeader">фотография</figcaption>
 		</figure>
 		<h1>Персональный сайт</h1>
-		<table class="fullTableMenu">
-			<caption>Гиперссылки на страницы сайта</caption>
-			<tr class="cMenuRow">
-				<th class="cMenuTabCol"></th>
-				<th class="hide">|<br>|</th>
-				<th>Мои интересы</th>
-				<th class="hide">|<br>|</th>
-				<th class="cMenuTabCol"></th>
-				<th class="cMenuTabCol"></th>
-				<th class="cMenuTabCol"></th>
-			</tr>
-			<tr class="cMenuRow">
-				<td><a href="index.htm">На гланую<br>страницу</a></td>
-				<td><a href="page1.htm">Обо мне</a></td>
-				<td></td>
-				<td><a href="page3.htm">Учеба</a></td>
-				<td><a href="page4.htm">Фотоальбом</a></td>
-				<td><a href="page5.htm">Контакт</a></td>
-				<td><a href="page6.htm">Тест<br>по дисциплине</a></td>
-			</tr>
-		</table>
+		<nav class="bg-menu">
+			<ul>
+				<li id="li-menu0" class="li-menu"><a href="index.htm">Главная<br>страница</a></li>
+				<li id="li-menu1" class="li-menu"><a href="page1.htm">Обо мне</a></li>
+				<li id="li-menu2" class="li-menu"><a href="#">Мои<br>интересы</a></li>
+				<li id="li-menu3" class="li-menu"><a href="page3.htm">Учеба</a></li>
+				<li id="li-menu4" class="li-menu"><a href="page4.htm">Фотоальбом</a></li>
+				<li id="li-menu5" class="li-menu"><a href="page5.htm">Контакты</a></li>
+				<li id="li-menu6" class="li-menu"><a href="page6.htm">Тест<br>по дисциплине</a></li>
+			</ul>
+		</nav>
 	</header>
 	<aside>
 		<h3>здесь могла быть ваша реклама:</h3>
@@ -120,8 +113,20 @@
 				<td class="tdMenu10">&lt;<a href="page3.htm">next</a>&gt;</td>
 			</tr>
 		</table>
-		&reg; <time>2019-11-13</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		&reg; <time datetime="2019,11,13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
 		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
+		<table name="gobartable" cellpadding=5  width=100%  border=0>
+			<tr>
+				<td width=95% align=left>
+					<font />
+				</td>
+			</tr>
+			<tr>
+				<td width=95% bgcolor=gray align=left>
+					<font color=white></font>
+				</td>
+			</tr>
+		</table><script src="js/gettime.js"></script>
 	</footer>
 </body>
 
