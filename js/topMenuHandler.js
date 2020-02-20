@@ -1,20 +1,30 @@
 var icons = new Array();
-icons[0] = {
-    file: "square.png",
-    title: "square",
-    width: "32",
-    height: "32"
+square = 0;
+caret = 1;
+caretSquare = 2;
+iconSize = "12";
+icons[square] = "square.png";
+icons[caret] = "caret.png";
+icons[caretSquare] = "caret-square.png";
+
+function loaded(linkHref){
+  //console.log(linkHref);
+  result = false;
+  if (window.location.href==linkHref)
+    result = true;
+  return result;
 }
-icons[1] = {
-    file: "caret.png",
-    title: "caret",
-    width: "32",
-    height: "32"
-}
-function ChangeOver(imgLi) {
-  imgLi.src= 'img/icons/'+icons[0].file;
+
+function ChangeOver(liMenu) {
+  //console.log();
+  if (loaded(liMenu.getElementsByTagName('a')[0].href))
+    liMenu.querySelector('.li-menu-img').src
+    = 'img/icon/'+icons[square];
+  else liMenu.querySelector('.li-menu-img').src
+    = 'img/icon/'+icons[caretSquare];
 };
 
-function ChangeOut(imgLi) {
-  imgLi.src= 'img/icons/'+icons[1].file;
+function ChangeOut(liMenu) {
+  liMenu.querySelector('.li-menu-img').src
+  = 'img/icon/'+icons[caret];
 }
