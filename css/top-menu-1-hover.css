@@ -7,6 +7,9 @@
 #top-menu-1 #li-menu0:hover>ul{
 	display: block;
 }
+#top-menu-1 .li-menu2:hover>ul{
+	display: block;
+}
 /*
 .main-item:focus ~ .sub-menu,
 .main-item:active ~ .sub-menu,

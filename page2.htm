@@ -15,21 +15,28 @@
 <body>
 	<header>
 		<nav id="top-menu-1">
+			<script src="js/topMenuHandler.js"></script>
 			<ul>
-				<li id="li-menu0">
-					<a href="index.htm">Главная<br>страница</a>
+				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
+					<a href="index.htm" >
+						<img class="li-menu-img" src="img/icon/caret.png" />
+						Главная<br>страница</a>
 					<ul>
 						<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
-						<li class="li-menu2"><a href="page2.htm">Мои<br>интересы</a></li>
+						<li class="li-menu2"><a href="#">Мои<br>интересы</a></li>
 						<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
 						<li class="li-menu4"><a href="page4.htm">Фотоальбом</a></li>
 						<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
 						<li class="li-menu6"><a href="page6.htm">Тест<br>по дисциплине</a></li>
 					</ul>
 				</li>
-				<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
-				<li class="li-menu2"><a class="main-item" href="#">Мои<br>интересы</a>
-					<ul id="sub-menu">
+				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Обо мне</a></li>
+				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Мои<br>интересы</a>
+					<ul>
 						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
 						<li><a href="page2.htm#page2-2">Мои любимые сайты</a></li>
 						<li><a href="page2.htm#page2-3">Мои любимые книги</a></li>
@@ -37,10 +44,18 @@
 						<li><a href="page2.htm#page2-5">Мои любимые фильмы</a></li>
 					</ul>
 				</li>
-				<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
-				<li class="li-menu4"><a href="page4.htm">Фотоальбом</a></li>
-				<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
-				<li class="li-menu6"><a href="page6.htm">Тест<br>по дисциплине</a></li>
+				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Учеба</a></li>
+				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Фотоальбом</a></li>
+				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Контакты</a></li>
+				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page6.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Тест<br>по дисциплине</a></li>
 			</ul>
 		</nav>
 
@@ -91,14 +106,16 @@
 			</section>
 			<section>
 				<h2 id="page2-2">Мои любимые сайты:</h2>
-				<script>
-					list("U"
-						,"<a href=\"http://vesti.ru/\">Вести 24 vesti.ru</a>;"
-						,"<a href=\"http://ukr.net/\">Новостной портал ukr.net</a>;"
-						,"<a href=\"http://pressa.tv/\">Подборка новостного медиа контента pressa.tv</a>;"
-						,"<a href=\"http://youtube.ru/\">Видеохостинг youtube.com</a>."
-					)
-				</script>
+				<ul>
+					<li><a href="https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym/">CSS псевдоклассы: стилизация полей форм по введенным данным;</a></li>
+					<li><a href="https://apps.eky.hk/css-triangle-generator/">CSS triangle generator</a></li>
+					<li><a href="http://www.xiper.net/scripts/cusel/">Выпадающие списки без select</a></li>
+					<li><a href="http://vesti.ru/">Вести 24 vesti.ru;</a></li>
+					<li><a href="http://ukr.net/">Новостной портал ukr.net;</a></li>
+					<li><a href="http://pressa.tv/">Подборка новостного медиа контента pressa.tv;</a></li>
+					<li><a href="http://youtube.ru/">Видеохостинг youtube.com .</a></li>
+
+				</ul>
 			</section>
 			<section>
 				<h2 id="page2-3">Мои любимые книги:</h2>

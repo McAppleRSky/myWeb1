@@ -15,9 +15,12 @@
 <body>
 	<header>
 		<nav id="top-menu-1">
+			<script src="js/topMenuHandler.js"></script>
 			<ul>
-				<li id="li-menu0">
-					<a href="index.htm">Главная<br>страница</a>
+				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
+					<a href="index.htm" >
+						<img class="li-menu-img" src="img/icon/caret.png" />
+						Главная<br>страница</a>
 					<ul>
 						<li class="li-menu1"><a href="#">Обо мне</a></li>
 						<li class="li-menu2"><a href="page2.htm">Мои<br>интересы</a></li>
@@ -27,8 +30,12 @@
 						<li class="li-menu6"><a href="page6.htm">Тест<br>по дисциплине</a></li>
 					</ul>
 				</li>
-				<li class="li-menu1"><a href="#">Обо мне</a></li>
-				<li class="li-menu2"><a href="page2.htm">Мои<br>интересы</a>
+				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Обо мне</a></li>
+				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page2.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Мои<br>интересы</a>
 					<ul>
 						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
 						<li><a href="page2.htm#page2-2">Мои любимые сайты</a></li>
@@ -37,10 +44,18 @@
 						<li><a href="page2.htm#page2-5">Мои любимые фильмы</a></li>
 					</ul>
 				</li>
-				<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
-				<li class="li-menu4"><a href="page4.htm">Фотоальбом</a></li>
-				<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
-				<li class="li-menu6"><a href="page6.htm">Тест<br>по дисциплине</a></li>
+				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Учеба</a></li>
+				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Фотоальбом</a></li>
+				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Контакты</a></li>
+				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page6.htm">
+					<img class="li-menu-img" src="img/icon/caret.png" />
+					Тест<br>по дисциплине</a></li>
 			</ul>
 		</nav>
 
