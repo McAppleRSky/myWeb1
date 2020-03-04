@@ -2,7 +2,8 @@ const monthNames = ("январь,февраль,март,апрель,май,и
 const westDays = "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(',');
 const euroeastDays = "Пн,Вт,Ср,Чт,Пт,Сб,Вс".split(',');
 
-document.addEventListener("DOMContentLoaded", InitDateElements);
+//ИНИЦИАЛИЗАЦИЯ ПЕРЕНЕСЕНА В (js/page5valid.js) В СВЯЗИ С ОБЪЕДИНЕНИЕМ СОБЫТИЯ
+//document.addEventListener("DOMContentLoaded", InitDateElements);
 
 var birthdate, birthmonth, birthyear, daysTSpace
 //, dateValue
@@ -18,7 +19,7 @@ function fillBirthdate(date, month, year) {
   //console.log(birthdate.value);
 }
 
-function InitDateElements() {
+function initDateElements() {
   let year, month, date //= ""
   ;
   birthdate = document.querySelector("#birthdate");

@@ -1,0 +1,16 @@
+.init{
+  outline: 1px solid gray;
+}
+
+.focused{
+  outline: 1px solid brown;
+}
+
+.valid{
+  outline: 1px solid green;
+  border:  1px solid green;
+}
+
+.invalid{
+  outline: 1px solid red;
+}

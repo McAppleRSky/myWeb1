@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
     <link rel="stylesheet" href="css/page5DefaultFormStyle.css" type="text/css"/>
     <link rel="stylesheet" href="css/birthday-date-panel.css" type="text/css">
+    <link rel="stylesheet" href="css/page5valid.css" type="text/css">
     <style type="text/css">
     </style>
-    <script src="js/page5valid.js"></script>
     <script src="js/calenderElement.js"></script>
+    <script src="js/page5valid.js"></script>
 </head>
 <body>
 <header>
@@ -130,10 +131,12 @@
                     </li>
                     <li>
                         <label>Пол:</label><br>
-                        <label for="radio1">мужской</label>
-                        <input type="radio" name="gender" value="male" id="radio1"/>
-                        <label for="radio2">женский</label>
-                        <input type="radio" name="gender" value="famale" id="radio2"/>
+                        <div id="genderOutline">
+                          <label for="radio1">мужской</label>
+                          <input type="radio" name="gender" value="male" id="radio1"/>
+                          <label for="radio2">женский</label>
+                          <input type="radio" name="gender" value="famale" id="radio2"/>
+                        </div>
                         <div class="InvalidMessage" id="valid11">
                             <br>пол не выбран
                         </div>
