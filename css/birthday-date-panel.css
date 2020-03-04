@@ -1,5 +1,5 @@
 .panel {
-  display:block;
+  display:none;
 }
 
 #birthdate:focus+.panel,

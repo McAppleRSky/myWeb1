@@ -175,14 +175,15 @@
                     </li>
                     <li class="birthday">Введите дату Вашего рождения в формате ДД.ММ.ГГГГ<br>
                         <label for="birthdate">Дата:</label>
-                        <input type="text" id="birthdate" name="birthdate" size="10" maxlength="10" onchange="fillCalender();">
-                        <div class="panel">
-                            <select class="birthmonth"></select>
+                        <input type="text" id="birthdate" name="birthdate" size="10" maxlength="10" onclick="fillCalender(this);">
+                        <div class="panel" >
+                            <select id="birthmonth" onchange="fillCalender(this)"></select>
                             <button type="button" onclick="incYear(-5);">&lt;&lt;</button>
                             <button type="button" onclick="incYear(-1);">&lt;</button>
-                            <select class="birthyear" onchange="fillYear(this)"></select>
+                            <select id="birthyear" onchange="fillCalender(this);"></select>
                             <button type="button" onclick="incYear(1);">&gt;</button>
                             <button type="button" onclick="incYear(5);">&gt;&gt;</button>
+                            <div id="days-space"></div>
                         </div>
                     </li>
                     <br>
