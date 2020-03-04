@@ -15,7 +15,7 @@ function fillBirthdate(date, month, year) {
   if (date < 10) date = '0' + date;
   else date = '' + date;
   birthdate.value = `${date}.${monthNumbers[month]}.${year}`;
-  console.log(birthdate.value);
+  //console.log(birthdate.value);
 }
 
 function InitDateElements() {
@@ -30,7 +30,7 @@ function InitDateElements() {
   let srcDate = new Date();
   date = srcDate.getDate();
   month = srcDate.getMonth();
-  year = srcDate.getFullYear() - 1//2
+  year = srcDate.getFullYear() //- 12
   ;
   fillBirthdate(date, month, year);
 
@@ -69,20 +69,23 @@ function fillYear(yearSelector){
   //fillCalender(document.querySelector("#birthdate"));
 }
 
-function incYear(inc){
+function incYear(inc, runnerElement){
   let year = Number(birthyear.value);
   birthyear.value=year+inc;
   fillYear(birthyear);
+  fillBirthdate(daysTSpace.value, birthmonth.value, birthyear.value);
+  fillCalender(runnerElement)
 }
 
-function fillCalender(RunnerElement){
-  console.log(`start filling calender ${RunnerElement.id}`);
+function fillCalender(runnerElement){
+  console.log(`start filling calender ${runnerElement.id}`);
   //var daysTSpace = document.querySelector(".days-space");
-  if(RunnerElement.id == "birthmonth") {
+  if(runnerElement.id == "birthmonth") {
     fillBirthdate(daysTSpace.value, birthmonth.value, birthyear.value);
   }
-  if(RunnerElement.id == "birthyear") {
-    fillYear(RunnerElement);
+
+  if(runnerElement.id == "birthyear") {
+    fillYear(runnerElement);
     fillBirthdate(daysTSpace.value, birthmonth.value, birthyear.value);
   }
   //console.log(dateValue);
@@ -113,15 +116,19 @@ function fillCalender(RunnerElement){
   let dateComponent, currentYear, currentMonth,
   lastDateCurrentMonth,firstDateCurrenMonth, firstDayCurrenMonth
   ,tokenDate = 1;
-  console.log(birthdate.value);
+  //console.log(birthdate.value);
   dateComponent = birthdate.value.split('.');
   currentYear = Number(dateComponent[2]);
-  currentMonth = Number(dateComponent[1])-1;
+  currentMonth = Number(dateComponent[1]) - 1
+  ;
   firstDateCurrenMonth = new Date(currentYear, currentMonth, 1);
+  //console.log(firstDateCurrenMonth);
   firstDayCurrenMonth = firstDateCurrenMonth.getDay();
-  if (firstDayCurrenMonth==0) firstDayCurrenMonth = 6;
-  //else
-  //firstDayCurrenMonth-1;
+  //console.log(firstDayCurrenMonth);
+  //СДВИГ НА РУССКИЙ ПОРЯДОК ДНЕЙ НЕДЕЛИ
+  if (firstDayCurrenMonth == 0) firstDayCurrenMonth = 6;
+  else firstDayCurrenMonth --;
+  //console.log(firstDayCurrenMonth);
 //  console.log(currentMonth);
   while (currentMonth == (new Date(currentYear, currentMonth, ++tokenDate)).getMonth()) {
     lastDateCurrentMonth = tokenDate;

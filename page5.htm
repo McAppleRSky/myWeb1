@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/birthday-date-panel.css" type="text/css">
     <style type="text/css">
     </style>
-    <script src="js/page5Valid.js"></script>
+    <script src="js/page5valid.js"></script>
     <script src="js/calenderElement.js"></script>
 </head>
 <body>
@@ -178,11 +178,11 @@
                         <input type="text" id="birthdate" name="birthdate" size="10" maxlength="10" onclick="fillCalender(this);">
                         <div class="panel" >
                             <select id="birthmonth" onchange="fillCalender(this)"></select>
-                            <button type="button" onclick="incYear(-5);">&lt;&lt;</button>
-                            <button type="button" onclick="incYear(-1);">&lt;</button>
+                            <button id="incBtn-5" type="button" onclick="incYear(-5, this);">&lt;&lt;</button>
+                            <button id="incBtn-1" type="button" onclick="incYear(-1, this);">&lt;</button>
                             <select id="birthyear" onchange="fillCalender(this);"></select>
-                            <button type="button" onclick="incYear(1);">&gt;</button>
-                            <button type="button" onclick="incYear(5);">&gt;&gt;</button>
+                            <button id="incBtn1" type="button" onclick="incYear(1, this);">&gt;</button>
+                            <button id="incBtn5" type="button" onclick="incYear(5, this);">&gt;&gt;</button>
                             <div id="days-space"></div>
                         </div>
                     </li>
