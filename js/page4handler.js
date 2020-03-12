@@ -2,16 +2,14 @@ var i;
 var listsCount = 2;
 var mainArticle;
 var lists;
-var arrayFlagIsObjectLoaded = new Array();
+//var arrayFlagIsObjectLoaded = new Array();
 
 function runHandler() {
   mainArticle = document.querySelector("#mainArticle");
   lists = mainArticle.getElementsByClassName("imgList");
+  //for (i = 0; i < lists.length; i++) {lists[i].style.display="none";}
   //console.log(`${arrayFlagIsObjectLoaded[0]}, ${arrayFlagIsObjectLoaded[1]}`);
-  console.log(`lists: ${lists.length}`);
-  for (i = 0; i < lists.length; i++) {
-    //  lists[i].style.display="none";
-  }
+  //console.log(`lists: ${lists.length}`);
   path = "img/album/";
   photo = {
     file: "",
@@ -30,10 +28,9 @@ function runHandler() {
   //    console.log(lists[0].contentWindow.document);
   //  }
 
-  console.log(
-    lists[0].contentWindow.document
-    .querySelectorAll("pre")
-    //.getElementsByTagName("pre").
+  console.log(lists[0].contentWindow.document
+    //.querySelectorAll("pre")
+    .getElementsByTagName("pre").length
     //.nodeName()
     //contentDocument.
     //.childNodes[0].childNodes[1].childNodes[0]//.childNodes[0]
@@ -45,13 +42,14 @@ function runHandler() {
     //.textContent
   );
 
-  for (var i = 0; i < lists[0].length; i++) {
-    //photos[i]
-  }
+  //for (var i = 0; i < lists[0].length; i++) {
+  //photos[i]
+  //}
 
   //photos = [];
   //photoArray = new Array();
   //console.log("begin");
+  /**
   photos[0] = {
     file: "normal.jpg",
     title: "oldMy",
@@ -106,6 +104,7 @@ function runHandler() {
     width: "75",
     height: "50"
   }
+  */
 
   photoTable = document.createElement('table');
 
@@ -126,11 +125,11 @@ function runHandler() {
       if (k < photos.length) {
         newCell.width = "" + tableWidthPercent / cellCount;
         newCell.style.textAlign = "center";
-        newCell.innerHTML = "<a href=\"img/" +
-          photos[k].file + "\" target=\"_blank\"> <figure><img src=\"img/" +
-          photos[k].file + "\" width=\"" + photos[k].width + "\" " +
-          "height=\"" + photos[k].height + "\"><figcaption>" +
-          photos[k++].title + "</figcaption></figure></a>";
+        //        newCell.innerHTML = "<a href=\"img/" +
+        //          photos[k].file + "\" target=\"_blank\"> <figure><img src=\"img/" +
+        //          photos[k].file + "\" width=\"" + photos[k].width + "\" " +
+        //          "height=\"" + photos[k].height + "\"><figcaption>" +
+        //          photos[k++].title + "</figcaption></figure></a>";
       }
     }
     //i++;
@@ -140,6 +139,9 @@ function runHandler() {
   mainArticle.appendChild(photoTable);
 }
 
+document.addEventListener("DOMContentLoaded", runHandler);
+
+/**
 function ifListLoaded(i) {
   arrayFlagIsObjectLoaded[i] = true;
   var counter;
@@ -162,13 +164,22 @@ function initPage4() {
     //lists[i].contentWindow.document.addEventListener("DOMContentLoaded", ifListLoaded(i));
   }
 }
+*/
 
-//document.addEventListener("DOMContentLoaded", runHandler);
 //window.onload = runHandler();
 
 //mainArticle = document.querySelector("#mainArticle");
 //lists = mainArticle.getElementsByClassName("imgList");
 //lists[0].contentWindow.document.onreadystatechange = function() {
-  //if (document.readyState == "compleate") {runHandler();}
-  //console.log(`readyState(${lists[0].contentWindow.document.readyState})`);
+//if (document.readyState == "compleate") {runHandler();}
+//console.log(`readyState(${lists[0].contentWindow.document.readyState})`);
 //}
+document.onreadystatechange = function() {
+  console.log(`readyState(${document.readyState})`);
+  if(document.readyState=="compete"){
+    //runHandler();
+    console.log(lists[0].contentWindow.document
+      .getElementsByTagName("pre").length
+    );
+  }
+}
