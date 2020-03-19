@@ -1,46 +1,102 @@
-var i;
-var listsCount = 2;
-var mainArticle;
-var lists;
-//var arrayFlagIsObjectLoaded = new Array();
+
+const imgListPath = "img/album/"
+  ,file = 0
+  ,title = 1
+  ,width = 2
+  ,height = 3
+  ,full = 0
+  ,formated = 1
+  ,listCount = 2;
+
+var lists = new Array()
+  ,photos = new Array()
+  ,mainArticle
+  //,j
+  ,i;
+
+function Photo(file, title, width, height) {
+  this.file = file;
+  this.title = title;
+  this.width = width;
+  this.height = height;
+}
+
+document.onreadystatechange = function() {
+  if (document.readyState == "complete") {
+    for (i = listCount; i--;)
+      try {
+        lists[i] = window.frames[i].document
+          .querySelector("pre").textContent.split("\n");
+      } catch (e) {
+        console.log(`list${i} with exception| ${e}`);
+      }
+    runHandler();
+  }
+}
 
 function runHandler() {
   mainArticle = document.querySelector("#mainArticle");
-  lists = mainArticle.getElementsByClassName("imgList");
+  let curPhotoParam
+  //  , pos
+  ;
+
+  for (i = 0;i<lists[formated].length; i++) {
+    curPhotoParam = lists[formated][i].split(';');
+    if(lists[full].includes(curPhotoParam[file])) {
+      if(curPhotoParam.length == 4) {
+        console.log(curPhotoParam[file]);
+        console.log(curPhotoParam[title]);
+        console.log(curPhotoParam[width]);
+        console.log(curPhotoParam[height]);
+        console.log("");
+        /**
+        photos.push(
+          new Photo(
+            curPhotoParam[file],
+            curPhotoParam[title],
+            curPhotoParam[width],
+            curPhotoParam[height]
+        ));
+        */
+      }
+    }
+  }
+//console.log(photos.length);
+//    photos[i]=new Photo
+
+//lists = mainArticle.getElementsByClassName("imgList");
+//object = document.getElementById("data");
+//object.onload = function() {
+//  console.log(object);
+//    var data = object.contentDocument.body.childNodes[0].innerHTML;
+// use the data
+//};
+
+  //mainArticle = document.querySelector("#mainArticle");
+  //lists = mainArticle.getElementsByClassName("imgList");
   //for (i = 0; i < lists.length; i++) {lists[i].style.display="none";}
   //console.log(`${arrayFlagIsObjectLoaded[0]}, ${arrayFlagIsObjectLoaded[1]}`);
   //console.log(`lists: ${lists.length}`);
-  path = "img/album/";
-  photo = {
-    file: "",
-    title: "",
-    width: "",
-    height: "",
-    fillProp: function(file, title, width, height) {
-      this.file = file;
-      this.title = title;
-      this.width = width;
-      this.height = height;
-    }
-  }
 
-  var photos = new Array();
+  //var photos = new Array();
   //    console.log(lists[0].contentWindow.document);
   //  }
-
-  console.log(lists[0].contentWindow.document
-    //.querySelectorAll("pre")
-    .getElementsByTagName("pre").length
-    //.nodeName()
-    //contentDocument.
-    //.childNodes[0].childNodes[1].childNodes[0]//.childNodes[0]
-    //.innerText
-    //.textContent
-    //.querySelector("#document")
-    //.length
-    //[0]
-    //.textContent
-  );
+  //  console.log('A');
+  //  date = new Date();
+  //  console.log(date.getTime()/ (1000));
+  //  console.log(lists[0].contentWindow.document
+  //    .querySelectorAll("pre")
+  //.getElementsByTagName("pre").length
+  //.nodeName()
+  //contentDocument.
+  //.childNodes[0].childNodes[1].childNodes[0]//.childNodes[0]
+  //.innerText
+  //.textContent
+  //.querySelector("#document")
+  //.length
+  //[0]
+  //.textContent
+  //  );
 
   //for (var i = 0; i < lists[0].length; i++) {
   //photos[i]
@@ -139,10 +195,18 @@ function runHandler() {
   mainArticle.appendChild(photoTable);
 }
 
-document.addEventListener("DOMContentLoaded", runHandler);
+//document.addEventListener("DOMContentLoaded", runHandler);
+//window.onload = runHandler();
+/**
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOMContentLoaded");
+  runHandler();
+});
+*/
 
 /**
 function ifListLoaded(i) {
+  console.log(`ifListLoaded ${i}`);
   arrayFlagIsObjectLoaded[i] = true;
   var counter;
   for (i = listsCount, counter = 0; i--;) {
@@ -153,33 +217,42 @@ function ifListLoaded(i) {
     runHandler();
   }
 }
-
-function initPage4() {
-  for (i = listsCount; i--;) {
-    arrayFlagIsObjectLoaded[i] = false;
-  }
-  for (i = listsCount; i--;) {
-    lists[i].contentWindow.document.onloaddata = ifListLoaded(i);
-    //lists[i].contentWindow.document.onload = ifListLoaded(i);
-    //lists[i].contentWindow.document.addEventListener("DOMContentLoaded", ifListLoaded(i));
-  }
-}
 */
 
-//window.onload = runHandler();
+//function initPage4() {
+//  console.log("initPage4");
+//  for (i = listsCount; i--;) {
+//    arrayFlagIsObjectLoaded[i] = false;
+//  }
+//  for (i = listsCount; i--;) {
+//lists[i].contentWindow.document.onloaddata = ifListLoaded(i);
+//lists[i].contentWindow.document.onload = ifListLoaded(i);
+//lists[i].contentWindow.document.addEventListener("DOMContentLoaded", ifListLoaded(i));
+//console.log(`addEventListener ${i}`);
+//    lists[i].contentWindow.document.onreadystatechange = function() {
+//      console.log(`readyState in list(${lists[i].contentWindow.document.readyState}) ${i}`);
+//      if(lists[i].contentWindow.document.readyState=="complete"){
+//        ifListLoaded(i)
+//        console.log('В');
+//        date = new Date();
+//        console.log(date.getTime()/ (1000));
+//    console.log(lists[0].contentWindow.document
+//      .querySelectorAll("pre")
+//.getElementsByTagName("pre").length
+//    );
+//    }
+//    }
 
-//mainArticle = document.querySelector("#mainArticle");
-//lists = mainArticle.getElementsByClassName("imgList");
-//lists[0].contentWindow.document.onreadystatechange = function() {
-//if (document.readyState == "compleate") {runHandler();}
-//console.log(`readyState(${lists[0].contentWindow.document.readyState})`);
+//  }
 //}
-document.onreadystatechange = function() {
-  console.log(`readyState(${document.readyState})`);
-  if(document.readyState=="compete"){
-    //runHandler();
-    console.log(lists[0].contentWindow.document
-      .getElementsByTagName("pre").length
-    );
-  }
+
+//initPage4();
+
+/**
+function onloadFrame(myFrame){
+  console.log('Д');
+  console.log(`myFrame(${myFrame.childNodes[0]})`);
+  frame1 = this;
+  //myFrame.querySelector("pre");
 }
+*/

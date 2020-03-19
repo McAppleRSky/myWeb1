@@ -92,8 +92,14 @@
 			<p>данные фотографии разбиты на группы, сделанные в разное время и различных обстоятельствах. Сделаны различными приборами</p>
 		</section>
 		<div id="mainArticle">
-			<object class="imgList" data="img/list" type="text/plain"></object>
-			<object class="imgList" data="img/listFormated" type="text/plain"></object>
+			<div class="imgLists">
+				<!-- files without ext (t.e. .txt) in object tag will be downloaded trought http protocol -->
+				<object data="img/list.txt" type="text/plain">
+				</object>
+				<object data="img/listFormated.txt" type="text/plain">
+				</object>
+			</div>
+			<script src="js/page4handler.js"></script>
 		</div>
 		<section>
 			<br><br>
@@ -198,7 +204,6 @@
 -->
 	<!--
 -->
-	<script src="js/page4handler.js"></script>
 
 </body>
 
