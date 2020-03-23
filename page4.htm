@@ -9,15 +9,17 @@
 	<link rel="stylesheet" href="css/top-menu-page4.css" type="text/css">
 	<link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
 	<style type="text/css">
-		#mainArticle {
+		.mainArticle {
 			background-image: url("img/cfa82088a277960755ecb3ca54c728be.png");
 			background-repeat: repeat-y;
 			background-position: left;
-			background-size: 75%;
+			background-size: 100%;
 		}
-
 		.commonTable {
 			width: 78%;
+		}
+		.figcapTitle{
+			font-size: 75%;
 		}
 	</style>
 </head>
@@ -91,21 +93,21 @@
 		<section>
 			<h3>Ниже секции расположены мои фотографии </h3>
 			<p>данные фотографии разбиты на группы, сделанные в разное время и различных обстоятельствах. Сделаны различными приборами</p>
-		</section>
-		<div id="mainArticle">
-			<div id="imgList">
-				<!-- files without ext (t.e. .txt) in object tag will be downloaded trought http protocol -->
-				<object data="img/list.txt" type="text/plain"></object>
-				<object data="img/listf.txt" type="text/plain"></object>
+			<div class="mainArticle">
+				<div class="imgList">
+					<!-- files without ext (t.e. .txt) in object tag will be downloaded trought http protocol -->
+					<object data="img/list.txt" type="text/plain"></object>
+					<object data="img/listf.txt" type="text/plain"></object>
+				</div>
+				<script src="js/page4handler.js"></script>
 			</div>
-			<script src="js/page4handler.js"></script>
-		</div>
+		</section>
 		<section>
 			<br><br>
 		</section>
 		<article>
 			<table class="commonTable">
-				<caption>Фотографии в HTML'е</caption>
+				<caption>Фотографии в HTML'е (oldSyle album)</caption>
 				<tr>
 					<th width="20%">
 					<th width="20%">
@@ -115,43 +117,26 @@
 				<tr>
 					<td>
 						<figure>
-							<!--
-							<img src="img/photo_2019-10-22_16-49-22.jpg" height="200" alt="2019 г. фотография с курсов по программе лидерства" />
-						-->
+							<img src="img/album/photo_2019-10-22_16-49-22.jpg" height="200" alt="2019 г. фотография с курсов по программе лидерства" />
 							<figcaption>фотография</figcaption>
 						</figure>
 					</td>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-39-51.jpg" height="200" alt="img flower1" /></td>
-					-->
+						<img src="img/album/photo_2019-11-22_10-39-51.jpg" height="200" alt="img flower1" /></td>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-39-59.jpg" width="200" alt="img flower2" /></td>
-					-->
+						<img src="img/album/photo_2019-11-22_10-39-59.jpg" width="200" alt="img flower2" /></td>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-40-06.jpg" height="200" alt="img flower3" /></td>
-					-->
+						<img src="img/album/photo_2019-11-22_10-40-06.jpg" height="200" alt="img flower3" /></td>
 				</tr>
 				<tr>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-36-12.jpg" width="200" alt="img flower4" /></td>
-					-->
+						<img src="img/album/photo_2019-11-22_10-36-12.jpg" width="200" alt="img flower4" /></td>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-40-12.jpg" height="200" alt="img flower5" /></td>
-					-->
+						<img src="img/album/photo_2019-11-22_10-40-12.jpg" height="200" alt="img flower5" /></td>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-39-46.jpg" width="200" alt="img flower6" /></td>
-					-->
+						<img src="img/album/photo_2019-11-22_10-39-46.jpg" width="200" alt="img flower6" /></td>
 					<td>
-						<!--
-						<img src="img/photo_2019-11-22_10-40-24.jpg" width="200" alt="img flower1" /></td>
-					-->
-
+						<img src="img/album/photo_2019-11-22_10-40-24.jpg" width="200" alt="img flower1" /></td>
 				</tr>
 			</table>
 			<table>
