@@ -9,8 +9,8 @@ const
 var lists = [],
   photos = [];
 
-var mainArticle,
-  full, formated, OnesReadystatechange = 0,
+var mainArticle, imgList,
+  full, formated, OnesReadystatechangeCount = 0,
   i;
 
 let myConsole = window.console;
@@ -22,34 +22,111 @@ function Photo(file, title, width, height) {
   this.height = height;
 }
 
-document.onreadystatechange = fillListsAndPhotosAndRunHandler;
-
-function fillListsAndPhotosAndRunHandler() {
-  let imgList = document.querySelector(".imgList");
-  mainArticle = document.querySelector(".mainArticle");
+document.onreadystatechange = function() {
   if (document.readyState == "complete") {
-    if (window.location.protocol == "http:") {
-      fillListsFromHttp();
-      mainArticle.removeChild(imgList);
-      fillPhotos();
-      runHandler();
+    if (OnesReadystatechangeCount++ == 0) {
+//      console.log("OnesReadystatechangeCount " + OnesReadystatechangeCount);
+      fillListAndPhotosAndRunHandler();
     }
+  }
+};
+
+function fillListAndPhotosAndRunHandler() {
+  let reader, blob;
+  //myElement,
+  imgList = document.querySelector(".imgList");
+  mainArticle = document.querySelector(".mainArticle");
+  if (window.location.protocol == "http:") {
+    fillListFromHttp();
+    mainArticle.removeChild(imgList);
+    fillPhotos();
+    runHandler();
   } else {
     if (window.location.protocol == "file:") {
       myConsole.log("protocol is file");
-      while(window.frames.length<2){
-        setTimeout("go()",1000);
-        console.log(window.frames.length);
-        //lists[0] = window.frames[0];
+      fillListFromFileAndFillPhotosRunHandler();
+      /*
+      //TODO Достать блоб из input file достать путь и имя
+      if (window.FileReader && window.File && window.Blob && window.FileList) {
+
+        window
+        .requestFileSystem(
+          window.PERSISTENT, 5 * 1024 * 1024, onInitFs, errorHandler
+        );
+
+        blob = new Blob([""], {
+          type: "text/plain"
+        });
+        reader = new FileReader();
+        re2ader.readAsText(blob);
+        reader.onload = function() {
+          console.log(reader.result);
+        }
+      } else {
+        myConsole.log("fileAPISupport" + false);
       }
+      */
     } else {
       myConsole.log("invalid protocol");
     }
   }
+  //}
 }
 
+function fillListFromFileAndFillPhotosRunHandler() {
+  var fileSelect = document.getElementById("fileSelect"),
+    fileElem = document.getElementById("fileElem");
+  fileSelect.addEventListener("click", function(e) {
+    if (fileElem) {
+      fileElem.click();
+    }
+    e.preventDefault(); // предотвращает перемещение к "#"
 
-function fillListsFromHttp() {
+    console.log(fileElem.name);
+    readFile(fileElem);
+
+    mainArticle.removeChild(imgList);
+    /*
+    fillPhotos();
+    runHandler();
+    */
+  }, false);
+}
+
+function handleFiles(files){
+  console.log("handleFiles func " + files);
+}
+function readFile(object) {
+  console.log("readFile func. files : " + object.files.length);
+  var file = object.files[0];
+  //  console.log("file (1) " + file);
+  var reader = new FileReader();
+  reader.onload = function() {
+    document.getElementById('out').innerHTML = reader.result;
+  };
+  console.log("file (2) " + file);
+  reader.readAsText(file);
+}
+
+/*
+<input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+<a href="#" id="fileSelect">Select some files</a>
+
+Код, обрабатывающий событие click, может выглядеть следующим образом:
+
+
+var fileSelect = document.getElementById("fileSelect"),
+  fileElem = document.getElementById("fileElem");
+
+fileSelect.addEventListener("click", function (e) {
+  if (fileElem) {
+    fileElem.click();
+  }
+  e.preventDefault(); // предотвращает перемещение к "#"
+}, false);
+*/
+
+function fillListFromHttp() {
   let curListValueCount;
   for (i = 0; i < listCount; i++) {
     try {
@@ -152,3 +229,51 @@ function runHandler() {
   }
   mainArticle.appendChild(photoTable);
 }
+
+/*
+function onInitFs(fs) {
+  console.log("Opened file system: " + fs.name);
+
+  fs.root.getFile("img/list.txt", {}, function(fileEntry) {
+    fileEntry.file(function(file) {
+      var reader = new FileReader();
+
+      reader.onloadend = function(e) {
+        var txtArea = document.createElement('textarea');
+        txtArea.value = this.result;
+        document.body.appendChild(txtArea);
+      };
+
+      reader.readAsText(file);
+    }, errorHandler);
+
+  }, errorHandler);
+}
+
+function errorHandler(e) {
+  var msg = '';
+
+  switch (e.code) {
+    case FileError.QUOTA_EXCEEDED_ERR:
+      msg = 'QUOTA_EXCEEDED_ERR';
+      break;
+    case FileError.NOT_FOUND_ERR:
+      msg = 'NOT_FOUND_ERR';
+      break;
+    case FileError.SECURITY_ERR:
+      msg = 'SECURITY_ERR';
+      break;
+    case FileError.INVALID_MODIFICATION_ERR:
+      msg = 'INVALID_MODIFICATION_ERR';
+      break;
+    case FileError.INVALID_STATE_ERR:
+      msg = 'INVALID_STATE_ERR';
+      break;
+    default:
+      msg = 'Unknown Error';
+      break;
+  };
+
+  myConsole.log('Error: ' + msg);
+}
+*/
