@@ -1,16 +1,19 @@
 const imgListPath = "img/album/",
+  listFilename = "list.txt",
+  listfFilename = "listf.txt",
   file = 0,
   title = 1,
   width = 2,
-  height = 3;
-const
+  height = 3,
   listCount = 2;
 
 var lists = [],
-  photos = [];
-
-var mainArticle, imgList,
-  full, formated, OnesReadystatechangeCount = 0,
+  photos = [],
+  mainArticle, imgList, fileElem,
+//  listPre = false,
+//  listfPre = false,
+  full = false, formated = false,
+  OnesReadystatechangeCount = 0,
   i;
 
 let myConsole = window.console;
@@ -25,15 +28,12 @@ function Photo(file, title, width, height) {
 document.onreadystatechange = function() {
   if (document.readyState == "complete") {
     if (OnesReadystatechangeCount++ == 0) {
-//      console.log("OnesReadystatechangeCount " + OnesReadystatechangeCount);
       fillListAndPhotosAndRunHandler();
     }
   }
 };
 
 function fillListAndPhotosAndRunHandler() {
-  let reader, blob;
-  //myElement,
   imgList = document.querySelector(".imgList");
   mainArticle = document.querySelector(".mainArticle");
   if (window.location.protocol == "http:") {
@@ -44,87 +44,116 @@ function fillListAndPhotosAndRunHandler() {
   } else {
     if (window.location.protocol == "file:") {
       myConsole.log("protocol is file");
-      fillListFromFileAndFillPhotosRunHandler();
-      /*
-      //TODO Достать блоб из input file достать путь и имя
-      if (window.FileReader && window.File && window.Blob && window.FileList) {
-
-        window
-        .requestFileSystem(
-          window.PERSISTENT, 5 * 1024 * 1024, onInitFs, errorHandler
-        );
-
-        blob = new Blob([""], {
-          type: "text/plain"
-        });
-        reader = new FileReader();
-        re2ader.readAsText(blob);
-        reader.onload = function() {
-          console.log(reader.result);
-        }
-      } else {
-        myConsole.log("fileAPISupport" + false);
-      }
-      */
+      document.querySelector("#fileElem").style.display = "block";
     } else {
       myConsole.log("invalid protocol");
     }
   }
-  //}
 }
 
+function handleFiles(files) {
+  let reader = [];
+  for (i = 0; i < files.length; i++) {
+    if (files[i].name == listFilename) {
+      reader[i] = new FileReader();
+      reader[i].readAsText(files[i]);
+      if(reader[i].result[0].split(';').length == 4){
+        full=true;
+      }
+      //listPre = document.createElement("pre");
+      //listPre.textContent = reader[i].result;
+      lists.push()
+      document.querySelector(`object[data="${imgListPath + listFilename}"]`)
+        .appendChild(listPre);
+
+      //lists[full]= reader[i].result;
+    } else {
+      if(files[i].name == listfFilename){
+        reader[i] = new FileReader();
+        reader[i].readAsText(files[i]);
+        if(reader[i].result[0].split(';').length == 4){
+          listfPre = document.createElement("pre");
+          listfPre.textContent = reader[i].result;
+          document.querySelector(`object[data="${imgListPath + listFilename}"]`)
+            .appendChild(listPre);
+
+
+          //lists[formated] = reader[i].result;
+        }
+      }
+    }
+  }
+
+  listfPre = document.createElement("pre");
+  document.querySelector(`object[data="${imgListPath + listfFilename}"]`)
+    .appendChild(listfPre);
+
+  if (listPre && listfPre) {
+    fillListFromFileAndFillPhotosRunHandler();
+  }
+
+  console.log(files[0].name);
+
+  let reader = [];
+  for (i = 0; i < files.length; i++) {
+    reader[i] = new FileReader();
+    reader[i].onload = "" //readerResulter
+    ;
+  }
+
+  for (i = 0; i < files.length; i++) {
+    reader[i].readAsText(files[i]);
+  }
+}
+//function readerResulter() {lists.push(reader.result);}
+
 function fillListFromFileAndFillPhotosRunHandler() {
-  var fileSelect = document.getElementById("fileSelect"),
-    fileElem = document.getElementById("fileElem");
+  //fileElem = document.getElementById("fileElem");
+  //let fileSelect = document.getElementById("fileSelect");
+  //for (i = 0; i < listCount; i++) {
+  //window.frames[i].addEventListener("click", function(e) {
+  //    fileElem.click();
+  //    e.preventDefault(); // предотвращает перемещение к "#"
+  //}, false);
+  //}
+
+  /*
   fileSelect.addEventListener("click", function(e) {
     if (fileElem) {
       fileElem.click();
     }
     e.preventDefault(); // предотвращает перемещение к "#"
-
-    console.log(fileElem.name);
-    readFile(fileElem);
-
-    mainArticle.removeChild(imgList);
-    /*
-    fillPhotos();
-    runHandler();
-    */
   }, false);
-}
+  */
+  //let objects = document.querySelectorAll("object");
+  //let pre0 = document.querySelectorAll("pre");
 
-function handleFiles(files){
-  console.log("handleFiles func " + files);
-}
-function readFile(object) {
-  console.log("readFile func. files : " + object.files.length);
-  var file = object.files[0];
-  //  console.log("file (1) " + file);
-  var reader = new FileReader();
-  reader.onload = function() {
-    document.getElementById('out').innerHTML = reader.result;
-  };
-  console.log("file (2) " + file);
-  reader.readAsText(file);
-}
+  //  for (i = 0; i < listCount; i++) {
+  //    objects[i].onclick = fileLoader;
+  //objects[i].addEventListener("click",fileLoader);
 
-/*
-<input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
-<a href="#" id="fileSelect">Select some files</a>
-
-Код, обрабатывающий событие click, может выглядеть следующим образом:
-
-
-var fileSelect = document.getElementById("fileSelect"),
-  fileElem = document.getElementById("fileElem");
-
-fileSelect.addEventListener("click", function (e) {
-  if (fileElem) {
+  /*
+  function(e) {
     fileElem.click();
-  }
-  e.preventDefault(); // предотвращает перемещение к "#"
-}, false);
+    e.preventDefault(); // предотвращает перемещение к "#"
+  }, false);
+  */
+  //  }
+  /*
+    for (i = 0; i < listCount; i++) {
+      reader[i] = new FileReader();
+      reader[i].onload = readerResulter;
+    }
+    */
+}
+/*
+function fileLoader() {
+  console.log("click");
+  fileElem.click();
+}
+
 */
+
 
 function fillListFromHttp() {
   let curListValueCount;
