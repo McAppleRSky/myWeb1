@@ -1,4 +1,4 @@
-const imgListPath = "img/album/",
+const imgListPath = ["img/", "album/"],
   listFilename = "list.txt",
   listfFilename = "listf.txt",
   file = 0,
@@ -9,10 +9,13 @@ const imgListPath = "img/album/",
 
 var lists = [],
   photos = [],
+  reader = [],
+  readerIndex = -1,
   mainArticle, imgList, fileElem,
-//  listPre = false,
-//  listfPre = false,
-  full = false, formated = false,
+  //  listPre = false,
+  //  listfPre = false,
+  full = false,
+  formated = false,
   OnesReadystatechangeCount = 0,
   i;
 
@@ -51,109 +54,56 @@ function fillListAndPhotosAndRunHandler() {
   }
 }
 
-function handleFiles(files) {
-  let reader = [];
+function fillListFromFileAndfillPhotosAndRunHandler(event) {
+  let files = event.target.files;
+  //var reader = [];
   for (i = 0; i < files.length; i++) {
-    if (files[i].name == listFilename) {
-      reader[i] = new FileReader();
-      reader[i].readAsText(files[i]);
-      if(reader[i].result[0].split(';').length == 4){
-        full=true;
-      }
-      //listPre = document.createElement("pre");
-      //listPre.textContent = reader[i].result;
-      lists.push()
-      document.querySelector(`object[data="${imgListPath + listFilename}"]`)
-        .appendChild(listPre);
-
-      //lists[full]= reader[i].result;
-    } else {
-      if(files[i].name == listfFilename){
-        reader[i] = new FileReader();
-        reader[i].readAsText(files[i]);
-        if(reader[i].result[0].split(';').length == 4){
-          listfPre = document.createElement("pre");
-          listfPre.textContent = reader[i].result;
-          document.querySelector(`object[data="${imgListPath + listFilename}"]`)
-            .appendChild(listPre);
-
-
-          //lists[formated] = reader[i].result;
+    if (
+      (files[i].name == listFilename) && (full === false)
+    ) {
+      reader[++readerIndex] = new FileReader();
+      reader[readerIndex].onload = function(e) {
+        let str = this.result.split("\n");
+        if (str[0].split(';').length == 1) {
+          lists.push(str);
+          full = lists.length - 1;
+          document.querySelector(
+            `object[data='${imgListPath[0] + listFilename}']`
+          ).style.display = "none";
         }
+        //console.log("e.target.result " + e.target.result);
+        if (lists.length == listCount) {
+          mainArticle.removeChild(imgList);
+          fillPhotos();
+          runHandler();
+        }
+      };
+      reader[readerIndex].readAsText(files[i]);
+    } else {
+      if (
+        (files[i].name == listfFilename) && (formated === false)
+      ) {
+        reader[++readerIndex] = new FileReader();
+        reader[readerIndex].onload = function(e) {
+          let str = this.result.split("\n");
+          if (str[0].split(';').length == 4) {
+            lists.push(str);
+            formated = lists.length - 1;
+            document.querySelector(
+              `object[data='${imgListPath[0] + listfFilename}']`
+            ).style.display = "none";
+          }
+          if (lists.length == listCount) {
+            mainArticle.removeChild(imgList);
+            fillPhotos();
+            runHandler();
+          }
+        };
+        reader[readerIndex].readAsText(files[i]);
       }
     }
   }
-
-  listfPre = document.createElement("pre");
-  document.querySelector(`object[data="${imgListPath + listfFilename}"]`)
-    .appendChild(listfPre);
-
-  if (listPre && listfPre) {
-    fillListFromFileAndFillPhotosRunHandler();
-  }
-
-  console.log(files[0].name);
-
-  let reader = [];
-  for (i = 0; i < files.length; i++) {
-    reader[i] = new FileReader();
-    reader[i].onload = "" //readerResulter
-    ;
-  }
-
-  for (i = 0; i < files.length; i++) {
-    reader[i].readAsText(files[i]);
-  }
 }
-//function readerResulter() {lists.push(reader.result);}
-
-function fillListFromFileAndFillPhotosRunHandler() {
-  //fileElem = document.getElementById("fileElem");
-  //let fileSelect = document.getElementById("fileSelect");
-  //for (i = 0; i < listCount; i++) {
-  //window.frames[i].addEventListener("click", function(e) {
-  //    fileElem.click();
-  //    e.preventDefault(); // предотвращает перемещение к "#"
-  //}, false);
-  //}
-
-  /*
-  fileSelect.addEventListener("click", function(e) {
-    if (fileElem) {
-      fileElem.click();
-    }
-    e.preventDefault(); // предотвращает перемещение к "#"
-  }, false);
-  */
-  //let objects = document.querySelectorAll("object");
-  //let pre0 = document.querySelectorAll("pre");
-
-  //  for (i = 0; i < listCount; i++) {
-  //    objects[i].onclick = fileLoader;
-  //objects[i].addEventListener("click",fileLoader);
-
-  /*
-  function(e) {
-    fileElem.click();
-    e.preventDefault(); // предотвращает перемещение к "#"
-  }, false);
-  */
-  //  }
-  /*
-    for (i = 0; i < listCount; i++) {
-      reader[i] = new FileReader();
-      reader[i].onload = readerResulter;
-    }
-    */
-}
-/*
-function fileLoader() {
-  console.log("click");
-  fileElem.click();
-}
-
-*/
-
 
 function fillListFromHttp() {
   let curListValueCount;
@@ -229,7 +179,7 @@ function runHandler() {
         newCell.width = "" + tableWidthPercent / cellCount;
         newCell.style.textAlign = "center";
 
-        fileName = imgListPath + photos[k].file;
+        fileName = imgListPath[0] + imgListPath[1] + photos[k].file;
 
         imgEl = document.createElement("img");
         imgEl.setAttribute("src", fileName);
