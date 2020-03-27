@@ -5,38 +5,35 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../css/modal-template.css" type="text/css">
+  <link rel="stylesheet" href="css/modal-template.css" type="text/css">
   <title>Модальное окно на чистом CSS</title>
 </head>
+  <body>
+    <div class="quote"></div>
 
-<body>
-  <div class="quote"></div>
-
-  <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">Модальное окно на чистом CSS</h1>
-  <div class="container">
-    <div style="text-align: center;">
-      <a href="#openModal">Открыть модальное окно</a>
-      <a target="_blank" href="../img">Показать</a>
-    </div>
-    <div id="openModal" class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title">Название</h3>
-            <a href="#close" title="Close" class="close">×</a>
-          </div>
-          <div class="modal-body">
-            Содержимое модального окна...
-            <img src="../img/normal.jpg" alt="normal.jpg">
+    <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">Модальное окно на чистом CSS</h1>
+    <div class="container">
+      <div style="text-align: center;">
+        <a href="#openModal">Открыть модальное окно</a>
+        <a target="_blank" href="../img">Показать</a>
+      </div>
+      <div id="openModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Название</h3>
+              <a href="#close" title="Close" class="close">×</a>
+            </div>
+            <div class="modal-body">
+              Содержимое модального окна...
+              <img src="../img/normal.jpg" alt="normal.jpg">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!--
--->
-  <script src="../js/modal-template-init.js"></script>
-
-</body>
-
+    <!--
+  -->
+    <script src="js/modal-template-init.js"></script>
+  </body>
 </html>

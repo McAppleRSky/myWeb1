@@ -15,6 +15,20 @@
 			background-position: left;
 			background-size: 100%;
 		}
+		.win-modal{
+			display: block;
+			position: fixed;
+			z-index: 1;
+			padding-top: 50px; /* Location of the box */
+			padding-left: 50px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		}
+		.win{
+			display: none;
+		}
 
 		.commonTable {
 			width: 78%;
@@ -104,7 +118,7 @@
 					<button onclick="readFile(document.getElementById('file'))">Read!</button>
 				-->
 					<!-- files without ext (t.e. .txt) in object tag will be downloaded trought http protocol -->
-					<input type="file" id="fileElem" accept=".txt,text/plain" style="display:none" onchange="fillListFromFileAndfillPhotosAndRunHandler(event)" multiple>
+					<input type="file" id="fileElem" accept=".txt,text/plain" style="display:none" onchange="fillListFromFileAndfillPhotosAndAlbumHandler(event)" multiple>
 					<object data="img/list.txt" type="text/plain;charset=UTF-8"></object>
 					<object data="img/listf.txt" type="text/plain;charset=UTF-8"></object>
 					<!--

@@ -1,10 +1,9 @@
 const imgListPath = ["img/", "album/"],
-  listFilename = "list.txt",
-  listfFilename = "listf.txt",
-  file = 0,
-  title = 1,
-  width = 2,
-  height = 3,
+  listFilename = "list.txt", listfFilename = "listf.txt",
+  file    = 0,
+  title   = 1,
+  width   = 2,
+  height  = 3,
   listCount = 2;
 
 var lists = [],
@@ -31,19 +30,19 @@ function Photo(file, title, width, height) {
 document.onreadystatechange = function() {
   if (document.readyState == "complete") {
     if (OnesReadystatechangeCount++ == 0) {
-      fillListAndPhotosAndRunHandler();
+      fillListAndPhotosAndAlbumHandler();
     }
   }
 };
 
-function fillListAndPhotosAndRunHandler() {
+function fillListAndPhotosAndAlbumHandler() {
   imgList = document.querySelector(".imgList");
   mainArticle = document.querySelector(".mainArticle");
   if (window.location.protocol == "http:") {
     fillListFromHttp();
     mainArticle.removeChild(imgList);
     fillPhotos();
-    runHandler();
+    albumHandler();
   } else {
     if (window.location.protocol == "file:") {
       myConsole.log("protocol is file");
@@ -54,7 +53,7 @@ function fillListAndPhotosAndRunHandler() {
   }
 }
 
-function fillListFromFileAndfillPhotosAndRunHandler(event) {
+function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
   let files = event.target.files;
   //var reader = [];
   for (i = 0; i < files.length; i++) {
@@ -75,7 +74,7 @@ function fillListFromFileAndfillPhotosAndRunHandler(event) {
         if (lists.length == listCount) {
           mainArticle.removeChild(imgList);
           fillPhotos();
-          runHandler();
+          albumHandler();
         }
       };
       reader[readerIndex].readAsText(files[i]);
@@ -96,7 +95,7 @@ function fillListFromFileAndfillPhotosAndRunHandler(event) {
           if (lists.length == listCount) {
             mainArticle.removeChild(imgList);
             fillPhotos();
-            runHandler();
+            albumHandler();
           }
         };
         reader[readerIndex].readAsText(files[i]);
@@ -155,16 +154,16 @@ function fillPhotos() {
   }
 }
 
-function runHandler() {
-  let photoTable,
+function albumHandler() {
+  let photoTable, photoWin, winImg,
     cellCount,
     tableWidthPercent,
-    newRow, newCell, fileName, anchEl, figEl, imgEl, figcapEl, j, k;
+    newRow, newCell, fileName, anchEl, figEl, imgEl, figcapEl,
+    j, k;
 
   //mainArticle = document.querySelector("#mainArticle")
 
   photoTable = document.createElement("table");
-
   photoTable.id = "photoTable";
   cellCount = 4;
   tableWidthPercent = "100";
@@ -182,21 +181,31 @@ function runHandler() {
         fileName = imgListPath[0] + imgListPath[1] + photos[k].file;
 
         imgEl = document.createElement("img");
+        imgEl.setAttribute("value", photos[k].file);
         imgEl.setAttribute("src", fileName);
         imgEl.setAttribute("width", photos[k].width);
         imgEl.setAttribute("height", photos[k].height);
+        imgEl.onclick = function (event) {
+          console.log("imgOnclick");
+          let photoWin = document.querySelector(".win");
+          if(photoWin){
+            console.log(event.path[0].value);
+            photoWin.classList.add("win-modal");
+            photoWin.classList.remove("win");
+          }
+        };
 
         figcapEl = document.createElement("figcaption");
         figcapEl.textContent = photos[k].title;
-        figcapEl.setAttribute("class", "figcapTitle");
+        figcapEl.classList.add("figcapTitle");
 
         figEl = document.createElement("figure");
         figEl.appendChild(imgEl);
         figEl.appendChild(figcapEl);
 
         anchEl = document.createElement("a");
-        anchEl.setAttribute("href", fileName);
-        anchEl.setAttribute("target", "_blank");
+        /*anchEl.setAttribute("href", fileName);
+        anchEl.setAttribute("target", "_blank");*/
         anchEl.appendChild(figEl);
 
         newCell.appendChild(anchEl);
@@ -206,53 +215,33 @@ function runHandler() {
     }
     i++;
   }
+
   mainArticle.appendChild(photoTable);
-}
 
-/*
-function onInitFs(fs) {
-  console.log("Opened file system: " + fs.name);
+  photoWin = document.createElement("div");
+  photoWin.classList.add("win");
 
-  fs.root.getFile("img/list.txt", {}, function(fileEntry) {
-    fileEntry.file(function(file) {
-      var reader = new FileReader();
-
-      reader.onloadend = function(e) {
-        var txtArea = document.createElement('textarea');
-        txtArea.value = this.result;
-        document.body.appendChild(txtArea);
-      };
-
-      reader.readAsText(file);
-    }, errorHandler);
-
-  }, errorHandler);
-}
-
-function errorHandler(e) {
-  var msg = '';
-
-  switch (e.code) {
-    case FileError.QUOTA_EXCEEDED_ERR:
-      msg = 'QUOTA_EXCEEDED_ERR';
-      break;
-    case FileError.NOT_FOUND_ERR:
-      msg = 'NOT_FOUND_ERR';
-      break;
-    case FileError.SECURITY_ERR:
-      msg = 'SECURITY_ERR';
-      break;
-    case FileError.INVALID_MODIFICATION_ERR:
-      msg = 'INVALID_MODIFICATION_ERR';
-      break;
-    case FileError.INVALID_STATE_ERR:
-      msg = 'INVALID_STATE_ERR';
-      break;
-    default:
-      msg = 'Unknown Error';
-      break;
+  winImg = document.createElement("img");
+  winImg.onclick = function (){
+    console.log("winImgOnclick");
+    let winImg = document.querySelector(".win-modal");
+    if(winImg){
+      winImg.classList.add("win");
+      winImg.classList.remove("win-modal");
+      winImg.setAttribute("src", "");
+      winImg.style.display = "none";
+    }
   };
+  //photoWin.textContent = "Title";
 
-  myConsole.log('Error: ' + msg);
+
+  //winImg.setAttribute("src", fileName);
+  //winImg.setAttribute("width", photos[k].width);
+  //winImg.setAttribute("height", photos[k].height);
+  photoWin.appendChild(winImg);
+  console.log("appendChild win");
+  mainArticle.appendChild(photoWin);
 }
-*/
+
+function showPic(fileName){
+}
