@@ -186,13 +186,17 @@ function albumHandler() {
         imgEl.setAttribute("width", photos[k].width);
         imgEl.setAttribute("height", photos[k].height);
         imgEl.onclick = function (event) {
-          console.log("imgOnclick");
+          //console.log("imgOnclick");
           let photoWin = document.querySelector(".win");
           if(photoWin){
-            console.log(event.path[0].value);
+            //console.log(photoWin);
+            photoWin.childNodes[0].setAttribute("src", event.path[0].src);
+            //console.log(event);
+            //console.log(event.path[0].src);
             photoWin.classList.add("win-modal");
             photoWin.classList.remove("win");
           }
+          //photoWin.style.display = "block";
         };
 
         figcapEl = document.createElement("figcaption");
@@ -226,15 +230,13 @@ function albumHandler() {
     console.log("winImgOnclick");
     let winImg = document.querySelector(".win-modal");
     if(winImg){
+      winImg.childNodes[0].setAttribute("src", "");
       winImg.classList.add("win");
       winImg.classList.remove("win-modal");
-      winImg.setAttribute("src", "");
-      winImg.style.display = "none";
+      //winImg.style.display = "none";
     }
   };
   //photoWin.textContent = "Title";
-
-
   //winImg.setAttribute("src", fileName);
   //winImg.setAttribute("width", photos[k].width);
   //winImg.setAttribute("height", photos[k].height);
@@ -242,6 +244,4 @@ function albumHandler() {
   console.log("appendChild win");
   mainArticle.appendChild(photoWin);
 }
-
-function showPic(fileName){
-}
+//function showPic(fileName){}
