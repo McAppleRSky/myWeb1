@@ -2,27 +2,37 @@
 <html lang="ru">
 
 <head>
-	<meta charset="utf-8" http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Мой персональный Веб-сайт</title>
+	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="stylesheet" href="css/top-menu-1-common.css" type="text/css">
 	<link rel="stylesheet" href="css/top-menu-page6.css" type="text/css">
 	<link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
-	<link rel="stylesheet" href="css/page6DefaultFormStyle.css" type="text/css"/>
-	<script type="text/javascript">var htmPage = "page6";</script>
+	<link rel="stylesheet" href="css/page6DefaultFormStyle.css" type="text/css" />
+	<style type="text/css">
+		#gobartable {
+			width: 100%;
+			border: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		var htmPage = "page6";
+	</script>
 	<script src="js/cookieHandler.js" charset="utf-8"></script>
 	<script src="js/pageCounter.js" charset="utf-8"></script>
 	<script src="js/page6Valid.js"></script>
 </head>
-<body><!--onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;"-->
-	<link rel="shortcut icon" href="favicon.ico" />
+
+<body>
+	<!--onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;"-->
 	<header>
 		<nav id="top-menu-1">
 			<script src="js/topMenuHandler.js"></script>
 			<ul>
 				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
-					<a href="index.htm" >
-						<img class="li-menu-img" src="img/icon/caret.png" />
+					<a href="index.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
 						Главная<br>страница</a>
 					<ul>
 						<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
@@ -34,11 +44,11 @@
 					</ul>
 				</li>
 				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
-					<img class="li-menu-img" src="img/icon/caret.png" />
-					Обо мне</a></li>
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Обо мне</a></li>
 				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page2.htm">
-					<img class="li-menu-img" src="img/icon/caret.png" />
-					Мои<br>интересы</a>
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Мои<br>интересы</a>
 					<ul>
 						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
 						<li><a href="page2.htm#page2-2">Мои любимые сайты</a></li>
@@ -48,17 +58,17 @@
 					</ul>
 				</li>
 				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
-					<img class="li-menu-img" src="img/icon/caret.png" />
-					Учеба</a></li>
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Учеба</a></li>
 				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
-					<img class="li-menu-img" src="img/icon/caret.png" />
-					Фотоальбом</a></li>
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Фотоальбом</a></li>
 				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
-					<img class="li-menu-img" src="img/icon/caret.png" />
-					Контакты</a></li>
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Контакты</a></li>
 				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
-					<img class="li-menu-img" src="img/icon/caret.png" />
-					Тест<br>по дисциплине</a></li>
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Тест<br>по дисциплине</a></li>
 			</ul>
 		</nav>
 
@@ -92,12 +102,7 @@
 					<div id="MainFormSubmitedMessage">
 						<p>Форма теста по дисциплине "Веб-технологии" отправлена (Form Submited)</p>
 					</div>
-					<form id="mainForm"
-					 			action="mailto:mcapple@yandex.ru"
-								method="post"
-								enctype="text/plain"
-								accept-charset="utf-8"
-								onsubmit="return validMainForm();">
+					<form id="mainForm" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" onsubmit="return validMainForm();">
 						<p>Для решения теста заполнитете поля с личными данными на себя, заполните тест и нажмите кнопку отправить для отправки теста на мою электронную почту на проверку
 						</p>
 						<ul>
@@ -139,7 +144,7 @@
 								</div>
 								<br class="PrevalidMessage">
 								<br>
-								</li>
+							</li>
 							<li>Вопросы по 1 части дисциплины:
 								<ol>
 									<li id="ask1">
@@ -188,7 +193,7 @@
 									</li>
 									<li id="ask3">
 										<h3>В чем состоят основные отличия HTML и XHTML?</h3>
-										<label >Впишите ответ:</label><br>
+										<label>Впишите ответ:</label><br>
 										<textarea name="ask3" rows="8" cols="50" form="mainForm"></textarea>
 										<div class="InvalidMessage" id="valid31">
 											<br>Третий вопрос не отвечен
@@ -201,7 +206,7 @@
 									</li>
 									<li id="ask4">
 										<h3>Какие атрибуты имеет тег &lt;FORM&gt; и для чего они используются?</h3>
-										<label >Варианты ответа:</label><br>
+										<label>Варианты ответа:</label><br>
 										<select size="6" name="ask4" multiple>
 											<option value="ans41">accept-charset</option>
 											<option value="ans42">action</option>
@@ -233,7 +238,7 @@
 									</li>
 									<li id="ask6">
 										<h3>Как выполняется группировка элементов списка выбора в выпадающих списках?</h3>
-										<label >Варианты ответа:</label><br>
+										<label>Варианты ответа:</label><br>
 										<select multiple size="6" name="ask6">
 											<optgroup label="">
 												<option value="ask61">Для выполнения группировки элементов списка выбора используется тэг &lt;optgroup&gt;</option>
@@ -253,9 +258,8 @@
 								</ol>
 							</li>
 						</ul>
-							<input type="submit" value="submit">
-							<input type="reset" value="reset"
-										 onClick="window.location.reload()">
+						<input type="submit" value="submit">
+						<input type="reset" value="reset" onClick="window.location.reload()">
 					</form>
 				</figure>
 			</section>
@@ -267,7 +271,7 @@
 						<input id="text5" type="text" name="name" value=""><br>
 					</p>
 					<p>
-						<label >Выберите группу</label>
+						<label>Выберите группу</label>
 					</p>
 					<ol>
 						<li>
@@ -299,9 +303,9 @@
 				<td class="tdMenu10"></td>
 			</tr>
 		</table>
-		&reg; <time datetime="2019,11,13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		&reg; <time datetime="2019-11-13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
 		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
-		<table name="gobartable" cellpadding=5  width=100%  border=0>
+		<table id="gobartable">
 			<tr>
 				<td width=95% align=left>
 					<font />
@@ -312,7 +316,8 @@
 					<font color=white></font>
 				</td>
 			</tr>
-		</table><script src="js/gettime.js"></script>
+		</table>
+		<script src="js/gettime.js"></script>
 	</footer>
 </body>
 
