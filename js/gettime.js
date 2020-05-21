@@ -1,7 +1,7 @@
-var periodDateTextNode = document.querySelector('#gobartable').rows[0].cells[0].getElementsByTagName('font')[0];
-var currentDateTextNode = document.querySelector('#gobartable').rows[1].cells[0].getElementsByTagName('font')[0];
+var periodDateTextNode = document.querySelector('#gobartable').rows[0].cells[0].getElementsByTagName('div')[0];
+var currentDateTextNode = document.querySelector('#gobartable').rows[1].cells[0].getElementsByTagName('div')[0];
 var beginDateTextNode = document.getElementsByTagName('time')[0];
-var beginDateParts = beginDateTextNode.dateTime.split(',');
+var beginDateParts = beginDateTextNode.dateTime.split('-');
 var dayNames = "воскресенье_понедельник_вторник_среда_четверг_пятница_суббота";
 var month = "";
 
