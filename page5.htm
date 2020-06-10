@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Мой персональный Веб-сайт</title>
@@ -11,21 +12,11 @@
   <link rel="stylesheet" href="css/page5DefaultFormStyle.css" type="text/css" />
   <link rel="stylesheet" href="css/birthday-date-panel.css" type="text/css">
   <link rel="stylesheet" href="css/page5valid.css" type="text/css">
-  <style type="text/css">
-		#gobartable{
-			width: 100%;
-			border: 0;
-		}
-    .display-field{
-      width: 95%;
-      text-align: left;
-    }
-    .display-field-gray-white{
-      background-color: gray;
-      color: white;
-    }
-	</style>
-  <script type="text/javascript">var htmPage = "page5";</script>
+  <script type="text/javascript">
+    var htmPage = "page5";
+  </script>
+  <script src="js/jquery-1.12.4.js" charset="utf-8"></script>
+  <script src="js/gettime.js"></script>
   <script src="js/cookieHandler.js" charset="utf-8"></script>
   <script src="js/pageCounter.js" charset="utf-8"></script>
   <script src="js/calenderElement.js"></script>
@@ -39,7 +30,7 @@
       <ul>
         <li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
           <a href="index.htm">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Главная<br>страница</a>
           <ul>
             <li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
@@ -51,10 +42,10 @@
           </ul>
         </li>
         <li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Обо мне</a></li>
         <li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page2.htm">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Мои<br>интересы</a>
           <ul>
             <li><a href="page2.htm#page2-1">Мое хобби</a></li>
@@ -65,16 +56,16 @@
           </ul>
         </li>
         <li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Учеба</a></li>
         <li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Фотоальбом</a></li>
         <li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Контакты</a></li>
         <li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page6.htm">
-            <img class="li-menu-img" src="img/icon/caret.png" alt=""/>
+            <img class="li-menu-img" src="img/icon/caret.png" alt="" />
             Тест<br>по дисциплине</a></li>
       </ul>
     </nav>
@@ -256,19 +247,18 @@
     </table>
     &reg; <time datetime="2019-11-13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
     <br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
-    <table id="gobartable">
-			<tr>
-				<td class="display-field">
-					<div></div>
-				</td>
-			</tr>
-			<tr>
-				<td class="display-field-gray-white" >
-					<div></div>
-				</td>
-			</tr>
-		</table>
-    <script src="js/gettime.js"></script>
+    <table id="tDateBar">
+      <tr>
+        <td>
+          <div></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div></div>
+        </td>
+      </tr>
+    </table>
   </footer>
 </body>
 
