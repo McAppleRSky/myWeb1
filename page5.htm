@@ -104,12 +104,12 @@
         <div id="MessageFormSubmitedMessage">
           <p>Сообщение отправлена (Form Submited)</p>
         </div>
-        <form id="messageForm" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" onsubmit="return validMessageForm();">
+          <form id="messageForm" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" onsubmit="validMessageForm();">
           Для отправки сообщения на мой личный почтоый ящик:
           <ol>
             <li>Введите для сообщения Фамилию Имя Отчество<br>
               <label for="text1">Вас зовут:</label><br>
-              <input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="20" id="text1" />
+              <input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="20" />
               <div class="InvalidMessage" id="valid01">
                 <br>поле ФИО должно быть заполнено
               </div>
@@ -140,7 +140,7 @@
                 <input type="radio" name="gender" value="famale" id="radio2" />
               </div>
               <div class="InvalidMessage" id="valid11">
-                <br>пол не выбран
+                пол не выбран
               </div>
               <br class="PrevalidMessage">
               <br>
@@ -189,12 +189,15 @@
                 <button id="incBtn1" type="button" onclick="incYear(1, this);">&gt;</button>
                 <button id="incBtn5" type="button" onclick="incYear(5, this);">&gt;&gt;</button>
                 <div id="days-space"></div>
-                <br>
               </div>
+              <div class="InvalidMessage" id="valid41">
+                <br>Дата не заполнена
+              </div>
+              <p></p>
             </li>
 
             <li>
-              <input id="submit-button" type="submit" value="Отправить" />
+              <input id="submit-button" type="submit" value="Отправить" disabled/>
               <input type="reset" value="Очистить" onClick="window.location.reload()" />
             </li>
           </ol>

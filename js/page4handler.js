@@ -10,7 +10,8 @@ var lists = [],
   photos = [],
   reader = [],
   readerIndex = -1,
-  mainArticle, imgList, fileElem,
+  //mainArticle, imgList,
+  fileElem,
   //  listPre = false,
   //  listfPre = false,
   full = false,
@@ -27,6 +28,52 @@ function Photo(file, title, width, height) {
   this.height = height;
 }
 
+//$()(function(){});
+  $(".mainArticle")
+    .css("background-image", 'url("img/cfa82088a277960755ecb3ca54c728be.png")')
+    .css("background-repeat", "repeat-y")
+    .css("background-position", "left")
+    .css("background-size", "100%");
+
+    /*
+    padding-top: 50px;
+     Location of the box */
+     /*
+    padding-left: 50px;
+     Location of the box */
+  $(".win-modal")
+    .css("display", "block")
+    .css("position", "fixed")
+    .css("z-index", "1")
+    .css("padding-top", "50px")
+    .css("padding-left", "50px")
+    .css("left", "0")
+    .css("top", "0")
+    .width("100%")
+    .css("height", "100%");
+    /*
+    height: 100%;
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    padding-left: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    */
+
+  $(".win")
+    .css("display", "none");
+  $(".commonTable")
+    .width("78%");
+  $("figcapTitle")
+    .css("font-size", "75%");
+  $("table.commonTable tr th")
+    .width("15%");
+
+
 document.onreadystatechange = function() {
   if (document.readyState == "complete") {
     if (OnesReadystatechangeCount++ == 0) {
@@ -36,11 +83,12 @@ document.onreadystatechange = function() {
 };
 
 function fillListAndPhotosAndAlbumHandler() {
-  imgList = document.querySelector(".imgList");
-  mainArticle = document.querySelector(".mainArticle");
+  //imgList = document.querySelector(".imgList");
+  //mainArticle = document.querySelector(".mainArticle");
   if (window.location.protocol == "http:") {
     fillListFromHttp();
-    mainArticle.removeChild(imgList);
+    //mainArticle.removeChild(imgList);
+    $(".mainArticle").children(".imgList").remove();
     fillPhotos();
     albumHandler();
   } else {
@@ -88,12 +136,15 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
           if (str[0].split(';').length == 4) {
             lists.push(str);
             formated = lists.length - 1;
-            document.querySelector(
-              `object[data='${imgListPath[0] + listfFilename}']`
-            ).style.display = "none";
+//            document.querySelector(
+//              `object[data='${imgListPath[0] + listfFilename}']`
+//            ).style.display = "none";
+            $(`object[data='${imgListPath[0] + listfFilename}']`)
+              .css("display", "none");
           }
           if (lists.length == listCount) {
-            mainArticle.removeChild(imgList);
+            $(".mainArticle").children(".imgList").remove();
+            //mainArticle.removeChild(imgList);
             fillPhotos();
             albumHandler();
           }
@@ -220,7 +271,8 @@ function albumHandler() {
     i++;
   }
 
-  mainArticle.appendChild(photoTable);
+  //mainArticle.appendChild(photoTable);
+  $(".mainArticle").append(photoTable);
 
   photoWin = document.createElement("div");
   photoWin.classList.add("win");
@@ -242,6 +294,7 @@ function albumHandler() {
   //winImg.setAttribute("height", photos[k].height);
   photoWin.appendChild(winImg);
   console.log("appendChild win");
-  mainArticle.appendChild(photoWin);
+  //mainArticle.appendChild(photoWin);
+  $(".mainArticle").append(photoWin);
 }
 //function showPic(fileName){}
