@@ -1,0 +1,19 @@
+		.win-modal {
+		  display: block;
+		  position: fixed;
+		  z-index: 1;
+		  padding-top: 50px;
+		  /* Location of the box */
+		  padding-left: 50px;
+		  /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  /* Full width */
+		  height: 100%;
+		  /* Full height */
+		}
+
+		.win {
+		  display: none;
+		}
