@@ -13,13 +13,11 @@ var lists = [],
   readerIndex = -1,
   mainArticle, imgList,
   fileElem,
-  //  listPre = false,
-  //  listfPre = false,
   full = false,
   formated = false,
   OnesReadystatechangeCount = 0,
   i,
-  currentPhotoView;
+  currentPhotoView, curPhotoViewHeight, curPhotoViewWidth = 0;
 
 let myConsole = window.console;
 
@@ -30,44 +28,11 @@ function Photo(file, title, width, height) {
   this.height = height;
 }
 
-//$()(function(){});
 $(".mainArticle")
   .css("background-image", 'url("img/cfa82088a277960755ecb3ca54c728be.png")')
   .css("background-repeat", "repeat-y")
   .css("background-position", "left")
   .css("background-size", "100%");
-
-/*
-padding-top: 50px;
- Location of the box */
-/*
-    padding-left: 50px;
-     Location of the box
-$(".win-modal")
-  .css("display", "block")
-  .css("position", "fixed")
-  .css("z-index", "1")
-  .css("padding-top", "50px")
-  .css("padding-left", "50px")
-  .css("left", "0")
-  .css("top", "0")
-  .width("100%")
-  .css("height", "100%");
-  */
-/*
-height: 100%;
-display: block;
-position: fixed;
-z-index: 1;
-padding-top: 50px;
-padding-left: 50px;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-*/
-
-//$(".win").css("display", "none");
 $(".commonTable")
   .width("78%");
 $("figcapTitle")
@@ -85,11 +50,8 @@ document.onreadystatechange = function() {
 };
 
 function fillListAndPhotosAndAlbumHandler() {
-  //imgList = document.querySelector(".imgList");
-  //mainArticle = document.querySelector(".mainArticle");
   if (window.location.protocol == "http:") {
     fillListFromHttp();
-    //mainArticle.removeChild(imgList);
     $(".mainArticle").children(".imgList").remove();
     fillPhotos();
     albumHandler();
@@ -105,7 +67,6 @@ function fillListAndPhotosAndAlbumHandler() {
 
 function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
   let files = event.target.files;
-  //var reader = [];
   for (i = 0; i < files.length; i++) {
     if (
       (files[i].name == listFilename) && (full === false)
@@ -205,7 +166,6 @@ function fillPhotos() {
       photos.push(new Photo(lists[full][i], lists[full][i], "100", "100"));
     }
   }
-  //if(photos[]photos.length){}
 }
 
 function albumHandler() {
@@ -214,8 +174,6 @@ function albumHandler() {
     tableWidthPercent = "100",
     newRow, newCell, fileName, anchEl, figEl, imgEl, figcapEl,
     j, k;
-    //cellCount = 4;tableWidthPercent = "100";
-  //mainArticle = document.querySelector("#mainArticle")
   photoTable = document.createElement("table");
   photoTable.id = "photoTable";
   photoTable.setAttribute("width", "" + tableWidthPercent + "%");
@@ -243,14 +201,14 @@ function albumHandler() {
         imgEl.setAttribute("height", photos[k].height);
         //imgEl.setAttribute("current", `${k}_${photos.length}`);
         imgEl.onclick = function(event) {
-          let currentSrc = event.path[0].src
-          ,componentSrc = currentSrc.split('/')
+          let currentSrc = event.path[0].src,
+            componentSrc = currentSrc.split('/')
           //,componentSrcLast = componentSrc[componentSrc.length-1]
           ;
           photos.forEach((item, i) => {
-//            console.log(`${i} ${item.file==componentSrc[componentSrc.length-1]}`);
-            if(item.file == componentSrc[componentSrc.length-1])
-            currentPhotoView = i;
+            //            console.log(`${i} ${item.file==componentSrc[componentSrc.length-1]}`);
+            if (item.file == componentSrc[componentSrc.length - 1])
+              currentPhotoView = i;
           });
 
           //console.log("imgOnclick");
@@ -268,17 +226,39 @@ function albumHandler() {
           $("#viewLayer")
             .addClass("win-modal")
             .removeClass("win")
-//            .find("img").attr("src", currentSrc)
-              ;
+          //            .find("img").attr("src", currentSrc)
+          ;
+          /*
+          $("mainArticle")
+            .animate({
+              opacity: 0.5,
+              filter: "blur(20px)"
+            }, 300);
+            */
+
+          /*
           $("#viewLayer")
-            .find("td")
+            .find("td").eq(1)
 //              .eq(1).empty().append(`фото ${"000"} из ${ event.path[0].src}`)
               .css("color", "gray")
+              .css("width", "33%")
+              .css("text-align","center")
               ;
+              */
           setPhotoViewLayer(currentSrc);
-          //photoWin.style.display = "block";
-        };
 
+          //photoWin.style.display = "block";
+          //$()
+          $(".blured")
+            .addClass("blur")
+          ;
+          $("body")
+            .addClass("lock")
+          ;
+        };
+        //imgEl.classList.add("blured");
+        //$(".mainArticle").addClass("blured");
+        //$("#photoTable").addClass("blured");
         figcapEl = document.createElement("figcaption");
         figcapEl.textContent = photos[k].title;
         figcapEl.classList.add("figcapTitle");
@@ -301,6 +281,8 @@ function albumHandler() {
   }
 
   //mainArticle.appendChild(photoTable);
+  photoTable.classList.add("blured");
+
   $(".mainArticle").append(photoTable);
 
   /*
@@ -320,10 +302,12 @@ function albumHandler() {
   };
   */
   $(".mainArticle")
-//    .append(photoTable)
+    //    .append(photoTable)
     .append('<div class="win" id="viewLayer"></div>');
   $("#viewLayer")
     .css("background-color", "#81ecec")
+    .css("top", "5%")
+    .css("left", "5%")
     .append(`
       <figure>
         <img src="" alt="" >
@@ -339,12 +323,45 @@ function albumHandler() {
       </figure>
       `)
     .find("img")
-      .click(function(){
-        $(".win-modal")
-          .addClass("win")
-          .removeClass("win-modal")
-      });
+    .click(function() {
+      $(".win-modal")
+        .addClass("win")
+        .removeClass("win-modal");
       /*
+            $("mainArticle")
+            //          .removeClass("blurSubmodal")
+              .animate({
+                opacity: 1.0,
+                filter: ""
+              }, 300);
+              */
+      $(".blured")
+        .removeClass("blur")
+        //.css("filter", "")
+      ;
+      $("body")
+        .removeClass("lock")
+      ;
+    });
+  /*
+  .change(function(){
+    curPhotoViewHeight = this.height;
+    curPhotoViewWidth = this.width;
+    console.log("_img is change:");
+    console.log(`curPhotoViewHeight ${curPhotoViewHeight}, curPhotoViewWidth ${curPhotoViewWidth}`);
+  })
+  */
+  ;
+  $("#viewLayer")
+    .find("table")
+    .width("100%")
+    .find("tr")
+    .css("background-color", "#81ecec")
+    .find("td").eq(1)
+    .css("color", "gray")
+    .css("width", "50%")
+    .css("text-align", "center");
+  /*
   $(".win")
     .find
     .children()
@@ -353,30 +370,32 @@ function albumHandler() {
     */
   $("#viewLayer")
     .find("td:first")
-    .css("text-align","right")
+    .css("text-align", "right")
     .append("<label><strong>&lt;&lt;</strong></label>")
     .children()
-      .click(function(){
-//        console.log("right click");
-        if (currentPhotoView > 0)
-          setPhotoViewLayer(imgListPath[0] + imgListPath[1]
-            + photos[--currentPhotoView].file);
-      });
+    .click(function() {
+      //        console.log("left click");
+      if (currentPhotoView == 0)
+        currentPhotoView = photos.length - 1;
+      else currentPhotoView--;
+      //          console.log(currentPhotoView);
+      setPhotoViewLayer(imgListPath[0] + imgListPath[1] +
+        photos[currentPhotoView].file);
+    });
   $("#viewLayer")
     .find("td:last")
     .append("<label><strong>&gt;&gt;</strong></label>")
     .children()
-      .click(function(){
-        //console.log("left click");
-        if (currentPhotoView < photos.length - 1)
-          setPhotoViewLayer(imgListPath[0] + imgListPath[1]
-            + photos[++currentPhotoView].file);
-      });
-  $("#viewLayer")
-    .find("td")
-      .eq(1)
-      .width("33%")
-      .css("text-align","center");
+    .click(function() {
+      //        console.log("right click");
+      if (currentPhotoView == photos.length - 1)
+        currentPhotoView = 0;
+      else currentPhotoView++;
+      //            console.log(currentPhotoView);
+      setPhotoViewLayer(imgListPath[0] + imgListPath[1] +
+        photos[currentPhotoView].file);
+    });
+  //$("#viewLayer").find("td").eq(1).width("33%").css("text-align","center");
 
   //photoWin.textContent = "Title";
   //winImg.setAttribute("src", fileName);
@@ -384,20 +403,67 @@ function albumHandler() {
   //winImg.setAttribute("height", photos[k].height);
   //photoWin.appendChild(winImg);
 
-  console.log("appendChild win");
+  //console.log("appendChild win");
   //mainArticle.appendChild(photoWin);
   //$(".mainArticle").append(photoWin);
 }
-//function showPic(fileName){}
 
-
-function setPhotoViewLayer(src){
+function setPhotoViewLayer(src) {
+  let prevPhotoViewWidth //, curWidth, curHeight
+    , continueIf = false;
+  //  console.log("set");
+  //  console.log(`curPhotoViewWidth ${curPhotoViewWidth}`);
+  if (curPhotoViewWidth != 0) {
+    continueIf = true;
+    prevPhotoViewWidth = curPhotoViewWidth;
+    //    console.log(`curPhotoViewWidth ${curPhotoViewWidth}, prevPhotoViewWidth ${prevPhotoViewWidth}`);
+    $("#viewLayer")
+      .find("img")
+      .css("opacity", "0.0")
+      .css("height", "")
+      .css("width", "");
+  }
   $("#viewLayer")
     .find("img")
-      .attr("src", src);
+    //      .hide()
+    //      .attr("height", "")
+    //      .hide()
+    .attr("src", src)
+    .attr("title", photos[currentPhotoView].title)
+    .attr("alt", photos[currentPhotoView].alt)
+    .attr("height", $(window).height() / 2);
+  curPhotoViewHeight = $("#viewLayer").find("img").height();
+  curPhotoViewWidth = $("#viewLayer").find("img").width();
+  //  console.log(`_curPhotoViewHeight ${curPhotoViewHeight}, curPhotoViewWidth ${curPhotoViewWidth}`);
+  if (continueIf) {
+    //    prevPhotoViewWidth = curPhotoViewWidth;
+    //    curHeight = $("#viewLayer").find("img").height();
+    //    curWidth = $("#viewLayer").find("img").width();
+    //    console.log(`curHeight ${curHeight}? curWidth ${curWidth}`);
+    //    console.log(`prevPhotoViewWidth ${prevPhotoViewWidth}`);
+    $("#viewLayer")
+      .find("img")
+      .removeAttr("height")
+      .css("height", curPhotoViewHeight)
+      .css("width", prevPhotoViewWidth);
+    $("#viewLayer")
+      .find("img")
+      .animate({
+        opacity: 1.0,
+        height: curPhotoViewHeight,
+        width: curPhotoViewWidth
+      }, 300);
+    //    console.log(`curPhotoViewWidth ${curPhotoViewWidth}.`);
+  }
+  //  $("#viewLayer")
+  //    .find("img")
+  //      .animate({opacity: 1.0}, 1000)
+  //    .show()
+  //      .animate({opacity: 1.0}, 1000)
+  ;
   $("#viewLayer")
     .find("td")
-      .eq(1)
-      .empty()
-      .append(`фото ${currentPhotoView+1} из ${photos.length}`);
+    .eq(1)
+    .empty()
+    .append(`фото ${currentPhotoView+1} из ${photos.length}`);
 }
