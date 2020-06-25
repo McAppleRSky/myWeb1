@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Мой персональный Веб-сайт</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="css/birthday-date-panel.css" type="text/css">
   <link rel="stylesheet" href="css/page5valid.css" type="text/css">
 
-<link rel="stylesheet" type="text/css"
-    href="u:/home/user0/node_modules/bootstrap/dist/css/bootstrap.css" >
+  <link rel="stylesheet" type="text/css" href="u:/home/user0/node_modules/bootstrap/dist/css/bootstrap.css">
   <script type="text/javascript">
     var htmPage = "page5"; // Контакты
   </script>
@@ -109,7 +108,7 @@
         <div id="MessageFormSubmitedMessage">
           <p>Сообщение отправлена (Form Submited)</p>
         </div>
-          <form id="messageForm" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" onsubmit="validMessageForm();">
+        <form id="messageForm" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" onsubmit="validMessageForm();">
           Для отправки сообщения на мой личный почтоый ящик:
           <ol>
             <li>Введите для сообщения Фамилию Имя Отчество<br>
@@ -200,36 +199,34 @@
               </div>
               <p></p>
             </li>
-
             <li
-            title="Tips (popover):"
-            data-content="Для отправки необходимо заполнить поля формы и пройтия валидацию по потере фокуса"
-            data-toggle="hover"
-            data-delay: {
-                "show": 500,
-                "hide": 100
-              }
+              data-toggle="popover" title="Tips (popover):"
+              data-content="Для отправки необходимо заполнить поля формы и пройти валидацию по потере фокуса"
             >
-              <input id="submit-button" type="submit" value="Отправить"
-              class="btn btn-primary"
-              style="pointer-events: none;"
-                />
-                <input type="reset" value="Очистить" onClick="window.location.reload()" />
-              </li>
-            </ol>
-<script
-  src="u:/home/user0/node_modules/bootstrap/dist/js/bootstrap.js"
-  type="text/javascript">
-</script>
-<script
-  src="u:/home/user0/node_modules/bootstrap/js/popover.js"
-  type="text/javascript">
-</script>
-<script type="text/javascript">
-  $(function(){
-    $('[data-toggle="hover"]').popover();
-  });
-</script>
+              <input type="submit" value="Отправить" id="submit-button"
+                class="btn btn-primary" style="pointer-events: none;" />
+              <input type="reset" value="Очистить" onClick="window.location.reload()" />
+            </li>
+          </ol>
+          <script
+            src="u:/home/user0/node_modules/bootstrap/dist/js/bootstrap.js"
+            type="text/javascript">
+          </script>
+          <script
+            src="u:/home/user0/node_modules/bootstrap/js/popover.js"
+            type="text/javascript">
+          </script>
+          <script type="text/javascript">
+            $(function() {
+              $('[data-toggle="popover"]').popover({
+                trigger: 'hover',
+                delay: {
+                  "show": 100,
+                  "hide": 500
+                }
+              });
+            });
+          </script>
         </form>
       </section>
       <section>
