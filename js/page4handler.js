@@ -81,7 +81,6 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
             `object[data='${imgListPath[0] + listFilename}']`
           ).style.display = "none";
         }
-        //console.log("e.target.result " + e.target.result);
         if (lists.length == listCount) {
           mainArticle.removeChild(imgList);
           fillPhotos();
@@ -99,15 +98,13 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
           if (str[0].split(';').length == 4) {
             lists.push(str);
             formated = lists.length - 1;
-            //            document.querySelector(
-            //              `object[data='${imgListPath[0] + listfFilename}']`
-            //            ).style.display = "none";
             $(`object[data='${imgListPath[0] + listfFilename}']`)
               .css("display", "none");
           }
           if (lists.length == listCount) {
-            $(".mainArticle").children(".imgList").remove();
-            //mainArticle.removeChild(imgList);
+            $(".mainArticle")
+              .children(".imgList")
+                .remove();
             fillPhotos();
             albumHandler();
           }
@@ -177,12 +174,6 @@ function albumHandler() {
   photoTable = document.createElement("table");
   photoTable.id = "photoTable";
   photoTable.setAttribute("width", "" + tableWidthPercent + "%");
-  /*
-  $(".mainArticle")
-    .html("<table id="photoTable"></table>");
-  $("#photoTable")
-    .width("width", "" + tableWidthPercent + "%");
-    */
   i = 0;
   k = 0;
   while (k < photos.length) {
@@ -199,66 +190,27 @@ function albumHandler() {
         imgEl.setAttribute("src", fileName);
         imgEl.setAttribute("width", photos[k].width);
         imgEl.setAttribute("height", photos[k].height);
-        //imgEl.setAttribute("current", `${k}_${photos.length}`);
         imgEl.onclick = function(event) {
           let currentSrc = event.path[0].src,
             componentSrc = currentSrc.split('/')
-          //,componentSrcLast = componentSrc[componentSrc.length-1]
           ;
           photos.forEach((item, i) => {
-            //            console.log(`${i} ${item.file==componentSrc[componentSrc.length-1]}`);
             if (item.file == componentSrc[componentSrc.length - 1])
               currentPhotoView = i;
           });
 
-          //console.log("imgOnclick");
-          /*
-          let photoWin = document.querySelector(".win");
-          if (photoWin) {
-            //console.log(photoWin);
-            photoWin.childNodes[0].setAttribute("src", event.path[0].src);
-            //console.log(event);
-            //console.log(event.path[0].src);
-            photoWin.classList.add("win-modal");
-            photoWin.classList.remove("win");
-          }
-          */
           $("#viewLayer")
             .addClass("win-modal")
             .removeClass("win")
-          //            .find("img").attr("src", currentSrc)
           ;
-          /*
-          $("mainArticle")
-            .animate({
-              opacity: 0.5,
-              filter: "blur(20px)"
-            }, 300);
-            */
 
-          /*
-          $("#viewLayer")
-            .find("td").eq(1)
-//              .eq(1).empty().append(`фото ${"000"} из ${ event.path[0].src}`)
-              .css("color", "gray")
-              .css("width", "33%")
-              .css("text-align","center")
-              ;
-              */
           setPhotoViewLayer(currentSrc);
 
-          //photoWin.style.display = "block";
-          //$()
           $(".blured")
-            .addClass("blur")
-          ;
+            .addClass("blur");
           $("body")
-            .addClass("lock")
-          ;
+            .addClass("lock");
         };
-        //imgEl.classList.add("blured");
-        //$(".mainArticle").addClass("blured");
-        //$("#photoTable").addClass("blured");
         figcapEl = document.createElement("figcaption");
         figcapEl.textContent = photos[k].title;
         figcapEl.classList.add("figcapTitle");
@@ -268,8 +220,6 @@ function albumHandler() {
         figEl.appendChild(figcapEl);
 
         anchEl = document.createElement("a");
-        /*anchEl.setAttribute("href", fileName);
-        anchEl.setAttribute("target", "_blank");*/
         anchEl.appendChild(figEl);
 
         newCell.appendChild(anchEl);
@@ -280,29 +230,11 @@ function albumHandler() {
     i++;
   }
 
-  //mainArticle.appendChild(photoTable);
   photoTable.classList.add("blured");
 
   $(".mainArticle").append(photoTable);
 
-  /*
-  photoWin = document.createElement("div");
-  photoWin.classList.add("win");
-
-  winImg = document.createElement("img");
-  winImg.onclick = function() {
-    console.log("winImgOnclick");
-    let winImg = document.querySelector(".win-modal");
-    if (winImg) {
-      winImg.childNodes[0].setAttribute("src", "");
-      winImg.classList.add("win");
-      winImg.classList.remove("win-modal");
-      //winImg.style.display = "none";
-    }
-  };
-  */
   $(".mainArticle")
-    //    .append(photoTable)
     .append('<div class="win" id="viewLayer"></div>');
   $("#viewLayer")
     .css("background-color", "#81ecec")
@@ -327,31 +259,11 @@ function albumHandler() {
       $(".win-modal")
         .addClass("win")
         .removeClass("win-modal");
-      /*
-            $("mainArticle")
-            //          .removeClass("blurSubmodal")
-              .animate({
-                opacity: 1.0,
-                filter: ""
-              }, 300);
-              */
       $(".blured")
-        .removeClass("blur")
-        //.css("filter", "")
-      ;
+        .removeClass("blur");
       $("body")
-        .removeClass("lock")
-      ;
-    });
-  /*
-  .change(function(){
-    curPhotoViewHeight = this.height;
-    curPhotoViewWidth = this.width;
-    console.log("_img is change:");
-    console.log(`curPhotoViewHeight ${curPhotoViewHeight}, curPhotoViewWidth ${curPhotoViewWidth}`);
-  })
-  */
-  ;
+        .removeClass("lock");
+    });;
   $("#viewLayer")
     .find("table")
     .width("100%")
@@ -361,24 +273,16 @@ function albumHandler() {
     .css("color", "gray")
     .css("width", "50%")
     .css("text-align", "center");
-  /*
-  $(".win")
-    .find
-    .children()
-    .width("100%")
-    .css("font-size","large");
-    */
   $("#viewLayer")
     .find("td:first")
     .css("text-align", "right")
     .append("<label><strong>&lt;&lt;</strong></label>")
     .children()
     .click(function() {
-      //        console.log("left click");
+//        console.log("left click");
       if (currentPhotoView == 0)
         currentPhotoView = photos.length - 1;
       else currentPhotoView--;
-      //          console.log(currentPhotoView);
       setPhotoViewLayer(imgListPath[0] + imgListPath[1] +
         photos[currentPhotoView].file);
     });
@@ -387,7 +291,7 @@ function albumHandler() {
     .append("<label><strong>&gt;&gt;</strong></label>")
     .children()
     .click(function() {
-      //        console.log("right click");
+//        console.log("right click");
       if (currentPhotoView == photos.length - 1)
         currentPhotoView = 0;
       else currentPhotoView++;
@@ -395,28 +299,13 @@ function albumHandler() {
       setPhotoViewLayer(imgListPath[0] + imgListPath[1] +
         photos[currentPhotoView].file);
     });
-  //$("#viewLayer").find("td").eq(1).width("33%").css("text-align","center");
-
-  //photoWin.textContent = "Title";
-  //winImg.setAttribute("src", fileName);
-  //winImg.setAttribute("width", photos[k].width);
-  //winImg.setAttribute("height", photos[k].height);
-  //photoWin.appendChild(winImg);
-
-  //console.log("appendChild win");
-  //mainArticle.appendChild(photoWin);
-  //$(".mainArticle").append(photoWin);
 }
 
 function setPhotoViewLayer(src) {
-  let prevPhotoViewWidth //, curWidth, curHeight
-    , continueIf = false;
-  //  console.log("set");
-  //  console.log(`curPhotoViewWidth ${curPhotoViewWidth}`);
+  let prevPhotoViewWidth, continueIf = false;
   if (curPhotoViewWidth != 0) {
     continueIf = true;
     prevPhotoViewWidth = curPhotoViewWidth;
-    //    console.log(`curPhotoViewWidth ${curPhotoViewWidth}, prevPhotoViewWidth ${prevPhotoViewWidth}`);
     $("#viewLayer")
       .find("img")
       .css("opacity", "0.0")
@@ -425,22 +314,13 @@ function setPhotoViewLayer(src) {
   }
   $("#viewLayer")
     .find("img")
-    //      .hide()
-    //      .attr("height", "")
-    //      .hide()
     .attr("src", src)
     .attr("title", photos[currentPhotoView].title)
     .attr("alt", photos[currentPhotoView].alt)
     .attr("height", $(window).height() / 2);
   curPhotoViewHeight = $("#viewLayer").find("img").height();
   curPhotoViewWidth = $("#viewLayer").find("img").width();
-  //  console.log(`_curPhotoViewHeight ${curPhotoViewHeight}, curPhotoViewWidth ${curPhotoViewWidth}`);
   if (continueIf) {
-    //    prevPhotoViewWidth = curPhotoViewWidth;
-    //    curHeight = $("#viewLayer").find("img").height();
-    //    curWidth = $("#viewLayer").find("img").width();
-    //    console.log(`curHeight ${curHeight}? curWidth ${curWidth}`);
-    //    console.log(`prevPhotoViewWidth ${prevPhotoViewWidth}`);
     $("#viewLayer")
       .find("img")
       .removeAttr("height")
@@ -453,14 +333,7 @@ function setPhotoViewLayer(src) {
         height: curPhotoViewHeight,
         width: curPhotoViewWidth
       }, 300);
-    //    console.log(`curPhotoViewWidth ${curPhotoViewWidth}.`);
-  }
-  //  $("#viewLayer")
-  //    .find("img")
-  //      .animate({opacity: 1.0}, 1000)
-  //    .show()
-  //      .animate({opacity: 1.0}, 1000)
-  ;
+  };
   $("#viewLayer")
     .find("td")
     .eq(1)
