@@ -15,12 +15,13 @@
   <link rel="stylesheet" href="css/birthday-date-panel.css" type="text/css">
   <link rel="stylesheet" href="css/page5valid.css" type="text/css">
 
-  <link rel="stylesheet" type="text/css"
-    href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <script type="text/javascript">
     var htmPage = "page5"; // Контакты
   </script>
   <script src="js/jquery-1.12.4.js" charset="utf-8"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/popover.js" type="text/javascript"></script>
   <script src="js/gettime.js"></script>
   <script src="js/cookieHandler.js" charset="utf-8"></script>
   <script src="js/pageCounter.js" charset="utf-8"></script>
@@ -114,7 +115,7 @@
           <ol>
             <li>Введите для сообщения Фамилию Имя Отчество<br>
               <label for="text1">Вас зовут:</label><br>
-              <input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="20" />
+              <input type="text" name="familyNameSurname" value="Фамилия Имя Отчество" size="63" />
               <div class="InvalidMessage" id="valid01">
                 <br>поле ФИО должно быть заполнено
               </div>
@@ -138,12 +139,12 @@
             </li>
             <li>
               <label>Пол:</label><br>
-              <div id="genderOutline">
+              <span id="genderOutline">
                 <label for="radio1">мужской</label>
                 <input type="radio" name="gender" value="male" id="radio1" />
                 <label for="radio2">женский</label>
                 <input type="radio" name="gender" value="famale" id="radio2" />
-              </div>
+              </span><br>
               <div class="InvalidMessage" id="valid11">
                 пол не выбран
               </div>
@@ -152,7 +153,7 @@
             </li>
             <li>Укажите Ваш телефон<br>
               <label for="text2">Ваш телефон (без разделителей):</label><br>
-              <input id="text2" type="text" name="telef" value="+7978" size="12" />
+              <input id="text2" type="text" name="telef" value="+7978" size="63" />
               <div class="InvalidMessage" id="valid20">
                 <br>Телефон заполнен не верно
               </div>
@@ -185,7 +186,7 @@
             </li>
             <li class="birthday">Введите дату Вашего рождения в формате ДД.ММ.ГГГГ<br>
               <label for="birthdate">Дата:</label>
-              <input type="text" id="birthdate" name="birthdate" size="10" maxlength="10" onclick="fillCalender(this);">
+              <input type="text" id="birthdate" name="birthdate" size="25" maxlength="10" onclick="fillCalender(this);">
               <div class="panel">
                 <select id="birthmonth" onchange="fillCalender(this)"></select>
                 <button id="incBtn-5" type="button" onclick="incYear(-5, this);">&lt;&lt;</button>
@@ -200,34 +201,13 @@
               </div>
               <p></p>
             </li>
-            <li
-              data-toggle="popover" title="Tips (popover):"
-              data-content="Для отправки необходимо заполнить поля формы и пройти валидацию по потере фокуса"
-            >
-              <input type="submit" value="Отправить" id="submit-button"
-                class="btn btn-primary" style="pointer-events: none;" />
-              <input type="reset" value="Очистить" onClick="window.location.reload()" />
+            <li>
+              <span id="submitReset">
+                <input type="submit" value="Отправить" id="submit-button" />
+                <input type="reset" value="Очистить" onClick="window.location.reload()" />
+              </span>
             </li>
           </ol>
-          <script
-            src="js/bootstrap.js"
-            type="text/javascript">
-          </script>
-          <script
-            src="js/popover.js"
-            type="text/javascript">
-          </script>
-          <script type="text/javascript">
-            $(function() {
-              $('[data-toggle="popover"]').popover({
-                trigger: 'hover',
-                delay: {
-                  "show": 100,
-                  "hide": 500
-                }
-              });
-            });
-          </script>
         </form>
       </section>
       <section>

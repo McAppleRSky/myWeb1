@@ -504,6 +504,9 @@ function initValidElements() {
   $("input[name=familyNameSurname]")
     .focusin(fnsFocusinHandler)
     .focusout(fnsFocusoutHandler)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "Поле должно содержать три слова разделенных пробелами для прохождения валидации по потере фокуса")
   //.focus()
   ;
   //let genderRadios = document.getElementsByName("gender");
@@ -514,6 +517,11 @@ function initValidElements() {
     genderRadios[i].addEventListener("focusin", genderFocusinHandler);
     genderRadios[i].addEventListener("focusout", genderFocusoutHandler);}
   */
+  $("#genderOutline")
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "Отметьте радиобоксом пол для прохождения валидации по потере фокуса")
+  ;
   $("input[name=gender]")
     .each(function() {
       $(this)
@@ -531,6 +539,9 @@ function initValidElements() {
   $("input[name=telef]")
     .focusin(telefFocusinHandler)
     .focusout(telefFocusoutHandler)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "Заполните номер телефона (от 9 до 11 цифр на +3 и +7) для прохождения валидации по потере фокуса")
     .focus();
   //let mail = form.mail;
   //validadedElements.push(mail);
@@ -541,6 +552,9 @@ function initValidElements() {
   $("input[name=mail]")
     .focusin(mailFocusinHandler)
     .focusout(mailFocusoutHandler)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "Заполните действительный адрес электронной почты для прохождения валидации по потере фокуса")
     .focus();
   //let message = form.message;
   //validadedElements.push(message);
@@ -551,6 +565,9 @@ function initValidElements() {
   $("input[name=message]")
     .focusin(messageFocusinHandler)
     .focusout(messageFocusoutHandler)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "Заполните сообщение, отражающего суть обращения, для прохождения валидации по потере фокуса")
     .focus();
   //let birthday = form.birthdate;
   //validadedElements.push(birthday);
@@ -563,9 +580,36 @@ function initValidElements() {
     .focusin(birthdateFocusinHandler)
     .focusout(birthdateFocusoutHandler)
     //.click(fillCalender($("input[name=birthday]")))
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "заполните дату рождения в формате ДД.ММ.ГГГГ  для прохождения валидации по потере фокуса")
     .focus();
+
+  $("#submitReset")
+    //.attr("onclick", "").unbind("click")
+    //.click(fillCalender($("input[name=birthday]")))
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "Для отправки необходимо заполнить поля формы и пройти валидацию по потере фокуса")
+    .children("input[type=submit]")
+      .css("pointer-events", "none")
+      .addClass("btn")
+      .addClass("btn-success")
+  ;
+  $("#submitReset")
+    .children("input[type=reset]")
+      .addClass("btn")
+      .addClass("btn-warning")
+  ;
   $("input[name=familyNameSurname]")
     .focus();
   //document.querySelector
   //$("#submit-button").disabled=true;
+  $('[data-toggle="popover"]').popover({
+    trigger: 'hover',
+    delay: {
+      "show": 100,
+      "hide": 500
+    }
+  });
 }
