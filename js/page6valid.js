@@ -52,6 +52,7 @@ function validMainForm() {
   //	form.email.style.border = "1px solid gray";
 
   if(ask6Cnt==0){
+  //if(howMany($("select[name=ask6]"))==0){
     form.querySelector("#ask6").style.border = "2px dashed red";
     form.querySelector("#valid61").style.display="inline";
     submitStatus=false;

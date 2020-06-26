@@ -233,7 +233,8 @@ function albumHandler() {
   photoTable.classList.add("blured");
 
   $(".mainArticle").append(photoTable);
-
+  $(".mainArticle")
+    .css("padding-top", "5px");
   $(".mainArticle")
     .append('<div class="win" id="viewLayer"></div>');
   $("#viewLayer")

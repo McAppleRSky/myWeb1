@@ -4,7 +4,7 @@
 }
 
 #top-menu-1 {
-	margin: 40px;
+	margin-top: 40px;
 }
 
 #top-menu-1 ul{
@@ -16,7 +16,7 @@
 #top-menu-1 li{
 	float: left;
 	list-style: none;
-	width: 140px;
+	width: 14%;
 	text-align: center;
 }
 
