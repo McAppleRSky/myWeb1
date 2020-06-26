@@ -40,8 +40,8 @@ function validMainForm() {
   var ask2Cnt = howManyChecked(form.ask2);
   var ask3 = form.ask3.value;
   var ask4Cnt = howMany(form.ask4);
-  var ask5Cnt = howManyNotnone(form.ask5);
-  var ask6Cnt = howMany(form.ask6);
+//  var ask5Cnt = howManyNotnone(form.ask5);
+//  var ask6Cnt = howMany(form.ask6);
   //console.log("Cnt"+ask4Cnt+ask5Cnt+ask6Cnt);
 
   //  var tel_pattern = /^\d{11}$/;
@@ -51,33 +51,70 @@ function validMainForm() {
   //	form.telnum.style.border = "1px solid gray";
   //	form.email.style.border = "1px solid gray";
 
-  if(ask6Cnt==0){
-  //if(howMany($("select[name=ask6]"))==0){
-    form.querySelector("#ask6").style.border = "2px dashed red";
-    form.querySelector("#valid61").style.display="inline";
+//  if(ask6Cnt==0){
+//    console.log($("li#ask6").children("select[name=ask6]").get(0));
+  if(howMany($("li#ask6").children("select[name=ask6]").get(0))==0){
+//    form.querySelector("#ask6").style.border = "2px dashed red";
+    $("#ask6")
+      .css("border", "2px dashed red");
+    $("#valid61")
+      .css("display", "inline")
+//    form.querySelector("#valid61").style.display="inline";
     submitStatus=false;
-    document.getElementsByName('ask6')[0].focus();
+//    document.getElementsByName('ask6')[0].focus();
+    $("li#ask6")
+      .children("select[name=ask6]")
+        .focus();
   }else{
-    form.querySelector("#ask6").style.border = "1px solid gray";
-    form.querySelector("#valid61").style.display="none";
+//    form.querySelector("#ask6").style.border = "1px solid gray";
+    $("#ask6")
+      .css("border", "1px solid gray");
+//    form.querySelector("#valid61").style.display="none";
+    $("#valid61")
+      .css("display", "none")
+
   }
-    if(ask5Cnt==0){
-    form.querySelector("#ask5").style.border = "2px dashed red";
-    form.querySelector("#valid51").style.display="inline";
+//    if(ask5Cnt==0){
+  if(howManyNotnone($("li#ask5").children("select[name=ask5]").get(0))==0){
+//    form.querySelector("#ask5").style.border = "2px dashed red";
+//    form.querySelector("#valid51").style.display="inline";
+    $("#ask5")
+      .css("border", "2px dashed red");
+    $("#valid51")
+      .css("display", "inline")
     submitStatus=false;
-    document.getElementsByName('ask5')[0].focus();
+//    document.getElementsByName('ask5')[0].focus();
+    $("li#ask5")
+      .children("select[name=ask5]")
+        .focus();
   }else{
-    form.querySelector("#ask5").style.border = "1px solid gray";
-    form.querySelector("#valid51").style.display="none";
+//    form.querySelector("#ask5").style.border = "1px solid gray";
+//    form.querySelector("#valid51").style.display="none";
+    $("#ask5")
+      .css("border", "1px solid gray");
+    $("#valid51")
+      .css("display", "none")
   }
-  if(ask4Cnt==0){
-    form.querySelector("#ask4").style.border = "2px dashed red";
-    form.querySelector("#valid41").style.display="inline";
+//  if(ask4Cnt==0){
+  if(howMany($("li#ask4").children("select[name=ask4]").get(0))==0){
+//    form.querySelector("#ask4").style.border = "2px dashed red";
+//    form.querySelector("#valid41").style.display="inline";
+    $("#ask4")
+      .css("border", "2px dashed red");
+    $("#valid41")
+      .css("display", "inline")
     submitStatus=false;
-    document.getElementsByName('ask4')[0].focus();
+//    document.getElementsByName('ask4')[0].focus();
+    $("li#ask4")
+      .children("select[name=ask4]")
+        .focus();
   }else{
-    form.querySelector("#ask4").style.border = "1px solid gray";
-    form.querySelector("#valid41").style.display="none";
+//    form.querySelector("#ask4").style.border = "1px solid gray";
+//    form.querySelector("#valid41").style.display="none";
+    $("#ask4")
+      .css("border", "1px solid gray");
+    $("#valid41")
+      .css("display", "none")
   }
   //С проверкой не менее 30 слов
   if(ask3==""){
