@@ -1,3 +1,4 @@
+var submitStatus = true; //false if def
 
 function howMany(selectObject) {
   var numberSelected = 0;
@@ -29,7 +30,10 @@ function howManyChecked(checkObject){
 
 function validMainForm() {
   let form = document.querySelector('#mainForm');
-  let submitStatus = true; //false if def
+  $("[name=modal]")
+    .removeClass("win")
+    .addClass("win-modal")
+  ;
 
 //  var nicname = form.nicname.value;
 //  var family = form.family.value;
@@ -397,8 +401,6 @@ function validMainForm() {
     //console.log("Проверка mainForm page6 успешно пройдена.");
   }
 
-  return submitStatus;
-
   /*  if (name == "") {
       fail = "Имя пользователя не должно быть пустым";
       form.name.style.border = "2px solid red";
@@ -430,6 +432,28 @@ function validMainForm() {
 }
 
 $(function(){
+  $("main")
+    .append('<div class="win" name="modal"><div>');
+  $("[name=modal]")
+    .css("background-color", "#81ecec")
+    .css("top", "25%")
+    .css("left", "25%")
+    .append("<section>Вы действительно хотите это сделать?</section>")
+    .append(
+'<section><input type="button" name="yesBut" value="Да"><input type="button" name="noBut"value="Нет"></section>'
+    )
+    .children("[name=yesBut]").eq(0)
+      .css("height", "80%")
+      .on
+  ;
+  $("[name=modal]")
+    .children("section").eq(1)
+      .children("input")
+        .css("width","45%")
+        .eq(0)
+  ;
+
+
   $("#mainForm li").eq(0)
     .attr("data-toggle", "popover")
     .attr("title", "Tips (popover):")
