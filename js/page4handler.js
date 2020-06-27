@@ -264,7 +264,7 @@ function albumHandler() {
         .removeClass("blur");
       $("body")
         .removeClass("lock");
-    });;
+    });
   $("#viewLayer")
     .find("table")
     .width("100%")
