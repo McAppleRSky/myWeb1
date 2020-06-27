@@ -28,18 +28,17 @@ function howManyChecked(checkObject){
 }
 
 function validMainForm() {
-  var form = document.querySelector('#mainForm');
-  var submitMessage = document.querySelector('#MainFormSubmitedMessage');
-  var submitStatus = true; //false if def
+  let form = document.querySelector('#mainForm');
+  let submitStatus = true; //false if def
 
-  var nicname = form.nicname.value;
-  var family = form.family.value;
-  var name = form.name.value;
-  var surname = form.surname.value;
-  var ask1 = form.ask1.value;
-  var ask2Cnt = howManyChecked(form.ask2);
-  var ask3 = form.ask3.value;
-  var ask4Cnt = howMany(form.ask4);
+//  var nicname = form.nicname.value;
+//  var family = form.family.value;
+//  var name = form.name.value;
+//  var surname = form.surname.value;
+//  var ask1 = form.ask1.value;
+//  var ask2Cnt = howManyChecked(form.ask2);
+//  var ask3 = form.ask3.value;
+//  var ask4Cnt = howMany(form.ask4);
 //  var ask5Cnt = howManyNotnone(form.ask5);
 //  var ask6Cnt = howMany(form.ask6);
   //console.log("Cnt"+ask4Cnt+ask5Cnt+ask6Cnt);
@@ -117,116 +116,268 @@ function validMainForm() {
       .css("display", "none")
   }
   //С проверкой не менее 30 слов
-  if(ask3==""){
-    form.querySelector("#ask3").style.border = "2px dashed red";
-    form.querySelector("#valid31").style.display="inline";
+//  if(ask3==""){
+  if($("li#ask3").children("textarea[name=ask3]").val()==""){
+//    form.querySelector("#ask3").style.border = "2px dashed red";
+//    form.querySelector("#valid31").style.display="inline";
+    $("#ask3")
+      .css("border", "2px dashed red");
+    $("#valid31")
+      .css("display", "inline")
     submitStatus=false;
-    document.getElementsByName('ask3')[0].focus();
+//    document.getElementsByName('ask3')[0].focus();
+    $("li#ask3")
+      .children("textarea[name=ask3]")
+        .focus();
   }else{
-    form.querySelector("#ask3").style.border = "1px solid gray";
-    form.querySelector("#valid31").style.display="none";
-    console.log(`Слов: ${ask3.split(" ").length}`);
-    if(ask3.split(" ").length<30){
-      form.querySelector("#ask3").style.border = "2px dashed red";
-      form.querySelector("#valid311").style.display="inline";
+//    form.querySelector("#ask3").style.border = "1px solid gray";
+//    form.querySelector("#valid31").style.display="none";
+    $("#ask3")
+      .css("border", "1px solid gray");
+    $("#valid31")
+      .css("display", "none")
+//    console.log(`Слов: ${ask3.split(" ").length}`);
+//    if(ask3.split(" ").length<30){
+    if($("li#ask3").children("textarea[name=ask3]").val().split(" ").length<30){
+//      form.querySelector("#ask3").style.border = "2px dashed red";
+//      form.querySelector("#valid311").style.display="inline";
+      $("#ask3")
+        .css("border", "2px dashed red");
+      $("#valid311")
+        .css("display", "inline")
       submitStatus=false;
-      document.getElementsByName('ask3')[0].focus();
+//      document.getElementsByName('ask3')[0].focus();
+      $("li#ask3")
+        .children("textarea[name=ask3]")
+          .focus();
     }else{
-      form.querySelector("#ask3").style.border = "1px solid gray";
-      form.querySelector("#valid311").style.display="none";
+//      form.querySelector("#ask3").style.border = "1px solid gray";
+//      form.querySelector("#valid311").style.display="none";
+      $("#ask3")
+        .css("border", "1px solid gray");
+      $("#valid311")
+        .css("display", "none")
     }
   }
-    if(ask2Cnt==0){
-    form.querySelector("#ask2").style.border = "2px dashed red";
-    form.querySelector("#valid21").style.display="inline";
+//    if(ask2Cnt==0){
+    if(howManyChecked($("li#ask2").children("input[name=ask2]"))==0){
+//console.log($("li#ask2").children("input[name=ask2]").length);
+//    form.querySelector("#ask2").style.border = "2px dashed red";
+//    form.querySelector("#valid21").style.display="inline";
+    $("#ask2")
+      .css("border", "2px dashed red");
+    $("#valid21")
+      .css("display", "inline")
     submitStatus=false;
-    document.getElementsByName('ask2')[0].focus();
+//    document.getElementsByName('ask2')[0].focus();
+    $("li#ask2")
+      .children("input[name=ask2]")
+        .get(0)
+        .focus();
   }else{
-    form.querySelector("#ask2").style.border = "1px solid gray";
-    form.querySelector("#valid21").style.display="none";
+//    form.querySelector("#ask2").style.border = "1px solid gray";
+//    form.querySelector("#valid21").style.display="none";
+    $("#ask2")
+      .css("border", "1px solid gray");
+    $("#valid21")
+      .css("display", "none")
   }
-  if(ask1==""){
-    form.querySelector("#ask1").style.border = "2px dashed red";
-    form.querySelector("#valid11").style.display="inline";
+//  var ask1 = form.ask1.value;
+//  if(ask1==""){
+//  if($("li#ask1").children("input[name=ask1]").val()==""){
+  if(form.ask1.value==""){
+//    form.querySelector("#ask1").style.border = "2px dashed red";
+//    form.querySelector("#valid11").style.display="inline";
+    $("#ask1")
+      .css("border", "2px dashed red");
+    $("#valid11")
+      .css("display", "inline")
     submitStatus=false;
-    document.getElementsByName('ask1')[0].focus();
+//    document.getElementsByName('ask1')[0].focus();
+    $("li#ask1")
+      .children("input[name=ask1]")
+        .get(0)
+        .focus();
   }else{
-    form.querySelector("#ask1").style.border = "1px solid gray";
-    form.querySelector("#valid11").style.display="none";
+//    form.querySelector("#ask1").style.border = "1px solid gray";
+//    form.querySelector("#valid11").style.display="none";
+    $("#ask1")
+      .css("border", "1px solid gray");
+    $("#valid11")
+      .css("display", "none")
   }
 
-  if (nicname == "") {
-    form.nicname.style.border = "2px dashed red";
-    form.querySelector("#valid01").style.display="inline";
+//  if (nicname == "") {
+  if ($("input[name=nicname]").val() == "") {
+//    form.nicname.style.border = "2px dashed red";
+//    form.querySelector("#valid01").style.display="inline";
+    $("input[name=nicname]")
+      .css("border", "2px dashed red");
+    $("#valid01")
+      .css("display", "inline")
     submitStatus=false;
-    form.nicname.focus();
+//    form.nicname.focus();
+    $("input[name=nicname]")
+      .focus();
   } else {
-    form.nicname.style.border = "1px solid gray";
-    form.querySelector("#valid01").style.display="none";
-    if (nicname.length<3) {
-      form.nicname.style.border = "2px dashed red";
-      form.querySelector("#valid02").style.display="inline";
+//    form.nicname.style.border = "1px solid gray";
+//    form.querySelector("#valid01").style.display="none";
+    $("input[name=nicname]")
+      .css("border", "1px solid gray");
+    $("#valid01")
+      .css("display", "none")
+//    if (nicname.length<3) {
+    if ($("input[name=nicname]").val().length<3) {
+//      form.nicname.style.border = "2px dashed red";
+//      form.querySelector("#valid02").style.display="inline";
+      $("input[name=nicname]")
+        .css("border", "2px dashed red");
+      $("#valid02")
+        .css("display", "inline")
       submitStatus=false;
-      form.nicname.focus();
+//      form.nicname.focus();
+      $("input[name=nicname]")
+        .focus();
     } else {
-      form.nicname.style.border = "1px solid gray";
-      form.querySelector("#valid02").style.display="none";
-      if(nicname == "nicname"){
-        form.nicname.style.border = "2px dashed red";
-        form.querySelector("#valid03").style.display="inline";
+//      form.nicname.style.border = "1px solid gray";
+//      form.querySelector("#valid02").style.display="none";
+      $("input[name=nicname]")
+        .css("border", "1px solid gray");
+      $("#valid02")
+        .css("display", "none")
+//      if(nicname == "nicname"){
+      if ($("input[name=nicname]").val() == "nicname") {
+//        form.nicname.style.border = "2px dashed red";
+//        form.querySelector("#valid03").style.display="inline";
+        $("input[name=nicname]")
+          .css("border", "2px dashed red");
+        $("#valid03")
+          .css("display", "inline")
         submitStatus=false;
-        form.nicname.focus();
+//        form.nicname.focus();
+        $("input[name=nicname]")
+          .focus();
       }else{
-        form.nicname.style.border = "1px solid gray";
-        form.querySelector("#valid03").style.display="none";
-        if(family == ""){
-          form.family.style.border = "2px dashed red";
-          form.querySelector("#valid011").style.display="inline";
+//        form.nicname.style.border = "1px solid gray";
+//        form.querySelector("#valid03").style.display="none";
+        $("input[name=nicname]")
+          .css("border", "1px solid gray");
+        $("#valid03")
+          .css("display", "none")
+//        if(family == ""){
+        if ($("input[name=family]").val() == "") {
+//          form.family.style.border = "2px dashed red";
+//          form.querySelector("#valid011").style.display="inline";
+          $("input[name=family]")
+            .css("border", "2px dashed red");
+          $("#valid011")
+            .css("display", "inline")
           submitStatus=false;
-          form.family.focus();
+//          form.family.focus();
+          $("input[name=family]")
+            .focus();
         }else{
-          form.family.style.border = "1px solid gray";
-          form.querySelector("#valid011").style.display="none";
-          if(family.length<3){
-            form.family.style.border = "2px dashed red";
-            form.querySelector("#valid012").style.display="inline";
+//          form.family.style.border = "1px solid gray";
+//          form.querySelector("#valid011").style.display="none";
+          $("input[name=family]")
+            .css("border", "1px solid gray");
+          $("#valid011")
+            .css("display", "none")
+//          if(family.length<3){
+          if ($("input[name=family]").val().length<3) {
+//            form.family.style.border = "2px dashed red";
+//            form.querySelector("#valid012").style.display="inline";
+            $("input[name=family]")
+              .css("border", "2px dashed red");
+            $("#valid012")
+              .css("display", "inline")
             submitStatus=false;
-            form.family.focus();
+//            form.family.focus();
+            $("input[name=family]")
+              .focus();
           }else{
-            form.family.style.border = "1px solid gray";
-            form.querySelector("#valid012").style.display="none";
-            if(name == ""){
-              form.name.style.border = "2px dashed red";
-              form.querySelector("#valid021").style.display="inline";
+//            form.family.style.border = "1px solid gray";
+//            form.querySelector("#valid012").style.display="none";
+            $("input[name=family]")
+              .css("border", "1px solid gray");
+            $("#valid012")
+              .css("display", "none")
+//          if(name == ""){
+          if ($("input[name=name]").val() == "") {
+//              form.name.style.border = "2px dashed red";
+//              form.querySelector("#valid021").style.display="inline";
+              $("input[name=name]")
+                .css("border", "2px dashed red");
+              $("#valid021")
+                .css("display", "inline")
               submitStatus=false;
-              form.name.focus();
+//              form.name.focus();
+              $("input[name=name]")
+                .focus();
             }else{
-              form.name.style.border = "1px solid gray";
-              form.querySelector("#valid021").style.display="none";
-              if(name.length<3){
-                form.name.style.border = "2px dashed red";
-                form.querySelector("#valid022").style.display="inline";
+//              form.name.style.border = "1px solid gray";
+//              form.querySelector("#valid021").style.display="none";
+              $("input[name=name]")
+                .css("border", "1px solid gray");
+              $("#valid021")
+                .css("display", "none")
+//              if(name.length<3){
+              if ($("input[name=name]").val().length<3) {
+//                form.name.style.border = "2px dashed red";
+//                form.querySelector("#valid022").style.display="inline";
+                $("input[name=name]")
+                  .css("border", "2px dashed red");
+                $("#valid022")
+                  .css("display", "inline")
                 submitStatus=false;
-                form.name.focus();
+//                form.name.focus();
+                $("input[name=name]")
+                  .focus();
               }else{
-                form.name.style.border = "1px solid gray";
-                form.querySelector("#valid022").style.display="none";
-                if(surname == ""){
-                  form.surname.style.border = "2px dashed red";
-                  form.querySelector("#valid031").style.display="inline";
+//                form.name.style.border = "1px solid gray";
+//                form.querySelector("#valid022").style.display="none";
+                $("input[name=name]")
+                  .css("border", "1px solid gray");
+                $("#valid022")
+                  .css("display", "none")
+//                if(surname == ""){
+                if ($("input[name=surname]").val() == "") {
+//                  form.surname.style.border = "2px dashed red";
+//                  form.querySelector("#valid031").style.display="inline";
+                  $("input[name=surname]")
+                    .css("border", "2px dashed red");
+                  $("#valid031")
+                    .css("display", "inline")
                   submitStatus=false;
-                  form.surname.focus();
+//                  form.surname.focus();
+                  $("input[name=surname]")
+                    .focus();
                 }else{
-                  form.surname.style.border = "1px solid gray";
-                  form.querySelector("#valid031").style.display="none";
-                  if(surname.length<3){
-                    form.name.style.border = "2px dashed red";
-                    form.querySelector("#valid032").style.display="inline";
+//                  form.surname.style.border = "1px solid gray";
+//                  form.querySelector("#valid031").style.display="none";
+                  $("input[name=surname]")
+                    .css("border", "1px solid gray");
+                  $("#valid031")
+                    .css("display", "none")
+//                  if(surname.length<3){
+                  if ($("input[name=surname]").val().length<3) {
+//                    form.name.style.border = "2px dashed red";
+//                    form.querySelector("#valid032").style.display="inline";
+                    $("input[name=surname]")
+                      .css("border", "2px dashed red");
+                    $("#valid032")
+                      .css("display", "inline")
                     submitStatus=false;
-                    form.surname.focus();
+//                    form.surname.focus();
+                    $("input[name=surname]")
+                      .focus();
                   }else{
-                    form.name.style.border = "1px solid gray";
-                    form.querySelector("#valid032").style.display="none";
+//                    form.name.style.border = "1px solid gray";
+//                    form.querySelector("#valid032").style.display="none";
+                    $("input[name=surname]")
+                      .css("border", "1px solid gray");
+                    $("#valid032")
+                      .css("display", "none")
                   }
                 }
               }
@@ -239,7 +390,10 @@ function validMainForm() {
 
   if(submitStatus){
     form.style.display="none";
-    submitMessage.style.display="inline";
+//    var submitMessage = document.querySelector('#MainFormSubmitedMessage');
+//    submitMessage.style.display="inline";
+    $("#MainFormSubmitedMessage")
+      .css("display", "inline")
     //console.log("Проверка mainForm page6 успешно пройдена.");
   }
 
@@ -274,3 +428,48 @@ function validMainForm() {
   //else {
   //}
 }
+
+$(function(){
+  $("#mainForm li").eq(0)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content",
+"все поля должны быть заполнены словами не менее из 3 букв, не должны быть заполнены словами Nicname, Family, Name, Surname. Nicname заполняется латиницей для соместимости без utf-8"
+  );
+  $("#mainForm li").eq(2)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "поле должно быть отмечено");
+  $("#mainForm li").eq(3)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "варианты должны быть выбраны")
+  ;
+  $("#mainForm li").eq(4)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "ответ должен быть длинной не менее 30 символов")
+  ;
+  $("#mainForm li").eq(5)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "должны быть отмечены несколько варриантов")
+  ;
+  $("#mainForm li").eq(6)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "ответ нужно выбрать")
+  ;
+  $("#mainForm li").eq(7)
+    .attr("data-toggle", "popover")
+    .attr("title", "Tips (popover):")
+    .attr("data-content", "должны быть отмечены несколько варриантов")
+  ;
+  $('[data-toggle="popover"]').popover({
+    trigger: 'hover',
+    delay: {
+      "show": 100,
+      "hide": 500
+    }
+  });
+});
