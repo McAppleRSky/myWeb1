@@ -1,0 +1,293 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Мой персональный Веб-сайт
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "css/main.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-1-common.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-page5.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-1-hover.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/page5DefaultFormStyle.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/birthday-date-panel.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/page5valid.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/postmaster.css", :rel => "stylesheet"}/
+    :javascript
+      var htmPage = "page5"; // &#x41A;&#x43E;&#x43D;&#x442;&#x430;&#x43A;&#x442;&#x44B;
+    %script{:charset => "utf-8", :src => "js/jquery-1.12.4.js"}
+    %script{:src => "js/bootstrap.js", :type => "text/javascript"}
+    %script{:src => "js/popover.js", :type => "text/javascript"}
+    %script{:src => "js/gettime.js"}
+    %script{:charset => "utf-8", :src => "js/cookieHandler.js"}
+    %script{:charset => "utf-8", :src => "js/pageCounter.js"}
+    %script{:src => "js/calenderElement.js"}
+    %script{:src => "js/page5valid.js"}
+  %body
+    %header
+      %nav#top-menu-1
+        %script{:src => "js/topMenuHandler.js"}
+        %ul
+          %li#li-menu0{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "index.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Главная
+              %br>/
+              страница
+            %ul
+              %li.li-menu1
+                %a{:href => "page1.htm"} Обо мне
+              %li.li-menu2
+                %a{:href => "page2.htm"}
+                  Мои
+                  %br>/
+                  интересы
+              %li.li-menu3
+                %a{:href => "page3.htm"} Учеба
+              %li.li-menu4
+                %a{:href => "page4.htm"} Фотоальбом
+              %li.li-menu5
+                %a{:href => "#"} Контакты
+              %li.li-menu6
+                %a{:href => "page6.htm"}
+                  Тест
+                  %br>/
+                  по дисциплине
+          %li.li-menu1{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page1.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Обо мне
+          %li.li-menu2{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page2.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Мои
+              %br>/
+              интересы
+            %ul
+              %li
+                %a{:href => "page2.htm#page2-1"} Мое хобби
+              %li
+                %a{:href => "page2.htm#page2-2"} Мои любимые сайты
+              %li
+                %a{:href => "page2.htm#page2-3"} Мои любимые книги
+              %li
+                %a{:href => "page2.htm#page2-4"} Моя любимая музыка
+              %li
+                %a{:href => "page2.htm#page2-5"} Мои любимые фильмы
+          %li.li-menu3{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page3.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Учеба
+          %li.li-menu4{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page4.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Фотоальбом
+          %li.li-menu5{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "#"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Контакты
+          %li.li-menu6{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page6.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Тест
+              %br>/
+              по дисциплине
+      %figure
+        %img{:alt => "фотография Борисова Е.А.", :src => "img/normal.jpg"}/
+        %figcaption#idFigcaptionHeader фотография
+      %h1 Персональный сайт
+    %aside
+      %h3 здесь могла быть ваша реклама:
+      %section
+        %h4 рекламодатель1
+        %p
+          рекламная
+          %br>/
+          плоскость 1
+      %section
+        %h4 рекламодатель2
+        %p
+          %q Телеведущий Владимир Соловьев завел телеграм-канал.
+          Ссылка для подписания
+          %a{:href => "t.me/SolovievLive"} https://t.me/SolovievLive
+          \.
+    %main
+      %section
+        %h2 Контакты со мной
+        %p Контакты со мной возможны по электронной почте, популярными мессенджерами, на домашний адрес:
+      %article
+        %section
+          %figure
+            %figcaption
+              %h2 Форма отправки &lt;/figure&gt; сообщения
+          #MessageFormSubmitedMessage
+            %p Сообщение отправлена (Form Submited)
+          %form#messageForm{"accept-charset" => "utf-8", :action => "mailto:mcapple@yandex.ru", :enctype => "text/plain", :method => "post", :onsubmit => "validMessageForm();"}
+            Для отправки сообщения на мой личный почтоый ящик:
+            %ol
+              %li
+                Введите для сообщения Фамилию Имя Отчество
+                %br/
+                %label{:for => "text1"} Вас зовут:
+                %br/
+                %input{:name => "familyNameSurname", :size => "63", :type => "text", :value => "Фамилия Имя Отчество"}/
+                #valid01.InvalidMessage
+                  %br>/
+                  поле ФИО должно быть заполнено
+                #valid02.InvalidMessage
+                  %br>/
+                  поле ФИО не может быть заполнено пробелом
+                #valid03.InvalidMessage
+                  %br>/
+                  поле ФИО не может начинаться с пробела
+                #valid04.InvalidMessage
+                  %br>/
+                  поле ФИО не может быть заполнено словами Фамилия Имя Отчество
+                #valid05.InvalidMessage
+                  %br>/
+                  Необходимо заполнить Фамилию Имя Отчество (зполнено менее 3 слов)
+                #valid06.InvalidMessage
+                  %br>/
+                  Необходимо заполнить Фамилию Имя Отчество (зполнено более 3 слов)
+                %br.PrevalidMessage/
+                %br/
+              %li
+                %label Пол:
+                %br/
+                %span#genderOutline
+                  %label{:for => "radio1"} мужской
+                  %input#radio1{:name => "gender", :type => "radio", :value => "male"}/
+                  %label{:for => "radio2"} женский
+                  %input#radio2{:name => "gender", :type => "radio", :value => "famale"}/
+                %br/
+                #valid11.InvalidMessage
+                  пол не выбран
+                %br.PrevalidMessage/
+                %br/
+              %li
+                Укажите Ваш телефон
+                %br/
+                %label{:for => "text2"} Ваш телефон (без разделителей):
+                %br/
+                %input#text2{:name => "telef", :size => "63", :type => "text", :value => "+7978"}/
+                #valid20.InvalidMessage
+                  %br>/
+                  Телефон заполнен не верно
+                #valid201.InvalidMessage
+                  %br>/
+                  Номер телефона можно вводить от 9 до 11 цифр (на +3 и +7)
+                %br.PrevalidMessage/
+                %br/
+              %li
+                Укажите Ваш адрес электронной почты
+                %br/
+                %label{:for => "text3"} Ваш Email:
+                %br/
+                %input#text3{:name => "mail", :size => "63", :type => "text", :value => "name@domain"}/
+                #valid21.InvalidMessage
+                  %br>/
+                  Email заполнен не верно
+                %br.PrevalidMessage/
+                %br/
+              %li
+                Напишите сообщение.
+                %br/
+                %label{:for => "text4"} Ввести сообщение здесь:
+                %br/
+                %input#text4{:name => "message", :size => "63", :type => "text", :value => "текст сообщения"}/
+                #valid31.InvalidMessage
+                  %br>/
+                  сообщение не может быть пустое
+                #valid32.InvalidMessage
+                  %br>/
+                  Текст сообщения - неприемлемые слова, изложите суть сообщения для отправки
+                %br.PrevalidMessage/
+                %br/
+              %li.birthday
+                Введите дату Вашего рождения в формате ДД.ММ.ГГГГ
+                %br/
+                %label{:for => "birthdate"} Дата:
+                %input#birthdate{:maxlength => "10", :name => "birthdate", :onclick => "fillCalender(this);", :size => "25", :type => "text"}/
+                .panel
+                  %select#birthmonth{:onchange => "fillCalender(this)"}
+                  %button#incBtn-5{:onclick => "incYear(-5, this);", :type => "button"} &lt;&lt;
+                  %button#incBtn-1{:onclick => "incYear(-1, this);", :type => "button"} &lt;
+                  %select#birthyear{:onchange => "fillCalender(this);"}
+                  %button#incBtn1{:onclick => "incYear(1, this);", :type => "button"} &gt;
+                  %button#incBtn5{:onclick => "incYear(5, this);", :type => "button"} &gt;&gt;
+                  #days-space
+                #valid41.InvalidMessage
+                  %br>/
+                  Дата не заполнена
+                %p
+              %li
+                %span#submitReset
+                  %input#submit-button{:type => "submit", :value => "Отправить"}/
+                  %input{:onclick => "window.location.reload()", :type => "reset", :value => "Очистить"}/
+        %section
+          %h2 Электронная почта:
+          %address
+            %br>/
+            Yandex
+            %a{:href => "mailto:mcapple@yandex.ru"} mcapple@yandex.ru
+          %address
+            %br>/
+            Корпоративная
+            %a{:href => "mailto:e.borisov@krtech.ru"} e.borisov@krtech.ru
+          %address
+            %br>/
+            Правительственная
+            %a{:href => "mailto:e.borisov@sev.gov.ru"} e.borisov@sev.gov.ru
+        %section
+          %h3 Телефоны:
+          %ul
+            %li
+              личный:
+              = succeed ";" do
+                %span.tel +7(978)816-74-86
+            %li
+              служебный:
+              = succeed "." do
+                %span.tel +7(978)000-05-31
+        %section
+          %h3 Мессенджеры:
+          %ul
+            %li
+              %a{"data-tooltip" => "McApple R. Sky в Telegram", :href => "https://t.me/mcapple", :rel => "nofollow", :target => "_blank"}
+                %span.fa.fa-telegram Telegram;
+                /
+            %li Viber;
+            %li WhatsApp;
+            %li Skype;
+            %li ТамТам;
+            %li Диалог-М.
+        %section
+          %h3 почтоый адрес:
+          %address ул. Володарского, д. 20/3, кв. 1, г. Симферополь, Республика Крым, 295001
+          %p
+    %footer
+      %table.fullTableMenu
+        %tr
+          %td.tdMenu10
+            \&lt;
+            %a{:href => "page4.htm"}> prev
+            \&gt;
+          %td#tdMenu80
+          %td.tdMenu10
+            \&lt;
+            %a{:href => "page6.htm"}> next
+            \&gt;
+      ®
+      = succeed "," do
+        %time{:datetime => "2019-11-13"} 13.11.19 г.
+      %br/
+      Автор:
+      %a{:href => "mailto:mcapple@yandex.ru"} Е.Борисов
+      %table#tDateBar
+        %tr
+          %td
+            %div
+        %tr
+          %td
+            %div

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Мой персональный Веб-сайт</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-1-common.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-page6.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
+	<link rel="stylesheet" href="css/page6DefaultFormStyle.css" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" >
+	<link rel="stylesheet" href="css/modal.css" type="text/css" >
+	<link rel="stylesheet" href="css/postmaster.css">
+	<script type="text/javascript">
+		var htmPage = "page6"; // Тест по дисциплине
+	</script>
+	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/popover.js" type="text/javascript"></script>
+	<script src="js/gettime.js"></script>
+	<script src="js/cookieHandler.js" charset="utf-8"></script>
+	<script src="js/pageCounter.js" charset="utf-8"></script>
+	<script src="js/page6valid.js"></script>
+</head>
+
+<body>
+	<!--onload="var v_date_init = new date();tm_init = v_date_init.getTime(); test_tm;"-->
+	<header class="blured">
+		<nav id="top-menu-1">
+			<script src="js/topMenuHandler.js"></script>
+			<ul>
+				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
+					<a href="index.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Главная<br>страница</a>
+					<ul>
+						<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
+						<li class="li-menu2"><a href="page2.htm">Мои<br>интересы</a></li>
+						<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
+						<li class="li-menu4"><a href="page4.htm">Фотоальбом</a></li>
+						<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
+						<li class="li-menu6"><a href="#">Тест<br>по дисциплине</a></li>
+					</ul>
+				</li>
+				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Обо мне</a></li>
+				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page2.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Мои<br>интересы</a>
+					<ul>
+						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
+						<li><a href="page2.htm#page2-2">Мои любимые сайты</a></li>
+						<li><a href="page2.htm#page2-3">Мои любимые книги</a></li>
+						<li><a href="page2.htm#page2-4">Моя любимая музыка</a></li>
+						<li><a href="page2.htm#page2-5">Мои любимые фильмы</a></li>
+					</ul>
+				</li>
+				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Учеба</a></li>
+				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Фотоальбом</a></li>
+				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Контакты</a></li>
+				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Тест<br>по дисциплине</a></li>
+			</ul>
+		</nav>
+
+		<figure>
+			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+			<figcaption id="idFigcaptionHeader">фотография</figcaption>
+		</figure>
+		<h1>Персональный сайт</h1>
+	</header>
+	<aside class="blured">
+		<h3>здесь могла быть ваша реклама:</h3>
+		<section>
+			<h4>рекламодатель1</h4>
+			<p>рекламная<br>плоскость 1</p>
+		</section>
+		<section>
+			<h4>рекламодатель2</h4>
+			<p><q>Телеведущий Владимир Соловьев завел телеграм-канал.</q> Ссылка для подписания <a href="t.me/SolovievLive">https://t.me/SolovievLive</a> .</p>
+		</section>
+	</aside>
+	<main class="blured">
+		<article>
+			<section>
+				<h2>Тесты по дисциплинам СевГУ:</h2>
+			</section>
+			<section>
+				<figure>
+					<figcaption>
+						<h2>Тест по дисциплине "Веб-технологии":</h2>
+					</figcaption>
+					<div id="MainFormSubmitedMessage">
+						<p>Форма теста по дисциплине "Веб-технологии" отправлена (Form Submited)</p>
+					</div>
+					<form id="mainForm" action="mailto:mcapple@yandex.ru" method="post" enctype="text/plain" accept-charset="utf-8" onsubmit="return validMainForm();">
+						<p>Для решения теста заполнитете поля с личными данными на себя, заполните тест и нажмите кнопку отправить для отправки теста на мою электронную почту на проверку
+						</p>
+						<ul>
+							<li>Личные данные:
+								<label for="text1">Ваш nicname:</label><br>
+								<input id="text1" type="text" name="nicname" value="nicname" size="20"><br>
+								<label for="text2">Фамилия:</label>
+								<input id="text2" type="text" name="family" value="">
+								<label for="text3">Имя:</label>
+								<input id="text3" type="text" name="name" value="">
+								<label for="text4">Отчество:</label>
+								<input id="text4" type="text" name="surname" value="">
+								<div class="InvalidMessage" id="valid01">
+									<br>поле "Nicname" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой
+								</div>
+								<div class="InvalidMessage" id="valid02">
+									<br>поле "Nicname" не может быть заполнено словом менее 3 букв
+								</div>
+								<div class="InvalidMessage" id="valid03">
+									<br>Nicname должен быть уникальным по этому значение "nicname" в поле не уникально и не годится
+								</div>
+								<div class="InvalidMessage" id="valid011">
+									<br>поле "Family" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой
+								</div>
+								<div class="InvalidMessage" id="valid012">
+									<br>поле "Family" не может быть заполнено словом менее 3 букв
+								</div>
+								<div class="InvalidMessage" id="valid021">
+									<br>поле "Name" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой"
+								</div>
+								<div class="InvalidMessage" id="valid022">
+									<br>поле "Name" не может быть заполнено словом менее 3 букв
+								</div>
+								<div class="InvalidMessage" id="valid031">
+									<br>поле "Surname" должно быть заполнено для идентификации в случае отсутствия поддержки utf-8 системой"
+								</div>
+								<div class="InvalidMessage" id="valid032">
+									<br>поле "Surname" не может быть заполнено словом менее 3 букв
+								</div>
+								<br class="PrevalidMessage">
+								<br>
+							</li>
+							<li>Вопросы по 1 части дисциплины:
+								<ol>
+									<li id="ask1">
+										<h3>Что такое URL? Расскажите о формате URL?</h3>
+										<label>Варианты ответа:</label><br>
+										<input id="radio1" type="radio" name="ask1" value="ans11">
+										<label for="radio1">система унифицированных адресов электронных ресурсов, или единообразный определитель местонахождения ресурса;</label>
+										<br>
+										<input id="radio2" type="radio" name="ask1" value="ans12">
+										<label for="radio2">это постоянная последовательность символов, идентифицирующая абстрактный или физический ресурс;</label>
+										<br>
+										<input id="radio3" type="radio" name="ask1" value="ans13">
+										<label for="radio3">последовательность символов, идентифицирующая абстрактный или физический ресурс.</label>
+										<div class="InvalidMessage" id="valid11">
+											<br>Первый вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
+									</li>
+									<li id="ask2">
+										<h3>Какие атрибуты используются в тегах таблиц HTML?</h3>
+										<label>Варианты ответа:</label><br>
+										<input id="checkbox1" type="checkbox" name="ask2" value="ans21">
+										<label for="checkbox1">bgcolor;</label><br>
+										<input id="checkbox2" type="checkbox" name="ask2" value="ans22">
+										<label for="checkbox2">bordercolor;</label><br>
+										<input id="checkbox3" type="checkbox" name="ask2" value="ans23">
+										<label for="checkbox3">frame;</label><br>
+										<input id="checkbox4" type="checkbox" name="ask2" value="ans24">
+										<label for="checkbox4">rules;</label><br>
+										<input id="checkbox5" type="checkbox" name="ask2" value="ans25">
+										<label for="checkbox5">summary;</label><br>
+										<input id="checkbox6" type="checkbox" name="ask2" value="ans26">
+										<label for="checkbox6">charoff;</label><br>
+										<input id="checkbox7" type="checkbox" name="ask2" value="ans27">
+										<label for="checkbox7">axis;</label><br>
+										<input id="checkbox8" type="checkbox" name="ask2" value="ans28">
+										<label for="checkbox8">nowrap;</label><br>
+										<input id="checkbox9" type="checkbox" name="ask2" value="ans29">
+										<label for="checkbox9">enctype.</label>
+										<div class="InvalidMessage" id="valid21">
+											<br>Второй вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
+									</li>
+									<li id="ask3">
+										<h3>В чем состоят основные отличия HTML и XHTML?</h3>
+										<label>Впишите ответ:</label><br>
+										<textarea name="ask3" rows="8" cols="50" form="mainForm"></textarea>
+										<div class="InvalidMessage" id="valid31">
+											<br>Третий вопрос не отвечен
+										</div>
+										<div class="InvalidMessage" id="valid311">
+											<br>Третий вопрос должен содержать не менее 30 слов
+										</div>
+										<br class="PrevalidMessage">
+										<br>
+									</li>
+									<li id="ask4">
+										<h3>Какие атрибуты имеет тег &lt;FORM&gt; и для чего они используются?</h3>
+										<label>Варианты ответа:</label><br>
+										<select size="6" name="ask4" multiple>
+											<option value="ans41">accept-charset</option>
+											<option value="ans42">action</option>
+											<option value="ans43">autocoplete</option>
+											<option value="ans44">enctype</option>
+											<option value="ans45">method</option>
+											<option value="ans46">novalidate</option>
+											<option value="ans47">target</option>
+										</select>
+										<div class="InvalidMessage" id="valid41">
+											<br>Четвертый вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
+									</li>
+									<li id="ask5">
+										<h3>Для чего используется тег &lt;SELECT&gt;?</h3>
+										<select name="ask5">
+											<option value="none" hidden="">Выберите ответ</option>
+											<option value="ans51">организации в формах списков выбора </option>
+											<option value="ans52">организации выпадающих списков выбора</option>
+											<option value="ans53">организации в формах списков выбора и выпадающих списков выбора</option>
+										</select>
+										<div class="InvalidMessage" id="valid51">
+											<br>Пятый вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
+									</li>
+									<li id="ask6">
+										<h3>Как выполняется группировка элементов списка выбора в выпадающих списках?</h3>
+										<label>Варианты ответа:</label><br>
+										<select multiple size="6" name="ask6">
+											<optgroup label="">
+												<option value="ask61">Для выполнения группировки элементов списка выбора используется тэг &lt;optgroup&gt;</option>
+												<option value="ask62">Для группировки элементов списка выбора используется тэг &lt;colgroup&gt;</option>
+											</optgroup>
+											<optgroup label="">
+												<option value="ask63">(закрывающий тэг обязательный)</option>
+												<option value="ask64">(закрывающий тэг не обязательный)</option>
+											</optgroup>
+										</select>
+										<div class="InvalidMessage" id="valid61">
+											<br>Шестой вопрос не отвечен
+										</div>
+										<br class="PrevalidMessage">
+										<br>
+									</li>
+								</ol>
+							</li>
+						</ul>
+						<input type="submit" value="submit">
+						<input type="reset" value="reset" onClick="window.location.reload()">
+					</form>
+				</figure>
+			</section>
+			<section>
+				<h2>Тест по дисциплине "Веб-технологии" 2:</h2>
+				<form class="" action="index.html" method="post">
+					<p>
+						<label for="text5">Введите свое имя</label><br>
+						<input id="text5" type="text" name="name1" value=""><br>
+					</p>
+					<p>
+						<label>Выберите группу</label>
+					</p>
+					<ol>
+						<li>
+						</li>
+					</ol>
+					<p></p>
+				</form>
+
+				<div>
+					<textarea name="IS" rows="10" cols="60">Севастопольский государственный университет, Кафедра ИС</textarea>
+				</div>
+			</section>
+		</article>
+		<section>
+			<pre>--------------------------------------------
+*для обработки (валидации) форм на текущей странице должен работать javaScript.
+<noscript class="tstjs">JavaScript working ? - NO !</noscript>
+Негатвный статус разрешения браузером обработки js кода
+отображается в документе строкой выше. Позитивный статус
+выводится в консоль браузера (доступна в меню разработчика).</pre>
+			<script src="js/testAllowJsBrowserLog.js"></script>
+		</section>
+	</main>
+	<footer class="blured">
+		<table class="fullTableMenu">
+			<tr>
+				<td class="tdMenu10">&lt;<a href="page5.htm">prev</a>&gt;</td>
+				<td id="tdMenu80"></td>
+				<td class="tdMenu10"></td>
+			</tr>
+		</table>
+		&reg; <time datetime="2019-11-13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
+		<table id="tDateBar">
+			<tr>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+		</table>
+	</footer>
+</body>
+
+</html>

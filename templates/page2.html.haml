@@ -1,0 +1,228 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %title Мой персональный Веб-сайт
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "css/main.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-1-common.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-page2.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-1-hover.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/postmaster.css", :rel => "stylesheet"}/
+    :javascript
+      var htmPage = "page2"; //&#x41C;&#x43E;&#x438; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x435;&#x441;&#x44B;
+    %script{:charset => "utf-8", :src => "js/jquery-1.12.4.js"}
+    %script{:src => "js/gettime.js"}
+    %script{:charset => "utf-8", :src => "js/cookieHandler.js"}
+    %script{:charset => "utf-8", :src => "js/pageCounter.js"}
+    %script{:src => "js/page2handler.js"}
+  %body
+    %header
+      %nav#top-menu-1
+        %script{:src => "js/topMenuHandler.js"}
+        %ul
+          %li#li-menu0{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "index.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Главная
+              %br>/
+              страница
+            %ul
+              %li.li-menu1
+                %a{:href => "page1.htm"} Обо мне
+              %li.li-menu2
+                %a{:href => "#"}
+                  Мои
+                  %br>/
+                  интересы
+              %li.li-menu3
+                %a{:href => "page3.htm"} Учеба
+              %li.li-menu4
+                %a{:href => "page4.htm"} Фотоальбом
+              %li.li-menu5
+                %a{:href => "page5.htm"} Контакты
+              %li.li-menu6
+                %a{:href => "page6.htm"}
+                  Тест
+                  %br>/
+                  по дисциплине
+          %li.li-menu1{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page1.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Обо мне
+          %li.li-menu2{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "#"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Мои
+              %br>/
+              интересы
+            %ul
+              %li
+                %a{:href => "page2.htm#page2-1"} Мое хобби
+              %li
+                %a{:href => "page2.htm#page2-2"} Мои любимые сайты
+              %li
+                %a{:href => "page2.htm#page2-3"} Мои любимые книги
+              %li
+                %a{:href => "page2.htm#page2-4"} Моя любимая музыка
+              %li
+                %a{:href => "page2.htm#page2-5"} Мои любимые фильмы
+          %li.li-menu3{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page3.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Учеба
+          %li.li-menu4{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page4.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Фотоальбом
+          %li.li-menu5{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page5.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Контакты
+          %li.li-menu6{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page6.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Тест
+              %br>/
+              по дисциплине
+      %figure
+        %img{:alt => "фотография Борисова Е.А.", :src => "img/normal.jpg"}/
+        %figcaption#idFigcaptionHeader фотография
+      %h1 Персональный сайт
+    %aside
+      %h3 здесь могла быть ваша реклама:
+      %section
+        %h4 рекламодатель1
+        %p
+          рекламная
+          %br>/
+          плоскость 1
+      %section
+        %h4 рекламодатель2
+        %p
+          %q Телеведущий Владимир Соловьев завел телеграм-канал.
+          Ссылка для подписания
+          %a{:href => "t.me/SolovievLive"} https://t.me/SolovievLive
+          \.
+    %main
+      %nav
+        %h2 личный сайт
+        %p Содержание страницы:
+        %dl
+          %dt Хобби - есть хобби
+          %dd
+            %a{:href => "#page2-1"}> Мое хобби
+            ;
+          %dt
+            Поскролить
+          %dd
+            %a{:href => "#page2-2"}> Мои любимые сайты
+            ;
+          %dt
+            Почитать
+          %dd
+            %a{:href => "#page2-3"}> Мои любимые книги
+            ;
+          %dt
+            Послушать
+          %dd
+            %a{:href => "#page2-4"}> Моя любимая музыка
+            ;
+          %dt
+            Посмотреть
+          %dd
+            %a{:href => "#page2-5"}> Мои любимые фильмы
+            \.
+      %article
+        %section
+          %h2#page2-1 Мое хобби
+          %p
+            Гиперссылки на страницы сайта
+          %p Демонстрация испоьзования javascript функции с переменным количеством аргументов для формирования HTML списков.
+        %section
+          %h2#page2-2 Мои любимые сайты:
+          %ul
+            %li
+              %a{:href => "https://developer.mozilla.org/ru/"} Web документация Mozilla;
+            %li
+              %a{:href => "https://www.w3.org/TR/html50/"} HTML5. A vocabulary and associated APIs for HTML;
+            %li
+              %a{:href => "https://jquery-docs.ru"} jQuery на русском
+            %li
+              %a{:href => "https://bootstrap-4.ru/"} Bootstrap. Документация на русском языке;
+            %li
+              %a{:href => "https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym/"} CSS псевдоклассы: стилизация полей форм по введенным данным;
+            %li
+              %a{:href => "https://apps.eky.hk/css-triangle-generator/"} CSS triangle generator
+            %li
+              %a{:href => "http://javascript.ru/manual"} Справочник javascript;
+            %li
+              %a{:href => "https://tools.dynamicdrive.com/favicon/"} Favorite icon generator
+            %li
+              %a{:href => "http://www.xiper.net/scripts/cusel/"} Выпадающие списки без select
+            %li
+              %a{:href => "http://vesti.ru/"} Вести 24 vesti.ru;
+            %li
+              %a{:href => "http://ukr.net/"} Новостной портал ukr.net;
+            %li
+              %a{:href => "http://pressa.tv/"} Подборка новостного медиа контента pressa.tv;
+            %li
+              %a{:href => "http://youtube.ru/"} Видеохостинг youtube.com .
+        %section
+          %h2#page2-3 Мои любимые книги:
+          :javascript
+            list("O",
+            	"&#x41C;&#x435;&#x442;&#x43E;&#x434;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x435; &#x443;&#x43A;&#x430;&#x437;&#x430;&#x43D;&#x438;&#x44F; &#x43A; &#x43B;&#x430;&#x431;&#x43E;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x43D;&#x44B;&#x43C; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x430;&#x43C; &#x43F;&#x43E; &#x434;&#x438;&#x441;&#x446;&#x438;&#x43F;&#x43B;&#x438;&#x43D;&#x435; &#xAB;&#x412;&#x435;&#x431;-&#x442;&#x435;&#x445;&#x43D;&#x43E;&#x43B;&#x43E;&#x433;&#x438;&#x438;&#xBB; &#x434;&#x43B;&#x44F; &#x441;&#x442;&#x443;&#x434;&#x435;&#x43D;&#x442;&#x43E;&#x432; &#x434;&#x43D;&#x435;&#x432;&#x43D;&#x43E;&#x439; &#x438; &#x437;&#x430;&#x43E;&#x447;&#x43D;&#x43E;&#x439; &#x444;&#x43E;&#x440;&#x43C; &#x43E;&#x431;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43D;&#x430;&#x43F;&#x440;&#x430;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x439; 09.03.02 &#x2013; &#xAB;&#x418;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x43E;&#x43D;&#x43D;&#x44B;&#x435; &#x441;&#x438;&#x441;&#x442;&#x435;&#x43C;&#x44B; &#x438; &#x442;&#x435;&#x445;&#x43D;&#x43E;&#x43B;&#x43E;&#x433;&#x438;&#x438;&#xBB; &#x438; 09.03.03 &#x2013; &#xAB;&#x41F;&#x440;&#x438;&#x43A;&#x43B;&#x430;&#x434;&#x43D;&#x430;&#x44F; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x442;&#x438;&#x43A;&#x430;&#xBB;, &#x447;&#x430;&#x441;&#x442;&#x44C; 1/&#x421;&#x43E;&#x441;&#x442;. &#x410;.&#x41B;.&#x41E;&#x432;&#x447;&#x438;&#x43D;&#x43D;&#x438;&#x43A;&#x43E;&#x432;, &#x414;.&#x412;. &#x421;&#x442;&#x435;&#x43F;&#x430;&#x43D;&#x435;&#x43D;&#x43A;&#x43E;, &#x410;.&#x41A;. &#x417;&#x430;&#x431;&#x430;&#x448;&#x442;&#x430;&#x43D;&#x441;&#x43A;&#x438;&#x439;. &#x2013; &#x421;&#x435;&#x432;&#x430;&#x441;&#x442;&#x43E;&#x43F;&#x43E;&#x43B;&#x44C;: &#x418;&#x437;&#x434;-&#x432;&#x43E; &#x421;&#x435;&#x432;&#x413;&#x423;, 2019. &#x2013; 129 &#x441;.;",
+            	"HTML5. CSS3 &#x438; JavaScript. &#x418;&#x441;&#x447;&#x435;&#x440;&#x43F;&#x44B;&#x432;&#x430;&#x44E;&#x449;&#x435;&#x435; &#x440;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E; / &#x414;&#x436;&#x435;&#x43D;-&#x43D;&#x438;&#x444;&#x435;&#x440; &#x420;&#x43E;&#x431;&#x431;&#x438;&#x43D;&#x441;; [&#x43F;&#x435;&#x440;.&#x441; &#x430;&#x43D;&#x433;&#x43B;. &#x41C;.&#x410;.&#x420;&#x430;&#x439;&#x442;&#x43C;&#x430;&#x43D;]. - 4-&#x435; &#x438;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435;. - &#x41C;.: &#x42D;&#x43A;&#x441;&#x43C;&#x43E;, 2014. - 528 &#x441;.;", "&#x41F;&#x43E;&#x433;&#x440;&#x443;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x432; HTML: &#x43F;&#x435;&#x440;&#x435;&#x432;.&#x441; &#x430;&#x43D;&#x433;&#x43B;. - &#x421;&#x43F;&#x431;.: &#x411;&#x425;&#x412;-&#x41F;&#x435;&#x442;&#x435;&#x440;&#x431;&#x443;&#x440;&#x433;, 2011. - 304 &#x441;.",
+            	"&#x41D;&#x43E;&#x432;&#x430;&#x44F; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x430;&#x44F; &#x43A;&#x43D;&#x438;&#x433;&#x430; CSS. - &#x421;&#x43F;&#x431;.: &#x41F;&#x438;&#x442;&#x435;&#x440;, 2016. - 720 &#x441;.;", "CSS &#x2014; &#x43A;&#x430;&#x441;&#x43A;&#x430;&#x434;&#x43D;&#x44B;&#x435; &#x442;&#x430;&#x431;&#x43B;&#x438;&#x446;&#x44B; &#x441;&#x442;&#x438;&#x43B;&#x435;&#x439;. &#x41F;&#x43E;&#x434;&#x440;&#x43E;&#x431;&#x43D;&#x43E;&#x435; &#x440;&#x443;&#x43A;&#x43E;&#x432;&#x43E;&#x434;&#x441;&#x442;&#x432;&#x43E;, 3-&#x435; &#x438;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x435;. - &#x43F;&#x435;&#x440;.&#x441;. &#x430;&#x43D;&#x433;&#x43B;."
+            )
+        %section
+          %h2#page2-4 Моя любимая музыка
+          %p
+            Группа “
+            %em> Ленинград
+            ” С.Шнурова.
+        %section
+          %h2#page2-5 Мои любимые фильмы
+          %p
+            Фильм
+            %em “Фонтан”
+            \.
+      %section
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+        %br/
+    %footer
+      %table.fullTableMenu
+        %tr
+          %td.tdMenu10
+            \&lt;
+            %a{:href => "page1.htm"}> prev
+            \&gt;
+          %td#tdMenu80
+          %td.tdMenu10
+            \&lt;
+            %a{:href => "page3.htm"}> next
+            \&gt;
+      ®
+      = succeed "," do
+        %time{:datetime => "2019-11-13"} 13.11.19 г.
+      %br/
+      Автор:
+      %a{:href => "mailto:mcapple@yandex.ru"} Е.Борисов
+      %table#tDateBar
+        %tr
+          %td
+            %div
+        %tr
+          %td
+            %div

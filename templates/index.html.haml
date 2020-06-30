@@ -1,0 +1,189 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %title Мой персональный Веб-сайт
+    %link{:href => "favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "css/main.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-1-common.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-page0.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/top-menu-1-hover.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "css/postmaster.css", :rel => "stylesheet"}/
+    %style{:media => "screen"}
+      :cdata
+    :javascript
+      var htmPage = "index"; // &#x413;&#x43B;&#x430;&#x432;&#x43D;&#x430;&#x44F; &#x441;&#x442;&#x440;&#x430;&#x43D;&#x438;&#x446;&#x430;
+    %script{:charset => "utf-8", :src => "js/jquery-1.12.4.js"}
+    %script{:src => "js/gettime.js"}
+    %script{:charset => "utf-8", :src => "js/cookieHandler.js"}
+    %script{:charset => "utf-8", :src => "js/pageCounter.js"}
+    /
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel='apple-touch-icon' sizes='180x180' href='https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/fav/apple-touch-icon.png'>
+      <link rel='icon' type='image/png' sizes='32x32' href='https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/fav/favicon-32x32.png'>
+      <link rel='icon' type='image/png' sizes='16x16' href='https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/fav/favicon-16x16.png'>
+      <link rel='manifest' href='https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/fav/manifest.json'>
+      <link rel='shortcut icon' href='favicon.ico'>
+      <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+      <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+  %body
+    %header
+      %nav#top-menu-1
+        %script{:src => "js/topMenuHandler.js"}
+        %ul
+          %li#li-menu0{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "#"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Главная
+              %br>/
+              страница
+            %ul
+              %li.li-menu1
+                %a{:href => "page1.htm"} Обо мне
+              %li.li-menu2
+                %a{:href => "page2.htm"}
+                  Мои
+                  %br>/
+                  интересы
+              %li.li-menu3
+                %a{:href => "page3.htm"} Учеба
+              %li.li-menu4
+                %a{:href => "page4.htm"} Фотоальбом
+              %li.li-menu5
+                %a{:href => "page5.htm"} Контакты
+              %li.li-menu6
+                %a{:href => "page6.htm"}
+                  Тест
+                  %br>/
+                  по дисциплине
+          %li.li-menu1{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page1.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Обо мне
+          %li.li-menu2{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page2.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Мои
+              %br>/
+              интересы
+            %ul
+              %li
+                %a{:href => "page2.htm#page2-1"} Мое хобби
+              %li
+                %a{:href => "page2.htm#page2-2"} Мои любимые сайты
+              %li
+                %a{:href => "page2.htm#page2-3"} Мои любимые книги
+              %li
+                %a{:href => "page2.htm#page2-4"} Моя любимая музыка
+              %li
+                %a{:href => "page2.htm#page2-5"} Мои любимые фильмы
+          %li.li-menu3{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page3.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Учеба
+          %li.li-menu4{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page4.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Фотоальбом
+          %li.li-menu5{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page5.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Контакты
+          %li.li-menu6{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+            %a{:href => "page6.htm"}
+              %img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+              Тест
+              %br>/
+              по дисциплине
+      %figure
+        %img{:alt => "фотография Борисова Е.А.", :src => "img/normal.jpg"}/
+        %figcaption#idFigcaptionHeader фотография
+      %h1 Персональный сайт
+    %section#boderSection
+    %aside
+      %h3 здесь могла быть ваша реклама:
+      %section
+        %h4 рекламодатель1
+        %p
+          рекламная
+          %br>/
+          плоскость 1
+      %section
+        %h4 рекламодатель2
+        %p
+          %q Телеведущий Владимир Соловьев завел телеграм-канал.
+          Ссылка для подписания
+          %a{:href => "t.me/SolovievLive"} https://t.me/SolovievLive
+          \.
+    %main
+      %article
+        %h2 Личные данные
+        %br/
+        %dl
+          %dt
+            Имя:
+          %dd
+            Борисов Евгений Александрович
+            %br/
+          %dt
+            студент СевГУ группы:
+          %dd
+            а31з
+            %br/
+          %dt
+            Номер и название работы:
+            Контрольная работа по дисциплине: «Веб-технологии»;
+          %dd
+            %ol
+              %li Задание № 1 Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей CSS;
+              %li Задание № 2 Исследование возможностей программирования на стороне клиента. Основы языка JavaScript;
+              %li Задание № 3 Исследование объектной модели документа (DOM) и системы событий JavaScript;
+              %li Задание № 4 Исследование возможностей библиотеки jQuery;
+              %li Задание № 5 Исследование возможностей ускорения разработки веб-приложений с использованием HAML;
+              %li Задание № 6 Исследование возможностей ускорения разработки клиентских приложений с использованием SASS;
+              %li Задание № 7 Исследование возможностей ускорения разработки клиентских приложений с использованием CoffeeScript.
+      %nav
+        %h2 Страницы сайта
+        %p Гиперссылки на страницы сайта:
+        %ul
+          %li
+            %a{:href => "page1.htm"} Обо мне
+          %li
+            %a{:href => "page2.htm"} Мои интересы
+          %li
+            %a{:href => "page3.htm"} Учеба
+          %li
+            %a{:href => "page4.htm"} Фотоальбом
+          %li
+            %a{:href => "page5.htm"} Контакт
+          %li
+            %a{:href => "page6.htm"} Тест по дисциплине "Безопасность жизнедеятельности"
+      %div
+        %p
+          Сам погибай, а систему
+          = succeed "." do
+            %em выключай
+    %footer
+      %table.fullTableMenu
+        %tr
+          %td.tdMenu10
+          %td#tdMenu80
+          %td.tdMenu10
+            \&lt;
+            %a{:href => "page1.htm"}> next
+            \&gt;
+      ®
+      = succeed "," do
+        %time{:datetime => "2019-11-13"} 13.11.19 г.
+      %br/
+      Автор:
+      %a{:href => "mailto:mcapple@yandex.ru"} Е.Борисов
+      %table#tDateBar
+        %tr
+          %td
+            %div
+        %tr
+          %td
+            %div
