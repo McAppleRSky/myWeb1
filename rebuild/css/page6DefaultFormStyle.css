@@ -1,0 +1,20 @@
+#mainForm ul li input, #mainForm ol li {
+  border: 1px solid gray;
+}
+#mainForm input:hover, #mainForm ol li:hover {
+  border: 2px solid;
+}
+/*Сообщение при Form submited*/
+#MainFormSubmitedMessage{
+  font-weight: 800;
+  font-size: 200%;
+  text-align: center;
+  display: none;
+}
+.PrevalidMessage{
+  display: inline;
+}
+.InvalidMessage{
+  display: none;
+  color: red;
+}

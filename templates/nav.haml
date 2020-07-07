@@ -1,0 +1,67 @@
+%nav#top-menu-1
+	%script{:src => "js/topMenuHandler.js"}
+	%ul
+		%li#li-menu0{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+			%a{:href => "index.htm"}
+				%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+				Главная
+				%br>/
+				страница
+			%ul
+				%li.li-menu1
+					%a{:href => "#"} Обо мне
+				%li.li-menu2
+			%a{:href => "page2.htm"}
+			Мои
+			%br>/
+			интересы
+		%li.li-menu3
+			%a{:href => "page3.htm"} Учеба
+		%li.li-menu4
+			%a{:href => "page4.htm"} Фотоальбом
+		%li.li-menu5
+			%a{:href => "page5.htm"} Контакты
+		%li.li-menu6
+			%a{:href => "page6.htm"}
+			Тест
+			%br>/
+			по дисциплине
+	%li.li-menu1{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+		%a{:href => "page1.htm"}
+		%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+		Обо мне
+	%li.li-menu2{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+		%a{:href => "page2.htm"}
+		%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+		Мои
+		%br>/
+		интересы
+		%ul
+		%li
+			%a{:href => "page2.htm#page2-1"} Мое хобби
+		%li
+			%a{:href => "page2.htm#page2-2"} Мои любимые сайты
+		%li
+			%a{:href => "page2.htm#page2-3"} Мои любимые книги
+		%li
+			%a{:href => "page2.htm#page2-4"} Моя любимая музыка
+		%li
+			%a{:href => "page2.htm#page2-5"} Мои любимые фильмы
+	%li.li-menu3{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+		%a{:href => "page3.htm"}
+		%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+		Учеба
+	%li.li-menu4{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+		%a{:href => "page4.htm"}
+		%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+		Фотоальбом
+	%li.li-menu5{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+		%a{:href => "page5.htm"}
+		%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+		Контакты
+	%li.li-menu6{:onmouseout => "ChangeOut(this)", :onmouseover => "ChangeOver(this)"}
+		%a{:href => "page6.htm"}
+		%img.li-menu-img{:alt => "", :src => "img/icon/caret.png"}/
+		Тест
+		%br>/
+		по дисциплине

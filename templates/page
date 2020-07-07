@@ -1,0 +1,16 @@
+!!!
+%html{:lang => "ru"}
+	%head
+		= Haml::Engine.new(File.read("head.haml")).render
+		%title Title
+		:javascript
+			var htmPage = "";
+	%body
+		%header
+			= Haml::Engine.new(File.read("nav.haml")).render
+		%aside
+			= Haml::Engine.new(File.read("aside.haml")).render
+		%main
+			%article
+		%footer
+			= Haml::Engine.new(File.read("footer.haml")).render

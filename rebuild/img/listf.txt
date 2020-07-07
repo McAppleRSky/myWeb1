@@ -1,0 +1,8 @@
+photo_2019-10-22_16-49-22.jpg;newMy;50;75
+photo_2019-11-22_10-36-12.jpg;flower1;75;50
+photo_2019-11-22_10-39-46.jpg;flower2;75;50
+photo_2019-11-22_10-39-51.jpg;flower3;50;75
+photo_2019-11-22_10-39-59.jpg;flower4;75;50
+photo_2019-11-22_10-40-06.jpg;flower5;50;75
+photo_2019-11-22_10-40-12.jpg;flower6;75;50
+photo_2019-11-22_10-40-24.jpg;flower7;75;50

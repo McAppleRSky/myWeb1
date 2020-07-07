@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Мой персональный Веб-сайт</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-1-common.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-page4.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
+	<link rel="stylesheet" href="css/modal.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/postmaster.css">
+	<script type="text/javascript">
+		var htmPage = "page4"; // Фотоальбом
+	</script>
+	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
+	<script src="js/gettime.js" charset="utf-8"></script>
+	<script src="js/cookieHandler.js" charset="utf-8"></script>
+	<script src="js/pageCounter.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<header>
+		<nav id="top-menu-1">
+			<script src="js/topMenuHandler.js"></script>
+			<ul>
+				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
+					<a href="index.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Главная<br>страница</a>
+					<ul>
+						<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
+						<li class="li-menu2"><a href="page2.htm">Мои<br>интересы</a></li>
+						<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
+						<li class="li-menu4"><a href="#">Фотоальбом</a></li>
+						<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
+						<li class="li-menu6"><a href="page6.htm">Тест<br>по дисциплине</a></li>
+					</ul>
+				</li>
+				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Обо мне</a></li>
+				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page2.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Мои<br>интересы</a>
+					<ul>
+						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
+						<li><a href="page2.htm#page2-2">Мои любимые сайты</a></li>
+						<li><a href="page2.htm#page2-3">Мои любимые книги</a></li>
+						<li><a href="page2.htm#page2-4">Моя любимая музыка</a></li>
+						<li><a href="page2.htm#page2-5">Мои любимые фильмы</a></li>
+					</ul>
+				</li>
+				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Учеба</a></li>
+				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Фотоальбом</a></li>
+				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Контакты</a></li>
+				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page6.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Тест<br>по дисциплине</a></li>
+			</ul>
+		</nav>
+
+		<figure>
+			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+			<figcaption id="idFigcaptionHeader">фотография</figcaption>
+		</figure>
+		<h1>Персональный сайт</h1>
+	</header>
+	<aside>
+		<h3>здесь могла быть ваша реклама:</h3>
+		<section>
+			<h4>рекламодатель1</h4>
+			<p>рекламная<br>плоскость 1</p>
+		</section>
+		<section>
+			<h4>рекламодатель2</h4>
+			<p><q>Телеведущий Владимир Соловьев завел телеграм-канал.</q> Ссылка для подписания <a href="t.me/SolovievLive">https://t.me/SolovievLive</a> .</p>
+		</section>
+	</aside>
+	<main>
+		<section>
+			<h3>Ниже секции расположены мои фотографии </h3>
+		</section>
+		<section>
+			<p>данные фотографии разбиты на группы, сделанные в разное время и различных обстоятельствах. Сделаны различными приборами</p>
+			<div class="mainArticle">
+				<div class="imgList">
+					<!--
+					<input type="file" id="file" nwworkdir="/mnt/d" multiple>
+					<button onclick="readFile(document.getElementById('file'))">Read!</button>
+				-->
+					<!-- files without ext (t.e. .txt) in object tag will be downloaded trought http protocol -->
+					<input type="file" id="fileElem" accept=".txt,text/plain" style="display:none" onchange="fillListFromFileAndfillPhotosAndAlbumHandler(event)" multiple>
+					<object data="img/list.txt" type="text/plain;charset=UTF-8"></object>
+					<object data="img/listf.txt" type="text/plain;charset=UTF-8"></object>
+					<!--
+					<a href="#" id="fileSelect">Select list files</a>
+				-->
+				</div>
+				<script src="js/page4handler.js"></script>
+			</div>
+			<br><br>
+		</section>
+		<article>
+			<table class="commonTable">
+				<caption>Фотографии в HTML'е (oldSyle album)</caption>
+				<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>
+						<figure>
+							<img src="img/album/photo_2019-10-22_16-49-22.jpg" height="200" alt="2019 г. фотография с курсов по программе лидерства" title="фотография с курсов Лидерства" />
+							<figcaption>фотография с курсов Лидерства</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/1576360052_pressa_tv_prikolnye_foto_38.jpg" height="200" alt="img8" title="фотография Б" />
+							<figcaption>фотография Б</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/1576360073_pressa_tv_prikolnye_foto_01.jpg" width="200" alt="img9" title="фотография В" />
+							<figcaption>фотография В</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/1576705603_pressa_tv_fotoprikoly_07.jpg" height="200" alt="img10" title="фотография Г" />
+							<figcaption>фотография Г</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/1575850368_d15.jpg" width="200" alt="img11" title="фотография Д" />
+							<figcaption>фотография Д</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/1575974982_d2.jpg" height="200" alt="img12" title="фотография Е" />
+							<figcaption>фотография Е</figcaption>
+						</figure>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<figure>
+							<img src="img/1575975602_d3.jpg" width="200" alt="img13" title="фотография Ж" />
+							<figcaption>фотография Ж</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-37-41.jpg" width="200" alt="img14" title="фотография З" />
+							<figcaption>фотография З</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-37-52.jpg" width="200" alt="img15" title="фотография И" />
+							<figcaption>фотография И</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-37-56.jpg" height="200" alt="img16" title="фотография К" />
+							<figcaption>фотография К</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-37-59.jpg" width="200" alt="img17" title="фотография Л" />
+							<figcaption>фотография Л</figcaption>
+						</figure>
+					</td>
+					<td>
+						<img src="img/.jpg" width="200" alt="img m" /></td>
+				</tr>
+				<tr>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-38-04.jpg" width="200" alt="img18" title="фотография М" />
+							<figcaption>фотография М</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-38-06.jpg" height="200" alt="img19" title="фотография Н" />
+							<figcaption>фотография Н</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-38-09.jpg" width="200" alt="img20" title="фотография О" />
+							<figcaption>фотография О</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/photo_2020-05-08_07-38-13.jpg" width="200" alt="img21" title="фотография П" />
+							<figcaption>фотография П</figcaption>
+						</figure>
+					</td>
+					<td>
+						<figure>
+							<img src="img/.jpg" width="200" alt="img n" title="фотография Р" />
+							<figcaption>фотография Р</figcaption>
+						</figure>
+					</td>
+					<td><a href="index.htm">На главную страницу</a>
+					</td>
+				</tr>
+			</table>
+
+			<table>
+				<caption>Фотографии последующие</caption>
+				<tr>
+					<th>
+					<th>
+					<th>
+					<th>
+				</tr>
+				<tr>
+					<td>
+					<td>
+					<td>
+					<td>
+				</tr>
+			</table>
+		</article>
+		<section>
+			<br><br><br><br><br><br><br><br><br><br><br>
+		</section>
+	</main>
+	<footer>
+		<table class="fullTableMenu">
+			<tr>
+				<td class="tdMenu10">&lt;<a href="page3.htm">prev</a>&gt;</td>
+				<td id="tdMenu80"></td>
+				<td class="tdMenu10">&lt;<a href="page5.htm">next</a>&gt;</td>
+			</tr>
+		</table>
+		&reg; <time datetime="2019-11-13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
+		<table id="tDateBar">
+			<tr>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+		</table>
+	</footer>
+	<!--
+	<script src="js/TDD-read-file.js" charset="utf-8"></script>
+-->
+	<!--
+-->
+
+</body>
+
+</html>

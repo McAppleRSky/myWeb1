@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Мой персональный Веб-сайт</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-1-common.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-page2.css" type="text/css">
+	<link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/postmaster.css">
+	<script type="text/javascript">
+		var htmPage = "page2"; //Мои интересы
+	</script>
+	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
+	<script src="js/gettime.js"></script>
+	<script src="js/cookieHandler.js" charset="utf-8"></script>
+	<script src="js/pageCounter.js" charset="utf-8"></script>
+	<script src="js/page2handler.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav id="top-menu-1">
+			<script src="js/topMenuHandler.js"></script>
+			<ul>
+				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
+					<a href="index.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Главная<br>страница</a>
+					<ul>
+						<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
+						<li class="li-menu2"><a href="#">Мои<br>интересы</a></li>
+						<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
+						<li class="li-menu4"><a href="page4.htm">Фотоальбом</a></li>
+						<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
+						<li class="li-menu6"><a href="page6.htm">Тест<br>по дисциплине</a></li>
+					</ul>
+				</li>
+				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Обо мне</a></li>
+				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Мои<br>интересы</a>
+					<ul>
+						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
+						<li><a href="page2.htm#page2-2">Мои любимые сайты</a></li>
+						<li><a href="page2.htm#page2-3">Мои любимые книги</a></li>
+						<li><a href="page2.htm#page2-4">Моя любимая музыка</a></li>
+						<li><a href="page2.htm#page2-5">Мои любимые фильмы</a></li>
+					</ul>
+				</li>
+				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Учеба</a></li>
+				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Фотоальбом</a></li>
+				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Контакты</a></li>
+				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page6.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						Тест<br>по дисциплине</a></li>
+			</ul>
+		</nav>
+
+		<figure>
+			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+			<figcaption id="idFigcaptionHeader">фотография</figcaption>
+		</figure>
+		<h1>Персональный сайт</h1>
+
+	</header>
+	<aside>
+		<h3>здесь могла быть ваша реклама:</h3>
+		<section>
+			<h4>рекламодатель1</h4>
+			<p>рекламная<br>плоскость 1</p>
+		</section>
+		<section>
+			<h4>рекламодатель2</h4>
+			<p><q>Телеведущий Владимир Соловьев завел телеграм-канал.</q> Ссылка для подписания <a href="t.me/SolovievLive">https://t.me/SolovievLive</a> .</p>
+		</section>
+	</aside>
+	<main>
+		<nav>
+			<h2>личный сайт</h2>
+			<p>Содержание страницы:</p>
+			<dl>
+				<dt>Хобби - есть хобби</dt>
+				<dd><a href="#page2-1">Мое хобби</a>;</dd>
+				<dt>Поскролить
+				</dt>
+				<dd><a href="#page2-2">Мои любимые сайты</a>;</dd>
+				<dt>Почитать
+				</dt>
+				<dd><a href="#page2-3">Мои любимые книги</a>;</dd>
+				<dt>Послушать
+				</dt>
+				<dd><a href="#page2-4">Моя любимая музыка</a>;</dd>
+				<dt>Посмотреть
+				</dt>
+				<dd><a href="#page2-5">Мои любимые фильмы</a>.</dd>
+			</dl>
+		</nav>
+		<article>
+			<section>
+				<h2 id="page2-1">Мое хобби</h2>
+				<p>Гиперссылки на страницы сайта
+					<p>Демонстрация испоьзования javascript функции с переменным количеством аргументов для формирования HTML списков.</p>
+			</section>
+			<section>
+				<h2 id="page2-2">Мои любимые сайты:</h2>
+				<ul>
+					<li><a href="https://developer.mozilla.org/ru/">Web документация Mozilla;</a></li>
+					<li><a href="https://www.w3.org/TR/html50/">HTML5. A vocabulary and associated APIs for HTML;</a></li>
+					<li><a href="https://jquery-docs.ru">jQuery на русском</a></li>
+					<li><a href="https://bootstrap-4.ru/">Bootstrap. Документация на русском языке;</a></li>
+					<li><a href="https://webformyself.com/css-psevdoklassy-stilizaciya-polej-form-po-vvedennym-dannym/">CSS псевдоклассы: стилизация полей форм по введенным данным;</a></li>
+					<li><a href="https://apps.eky.hk/css-triangle-generator/">CSS triangle generator</a></li>
+					<li><a href="http://javascript.ru/manual">Справочник javascript;</a></li>
+					<li><a href="https://tools.dynamicdrive.com/favicon/">Favorite icon generator</a></li>
+					<li><a href="http://www.xiper.net/scripts/cusel/">Выпадающие списки без select</a></li>
+					<li><a href="http://vesti.ru/">Вести 24 vesti.ru;</a></li>
+					<li><a href="http://ukr.net/">Новостной портал ukr.net;</a></li>
+					<li><a href="http://pressa.tv/">Подборка новостного медиа контента pressa.tv;</a></li>
+					<li><a href="http://youtube.ru/">Видеохостинг youtube.com .</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2 id="page2-3">Мои любимые книги:</h2>
+				<script>
+					list("O",
+						"Методические указания к лабораторным работам по дисциплине «Веб-технологии» для студентов дневной и заочной форм обучения направлений 09.03.02 – «Информационные системы и технологии» и 09.03.03 – «Прикладная информатика», часть 1/Сост. А.Л.Овчинников, Д.В. Степаненко, А.К. Забаштанский. – Севастополь: Изд-во СевГУ, 2019. – 129 с.;",
+						"HTML5. CSS3 и JavaScript. Исчерпывающее руководство / Джен-нифер Роббинс; [пер.с англ. М.А.Райтман]. - 4-е издание. - М.: Эксмо, 2014. - 528 с.;", "Погружение в HTML: перев.с англ. - Спб.: БХВ-Петербург, 2011. - 304 с.",
+						"Новая большая книга CSS. - Спб.: Питер, 2016. - 720 с.;", "CSS — каскадные таблицы стилей. Подробное руководство, 3-е издание. - пер.с. англ."
+					)
+				</script>
+			</section>
+			<section>
+				<h2 id="page2-4">Моя любимая музыка</h2>
+				<p>Группа &ldquo;<em>Ленинград</em>&rdquo; С.Шнурова.</p>
+			</section>
+			<section>
+				<h2 id="page2-5">Мои любимые фильмы</h2>
+				<p>Фильм <em>&ldquo;Фонтан&rdquo;</em> .</p>
+			</section>
+		</article>
+		<section>
+			<br><br><br><br><br><br><br><br><br><br><br>
+		</section>
+	</main>
+	<footer>
+		<table class="fullTableMenu">
+			<tr>
+				<td class="tdMenu10">&lt;<a href="page1.htm">prev</a>&gt;</td>
+				<td id="tdMenu80"></td>
+				<td class="tdMenu10">&lt;<a href="page3.htm">next</a>&gt;</td>
+			</tr>
+		</table>
+		&reg; <time datetime="2019-11-13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
+		<br> Автор: <a href="mailto:mcapple@yandex.ru">Е.Борисов</a>
+		<table id="tDateBar">
+			<tr>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div></div>
+				</td>
+			</tr>
+		</table>
+	</footer>
+</body>
+
+</html>

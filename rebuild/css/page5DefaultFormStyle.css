@@ -1,0 +1,15 @@
+
+/*Сообщение при Form submited*/
+#MessageFormSubmitedMessage{
+  font-weight: 800;
+  font-size: 200%;
+  text-align: center;
+  display: none;
+}
+.PrevalidMessage{
+  display: inline;
+}
+.InvalidMessage{
+  display: none;
+  color: red;
+}

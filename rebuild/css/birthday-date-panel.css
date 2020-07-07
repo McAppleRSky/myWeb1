@@ -1,0 +1,14 @@
+.panel {
+  display:none;
+}
+
+#birthdate:focus+.panel,
+.panel:hover{
+  display:block;
+}
+
+/*
+*:focus {
+outline: 2px solid #d71ef7;
+}
+*/
