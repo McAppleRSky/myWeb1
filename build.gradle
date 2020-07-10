@@ -30,10 +30,43 @@ dependencies {
 }
 */
 
-task execHamlPage(type:Exec) {
-  workingDir './'
+/*
+apply plugin:'java'
+sourceSets {
+    integTest
+}
 
-  commandLine 'haml ./template/page ./rebuild/index.html'
+group 'org'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    flatDir {
+        dirs '/home/borisov/_apps/libs/'
+    }
+}
+*/
+
+ext{
+//    log4jVersion = '2.12.1'
+  rebuild = "../rebuild/"
+  templatesPath = "/mnt/d/projects/myWeb1/templates"
+  rebuildPath = "/mnt/d/projects/myWeb1/rebuild"
+}
+/*
+dependencies {
+    testCompile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4jVersion
+    testCompile group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4jVersion
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+}
+*/
+
+task indexHaml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "index.html"
 
   //store the output instead of printing to the console:
   standardOutput = new ByteArrayOutputStream()
@@ -42,4 +75,123 @@ task execHamlPage(type:Exec) {
   ext.output = {
     return standardOutput.toString()
   }
+  //dependOn =
+}
+
+task page1Haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page1.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task page2Haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page2.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task page3Haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page3.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task page4Haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page4.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task page5Haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page5.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task page6haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page6.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task page7Haml(type:Exec) {
+  workingDir templatesPath
+
+  commandLine "haml", "page", rebuild + "page7.html"
+
+  //store the output instead of printing to the console:
+  standardOutput = new ByteArrayOutputStream()
+
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+    return standardOutput.toString()
+  }
+  //dependOn =
+}
+
+task indexDiff(type:Exec) {
+  workingDir rebuildPath
+  commandLine "html-differ", "index.html", "../index.htm"
+
+  //store the output instead of printing to the console:
+//  standardOutput = new ByteArrayOutputStream()
+  //extension method stopTomcat.output() can be used to obtain the output:
+  ext.output = {
+//    return standardOutput.toString()
+  }
+  //dependOn =
 }
