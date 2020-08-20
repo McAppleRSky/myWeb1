@@ -2,11 +2,11 @@
 <html lang="ru">
 
 <head>
+	<link rel="stylesheet" href="css/top-menu-page2.css" type="text/css">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<link rel="stylesheet" href="css/top-menu-1-common.css" type="text/css">
-	<link rel="stylesheet" href="css/top-menu-page2.css" type="text/css">
 	<link rel="stylesheet" href="css/top-menu-1-hover.css" type="text/css">
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="css/postmaster.css"  type="text/css">
@@ -15,9 +15,15 @@
 	<script src="js/cookieHandler.js" charset="utf-8"></script>
 	<script src="js/pageCounter.js" charset="utf-8"></script>
 	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
-	<script src="js/page2handler.js"></script>
+	<script src="js/page2handler.js" charset="utf-8"></script>
 	<script>
 		var htmPage = "page2"; //Мои интересы
+		 $(function(){
+			 $('.li-menu2').children().attr('href','#');
+			 $('.tdMenu10').first().children().attr('href','page1.htm');
+			 $('.tdMenu10').last().children().attr('href','page3.htm');
+		 });
+
 	</script>
 	<title>Мой персональный Веб-сайт</title>
 </head>
@@ -25,15 +31,15 @@
 <body>
 	<header>
 		<nav id="top-menu-1">
-			<script src="js/topMenuHandler.js"></script>
+			<script src="js/topMenuHandler.js" charset="utf-8"></script>
 			<ul>
 				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
 					<a href="index.htm">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Главная<br>страница</a>
 					<ul>
 						<li class="li-menu1"><a href="page1.htm">Обо мне</a></li>
-						<li class="li-menu2"><a href="#">Мои<br>интересы</a></li>
+						<li class="li-menu2"><a href="page2.htm">Мои<br>интересы</a></li>
 						<li class="li-menu3"><a href="page3.htm">Учеба</a></li>
 						<li class="li-menu4"><a href="page4.htm">Фотоальбом</a></li>
 						<li class="li-menu5"><a href="page5.htm">Контакты</a></li>
@@ -41,10 +47,10 @@
 					</ul>
 				</li>
 				<li class="li-menu1" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page1.htm">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Обо мне</a></li>
-				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="#">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+				<li class="li-menu2" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page2.htm">
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Мои<br>интересы</a>
 					<ul>
 						<li><a href="page2.htm#page2-1">Мое хобби</a></li>
@@ -55,22 +61,22 @@
 					</ul>
 				</li>
 				<li class="li-menu3" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page3.htm">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Учеба</a></li>
 				<li class="li-menu4" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page4.htm">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Фотоальбом</a></li>
 				<li class="li-menu5" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page5.htm">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Контакты</a></li>
 				<li class="li-menu6" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)"><a href="page6.htm">
-						<img class="li-menu-img" src="img/icon/caret.png" alt="" />
+						<img class="li-menu-img" src="img/icon/caret.png" alt="">
 						Тест<br>по дисциплине</a></li>
 			</ul>
 		</nav>
 
 		<figure>
-			<img src="img/normal.jpg" alt="фотография Борисова Е.А." />
+			<img src="img/normal.jpg" alt="фотография Борисова Е.А.">
 			<figcaption id="idFigcaptionHeader">фотография</figcaption>
 		</figure>
 		<h1>Персональный сайт</h1>
@@ -113,6 +119,7 @@
 				<h2 id="page2-1">Мое хобби</h2>
 				<p>Гиперссылки на страницы сайта
 					<p>Демонстрация испоьзования javascript функции с переменным количеством аргументов для формирования HTML списков.</p>
+				</p>
 			</section>
 			<section>
 				<h2 id="page2-2">Мои любимые сайты:</h2>
@@ -136,10 +143,10 @@
 				<h2 id="page2-3">Мои любимые книги:</h2>
 				<script>
 					list("O",
-						"Методические указания к лабораторным работам по дисциплине «Веб-технологии» для студентов дневной и заочной форм обучения направлений 09.03.02 – «Информационные системы и технологии» и 09.03.03 – «Прикладная информатика», часть 1/Сост. А.Л.Овчинников, Д.В. Степаненко, А.К. Забаштанский. – Севастополь: Изд-во СевГУ, 2019. – 129 с.;",
-						"HTML5. CSS3 и JavaScript. Исчерпывающее руководство / Джен-нифер Роббинс; [пер.с англ. М.А.Райтман]. - 4-е издание. - М.: Эксмо, 2014. - 528 с.;", "Погружение в HTML: перев.с англ. - Спб.: БХВ-Петербург, 2011. - 304 с.",
-						"Новая большая книга CSS. - Спб.: Питер, 2016. - 720 с.;", "CSS — каскадные таблицы стилей. Подробное руководство, 3-е издание. - пер.с. англ."
-					)
+						 "Методические указания к лабораторным работам по дисциплине «Веб-технологии» для студентов дневной и заочной форм обучения направлений 09.03.02 – «Информационные системы и технологии» и 09.03.03 – «Прикладная информатика», часть 1/Сост. А.Л.Овчинников, Д.В. Степаненко, А.К. Забаштанский. – Севастополь: Изд-во СевГУ, 2019. – 129 с.;",
+						 "HTML5. CSS3 и JavaScript. Исчерпывающее руководство / Джен-нифер Роббинс; [пер.с англ. М.А.Райтман]. - 4-е издание. - М.: Эксмо, 2014. - 528 с.;", "Погружение в HTML: перев.с англ. - Спб.: БХВ-Петербург, 2011. - 304 с.",
+						 "Новая большая книга CSS. - Спб.: Питер, 2016. - 720 с.;", "CSS — каскадные таблицы стилей. Подробное руководство, 3-е издание. - пер.с. англ."
+					 )
 				</script>
 			</section>
 			<section>
@@ -158,9 +165,9 @@
 	<footer>
 		<table class="fullTableMenu">
 			<tr>
-				<td class="tdMenu10">&lt;<a href="page1.htm">prev</a>&gt;</td>
+				<td class="tdMenu10">&lt;<a>prev</a>&gt;</td>
 				<td id="tdMenu80"></td>
-				<td class="tdMenu10">&lt;<a href="page3.htm">next</a>&gt;</td>
+				<td class="tdMenu10">&lt;<a>next</a>&gt;</td>
 			</tr>
 		</table>
 		&reg; <time datetime="2019-11-13">13.11.19 г.</time>, Борисов Е.А. Все права защищены. &copy; Копирование запрещено
