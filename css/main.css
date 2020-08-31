@@ -30,7 +30,8 @@ text-transform: none;
 font-size: 10pt;
 font-style: italic;
 }
-
+.fullTableMenu {
+  width: 100%; }
 .tdMenu10{
   width: 10%;
 }
