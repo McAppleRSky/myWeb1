@@ -30,21 +30,12 @@ text-transform: none;
 font-size: 10pt;
 font-style: italic;
 }
-.fullTableMenu{
-  width: 100%;
-}
+
 .tdMenu10{
   width: 10%;
 }
 #tdMenu80{
   width: 80%;
-}
-.cMenuRow{
-  text-align: center;
-  font-size: smaller;
-}
-.cMenuTabCol{
-  width: 14%;
 }
 .hide{
   opacity: 0;

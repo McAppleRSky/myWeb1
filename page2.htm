@@ -2,6 +2,14 @@
 <html lang="ru">
 
 <head>
+	<script>
+		var htmPage = "page2"; //Мои интересы
+		 $(function(){
+			 $('.li-menu2').children().attr('href','#');
+			 $('.tdMenu10').first().children().attr('href','page1.htm');
+			 $('.tdMenu10').last().children().attr('href','page3.htm');
+		 });
+	</script>
 	<link rel="stylesheet" href="css/top-menu-page2.css" type="text/css">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<link rel="shortcut icon" href="favicon.ico">
@@ -16,15 +24,6 @@
 	<script src="js/pageCounter.js" charset="utf-8"></script>
 	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
 	<script src="js/page2handler.js" charset="utf-8"></script>
-	<script>
-		var htmPage = "page2"; //Мои интересы
-		 $(function(){
-			 $('.li-menu2').children().attr('href','#');
-			 $('.tdMenu10').first().children().attr('href','page1.htm');
-			 $('.tdMenu10').last().children().attr('href','page3.htm');
-		 });
-
-	</script>
 	<title>Мой персональный Веб-сайт</title>
 </head>
 

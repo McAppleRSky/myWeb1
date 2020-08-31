@@ -2,6 +2,15 @@
 <html lang="ru">
 
 <head>
+	<script>
+		var htmPage = "page4"; // Фотоальбом
+		 $(function(){
+			 $('.li-menu4').children().attr('href','#');
+			 $('.tdMenu10').first().children().attr('href','page3.htm');
+			 $('.tdMenu10').last().children().attr('href','page5.htm');
+			 $('.commonTable tr td').last().empty().append('<a href="index.htm">На главную страницу</a>');
+		 });
+	</script>
 	<link rel="stylesheet" href="css/top-menu-page4.css" type="text/css">
 	<link rel="stylesheet" href="css/modal.css" type="text/css">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" >
@@ -16,15 +25,6 @@
 	<script src="js/cookieHandler.js" charset="utf-8"></script>
 	<script src="js/pageCounter.js" charset="utf-8"></script>
 	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
-	<script>
-		var htmPage = "page4"; // Фотоальбом
-		 $(function(){
-			 $('.li-menu4').children().attr('href','#');
-			 $('.tdMenu10').first().children().attr('href','page3.htm');
-			 $('.tdMenu10').last().children().attr('href','page5.htm');
-			 $('.commonTable tr td').last().empty().append('<a href="index.htm">На главную страницу</a>');
-		 });
-	</script>
 	<title>Мой персональный Веб-сайт</title>
 </head>
 
