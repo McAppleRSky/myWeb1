@@ -2,14 +2,6 @@
 <html lang="ru">
 
 <head>
-	<script>
-		var htmPage = "index"; // Главная страница
-		 $(function(){
-			 $('#li-menu0').children().first().attr('href','#');
-			 $('.tdMenu10').first().empty();
-			 $('.tdMenu10').last().children().attr('href','page1.htm');
-		 });
-	</script>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<link rel="shortcut icon" href="favicon.ico" >
 	<link rel="stylesheet" href="css/main.css" type="text/css">
@@ -18,11 +10,19 @@
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" href="css/postmaster.css" type="text/css">
 	<style media="screen"></style>
-	<script src="js/gettime.js" charset="utf-8"></script>
-	<script src="js/cookieHandler.js" charset="utf-8"></script>
-	<script src="js/pageCounter.js" charset="utf-8"></script>
-	<script src="js/jquery-1.12.4.js" charset="utf-8"></script>
+	<script src="js/cookieHandler.js"></script>
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/gettime.js"></script>
 	<link rel="stylesheet" href="css/top-menu-page0.css" type="text/css">
+	<script>
+		var htmPage = "index"; // Главная страница
+		 $(function(){
+			 $('#li-menu0').children().first().attr('href','#');
+			 $('.tdMenu10').first().empty();
+			 $('.tdMenu10').last().children().attr('href','page1.htm');
+		 });
+	</script>
+	<script src="js/pageCounter.js"></script>
 	<title>Мой персональный Веб-сайт</title>
 	<!--
 	<link rel="icon" href="/favicon.ico" />
@@ -40,7 +40,7 @@
 <body>
 	<header>
 		<nav id="top-menu-1">
-			<script src="js/topMenuHandler.js" charset="utf-8"></script>
+			<script src="js/topMenuHandler.js"></script>
 			<ul>
 				<li id="li-menu0" onmouseover="ChangeOver(this)" onmouseout="ChangeOut(this)">
 					<a href="index.htm">
