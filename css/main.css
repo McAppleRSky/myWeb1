@@ -1,14 +1,25 @@
+.opera, .firefox, .chrome, .ie {
+  min-height: 16px;
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: right 5%;
+}
+
 .ie {
-  background: url(../img/icon/ie.png) no-repeat right 5%; }
+  background-image: url(../img/icon/ie.png);
+}
 
 .chrome {
-  background: url(../img/icon/chrome.png) no-repeat right 5%; }
+  background-image: url(../img/icon/chrome.png);
+}
 
 .firefox {
-  background: url(../img/icon/firefox.png) no-repeat right 5%; }
+  background-image: url(../img/icon/firefox.png);
+}
 
 .opera {
-  background: url(../img/icon/opera.png) no-repeat right 5%; }
+  background-image: url(../img/icon/opera.png);
+}
 header {
   text-align: center;
   font-family: serif;
