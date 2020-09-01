@@ -1,3 +1,14 @@
+.ie {
+  background: url(../img/icon/ie.png) no-repeat right 5%; }
+
+.chrome {
+  background: url(../img/icon/chrome.png) no-repeat right 5%; }
+
+.firefox {
+  background: url(../img/icon/firefox.png) no-repeat right 5%; }
+
+.opera {
+  background: url(../img/icon/opera.png) no-repeat right 5%; }
 header {
   text-align: center;
   font-family: serif;
