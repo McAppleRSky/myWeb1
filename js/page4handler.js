@@ -82,7 +82,9 @@ function fillListFromFileAndfillPhotosAndAlbumHandler(event) {
           ).style.display = "none";
         }
         if (lists.length == listCount) {
-          mainArticle.removeChild(imgList);
+          $(".mainArticle")
+            .children(".imgList")
+              .remove();
           fillPhotos();
           albumHandler();
         }
