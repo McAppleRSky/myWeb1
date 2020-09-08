@@ -11,6 +11,7 @@ const birthday_pattern = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
 //document.addEventListener("DOMContentLoaded", page5init);
 
 function validMessageForm() {
+  console.log("validMessageForm call");
   //  var fns = form.familyNameSurname.value;
   //  var fnsWordTextCnt = qHowManyTextWord(form.familyNameSurname.value);
   //console.log(`howManyTextWord: ${howManyTextWord(form.familyNameSurname.value)}`);
@@ -22,9 +23,22 @@ function validMessageForm() {
 
   //var form = document.querySelector('#messageForm');
   //var submitMessage = document.querySelector('#MessageFormSubmitedMessage');
-  //let result = false;
+  let result = false;
+  if ($(".invalid").eq(0).length == 0) {
+    $("#messageForm")
+      .css("display", "none");
+    $("#MessageFormSubmitedMessage")
+      .css("display", "inline")
+      //form.style.display = "none";
+//      submitMessage.style.display = "inline";
+      result = true;
+      //console.log("Проверка mainForm page5 успешно пройдена.");
+    }
+    /*
   if ($(".invalid").eq(0).length == 0) result = true;
+  */
   else event.preventDefault();
+  console.log("validMessageForm leave");
   /*
     if (submitStatus) {
       form.style.display = "none";
@@ -32,9 +46,9 @@ function validMessageForm() {
       //console.log("Проверка mainForm page5 успешно пройдена.");
     }
     */
-  console.log($(".invalid").eq(0).length);
-  /*
-    return //result;
+//  console.log($(".invalid").eq(0).length);
+    return result;
+    /*
       false;
       */
 }
@@ -96,6 +110,16 @@ function canSubmit(){
   return result;
 }
 */
+
+var
+validTest = function (){
+  if($(".invalid").eq(0).length == 0 && $(".valid").length == 6){
+    console.log("Дык : ");
+    $("#submit-button")
+      .css("pointer-events", "auto")
+      .disabled = false;
+  }
+}
 
 function fnsFocusinHandler() {
   //  let fns = form.familyNameSurname;
@@ -211,16 +235,17 @@ function fnsFocusoutHandler() {
                 .addClass("valid");
               // TODO: jquery disabled
               //if(canSubmit())//document.querySelector
-              if ($(".invalid").eq(0).length == 0)
+              if ($(".invalid").eq(0).length == 0){
                 $("#submit-button") //.disabled = false;
                 .prop("disabled", false);
+              }
             }
           }
         }
       }
     }
   }
-
+  validTest();
 }
 
 function genderFocusinHandler() {
@@ -269,6 +294,7 @@ function genderFocusoutHandler() {
       $("#submit-button") //.disabled = false;
       .prop("disabled", false);
   }
+  validTest();
 }
 
 function telefFocusinHandler() {
@@ -335,6 +361,7 @@ function telefFocusoutHandler() {
         .prop("disabled", false);
     }
   }
+  validTest();
 }
 
 function mailFocusinHandler() {
@@ -381,6 +408,7 @@ function mailFocusoutHandler() {
       $("#submit-button") //.disabled = false;
       .prop("disabled", false);
   }
+  validTest();
 }
 
 function messageFocusinHandler() {
@@ -441,6 +469,7 @@ function messageFocusoutHandler() {
         .prop("disabled", false);
     }
   }
+  validTest();
 }
 
 function birthdateFocusinHandler() {
@@ -457,6 +486,9 @@ function birthdateFocusinHandler() {
   //$("#submit-button").disabled = true;
   $("#submit-button") //.disabled = false;
     .prop("disabled", true);
+  if( $("input[name=birthdate]").val().split('.') != 3) {
+    $("input[name=birthdate]").val("31.12.1999");
+  }
 }
 
 function birthdateFocusoutHandler() {
@@ -491,6 +523,7 @@ function birthdateFocusoutHandler() {
       $("#submit-button") //.disabled = false;
       .prop("disabled", false);
   }
+  validTest();
 }
 
 function initValidElements() {
@@ -612,4 +645,5 @@ function initValidElements() {
       "hide": 500
     }
   });
+  console.log("После init не валидные существуют: " + $(".invalid").length);
 }
