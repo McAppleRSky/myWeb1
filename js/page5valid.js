@@ -28,7 +28,7 @@ function validMessageForm() {
     $("#messageForm")
       .css("display", "none");
     $("#MessageFormSubmitedMessage")
-      .css("display", "inline")
+      .css("display", "inline");
       //form.style.display = "none";
 //      submitMessage.style.display = "inline";
       result = true;
